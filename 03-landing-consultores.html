@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seja Consultor Vante — Venda tecnologia para o pequeno varejo</title>
+<meta name="description" content="Torne-se consultor comercial da Vante Gestão Tecnologia: comissões de 20% a 40%, bônus de até R$ 5.000, produto com IA e implantação por conta da Vante.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563EB;
+    --navy:#0E2A5C;
+    --navy-deep:#0A1B3A;
+    --blue-light:#7FA8F0;
+    --bg:#EEF2F8;
+    --white:#FFFFFF;
+    --text:#1E293B;
+    --gray:#64748B;
+    --success:#16A34A;
+    --warn:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+    font-size:16px;
+  }
+  h1,h2,h3{line-height:1.25;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  section{padding:72px 0;}
+
+  /* ===== Topbar ===== */
+  .topbar{
+    background:var(--navy-deep);
+    padding:16px 0;
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 2px 12px rgba(10,27,58,.25);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .logo{color:var(--white);font-weight:700;font-size:1.35rem;letter-spacing:.5px;text-decoration:none;}
+  .logo .mark{color:var(--blue-light);margin-right:6px;}
+  .btn{
+    display:inline-block;
+    background:var(--blue);
+    color:var(--white);
+    font-weight:600;
+    text-decoration:none;
+    padding:14px 32px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    font-size:1rem;
+    font-family:inherit;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    box-shadow:0 8px 24px rgba(37,99,235,.35);
+  }
+  .btn:hover{transform:translateY(-2px);background:#1d4fc4;}
+  .btn-sm{padding:10px 22px;font-size:.9rem;box-shadow:none;}
+  .btn-ghost{background:transparent;border:2px solid var(--blue-light);color:var(--blue-light);box-shadow:none;}
+  .btn-ghost:hover{background:rgba(127,168,240,.12);}
+
+  /* ===== Hero ===== */
+  .hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 60%,#153a7d 100%);
+    color:var(--white);
+    padding:96px 0 88px;
+    text-align:center;
+  }
+  .hero .kicker{
+    display:inline-block;
+    background:rgba(127,168,240,.18);
+    color:var(--blue-light);
+    font-weight:600;
+    font-size:.85rem;
+    padding:8px 20px;
+    border-radius:999px;
+    margin-bottom:24px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:clamp(1.9rem,4.5vw,3.1rem);
+    font-weight:800;
+    max-width:860px;
+    margin:0 auto 24px;
+  }
+  .hero h1 .hl{color:var(--blue-light);}
+  .hero .sub{
+    font-size:clamp(1rem,2vw,1.2rem);
+    font-weight:400;
+    color:#CBD8F2;
+    max-width:760px;
+    margin:0 auto 40px;
+  }
+  .hero .sub strong{color:var(--white);font-weight:600;}
+  .hero .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .hero .micro{margin-top:20px;font-size:.85rem;color:#8FA6CE;}
+
+  /* ===== Barra de prova ===== */
+  .proofbar{background:var(--white);padding:32px 0;box-shadow:0 4px 20px rgba(14,42,92,.06);}
+  .proofbar .wrap{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;}
+  .proof-item{text-align:center;padding:8px 28px;min-width:200px;}
+  .proof-item .num{font-size:1.7rem;font-weight:800;color:var(--blue);}
+  .proof-item .lbl{font-size:.9rem;color:var(--gray);font-weight:500;}
+  .proof-item + .proof-item{border-left:1px solid #E2E8F0;}
+  @media (max-width:720px){.proof-item + .proof-item{border-left:none;}}
+
+  /* ===== Seções genéricas ===== */
+  .sec-head{text-align:center;max-width:720px;margin:0 auto 48px;}
+  .sec-head .eyebrow{
+    color:var(--blue);
+    font-weight:700;
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    display:block;
+    margin-bottom:10px;
+  }
+  .sec-head h2{font-size:clamp(1.5rem,3.2vw,2.2rem);font-weight:800;color:var(--navy);}
+  .sec-head p{color:var(--gray);margin-top:14px;}
+  .sec-dark{background:var(--navy);color:var(--white);}
+  .sec-dark .sec-head h2{color:var(--white);}
+  .sec-dark .sec-head p{color:#B9C8E6;}
+  .sec-dark .sec-head .eyebrow{color:var(--blue-light);}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  @media (max-width:900px){.grid3,.grid4{grid-template-columns:1fr 1fr;}}
+  @media (max-width:620px){.grid3,.grid4,.grid2{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--white);
+    border-radius:20px;
+    padding:32px 28px;
+    box-shadow:0 8px 30px rgba(14,42,92,.08);
+  }
+  .card .icon{
+    width:52px;height:52px;
+    border-radius:16px;
+    background:rgba(37,99,235,.1);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;
+    margin-bottom:18px;
+  }
+  .card h3{color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:10px;}
+  .card p{color:var(--gray);font-size:.95rem;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:40px;}
+  .chip{
+    background:rgba(127,168,240,.22);
+    color:var(--navy);
+    font-weight:600;
+    font-size:.9rem;
+    padding:10px 22px;
+    border-radius:999px;
+  }
+  .sec-dark .chip{background:rgba(127,168,240,.18);color:#D7E3FA;}
+
+  /* ===== Tabelas ===== */
+  .table-scroll{overflow-x:auto;border-radius:20px;box-shadow:0 8px 30px rgba(14,42,92,.08);}
+  table{width:100%;border-collapse:collapse;background:var(--white);min-width:560px;}
+  thead th{
+    background:var(--navy);
+    color:var(--white);
+    font-weight:600;
+    font-size:.9rem;
+    padding:16px 18px;
+    text-align:left;
+    white-space:nowrap;
+  }
+  tbody td{padding:14px 18px;font-size:.95rem;border-top:1px solid #E8EDF6;}
+  tbody tr:nth-child(even){background:#F6F9FE;}
+  td.center,th.center{text-align:center;}
+  .tag-success{color:var(--success);font-weight:700;}
+
+  /* ===== Calculadora ===== */
+  .calc{
+    background:var(--white);
+    border-radius:24px;
+    padding:40px 36px;
+    box-shadow:0 12px 40px rgba(14,42,92,.12);
+    max-width:640px;
+    margin:48px auto 0;
+  }
+  .calc h3{color:var(--navy);font-weight:700;font-size:1.25rem;margin-bottom:24px;text-align:center;}
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:8px;}
+  .field select,.field input,.field textarea{
+    width:100%;
+    padding:13px 16px;
+    border-radius:14px;
+    border:1.5px solid #D5DEEE;
+    font-family:inherit;
+    font-size:.95rem;
+    color:var(--text);
+    background:#FBFCFE;
+    outline:none;
+    transition:border-color .15s;
+  }
+  .field select:focus,.field input:focus,.field textarea:focus{border-color:var(--blue);}
+  .calc-result{
+    background:linear-gradient(135deg,var(--navy) 0%,#173d82 100%);
+    color:var(--white);
+    border-radius:18px;
+    padding:26px 24px;
+    text-align:center;
+    margin-top:8px;
+  }
+  .calc-result .big{font-size:2rem;font-weight:800;color:var(--blue-light);}
+  .calc-result .detail{font-size:.88rem;color:#C4D3F0;margin-top:6px;}
+  .footnote{font-size:.8rem;color:var(--gray);text-align:center;margin-top:18px;max-width:640px;margin-left:auto;margin-right:auto;}
+
+  /* ===== Checklist ===== */
+  ul.checks{list-style:none;}
+  ul.checks li{
+    padding-left:34px;
+    position:relative;
+    margin-bottom:14px;
+    font-size:.98rem;
+  }
+  ul.checks li::before{
+    content:"✔";
+    position:absolute;left:0;top:1px;
+    width:22px;height:22px;
+    background:rgba(37,99,235,.12);
+    color:var(--blue);
+    border-radius:50%;
+    font-size:.72rem;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;
+  }
+  .sec-dark ul.checks li::before{background:rgba(127,168,240,.2);color:var(--blue-light);}
+
+  /* ===== Passos ===== */
+  .step{
+    background:var(--white);
+    border-radius:20px;
+    padding:32px 26px;
+    box-shadow:0 8px 30px rgba(14,42,92,.08);
+    position:relative;
+  }
+  .step .n{
+    width:44px;height:44px;
+    border-radius:50%;
+    background:var(--blue);
+    color:var(--white);
+    font-weight:800;
+    font-size:1.1rem;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .step h3{color:var(--navy);font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+  .step p{color:var(--gray);font-size:.9rem;}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:760px;margin:0 auto;}
+  details{
+    background:var(--white);
+    border-radius:16px;
+    padding:20px 24px;
+    margin-bottom:14px;
+    box-shadow:0 4px 18px rgba(14,42,92,.06);
+  }
+  summary{
+    font-weight:600;
+    color:var(--navy);
+    cursor:pointer;
+    list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";color:var(--blue);font-size:1.4rem;font-weight:600;flex-shrink:0;}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px;color:var(--gray);font-size:.94rem;}
+
+  /* ===== Formulário ===== */
+  .form-card{
+    background:var(--white);
+    border-radius:24px;
+    padding:44px 40px;
+    box-shadow:0 16px 48px rgba(14,42,92,.14);
+    max-width:640px;
+    margin:0 auto;
+  }
+  @media (max-width:620px){.form-card{padding:32px 22px;}}
+  .form-card h3{color:var(--navy);font-weight:800;font-size:1.4rem;margin-bottom:6px;text-align:center;}
+  .form-card .sub{color:var(--gray);text-align:center;font-size:.92rem;margin-bottom:28px;}
+  .form-actions{display:flex;flex-direction:column;gap:12px;margin-top:8px;}
+  .btn-wide{width:100%;text-align:center;font-size:1.05rem;padding:16px;}
+  .alt-link{text-align:center;font-size:.86rem;color:var(--gray);}
+  .alt-link a{color:var(--blue);font-weight:600;}
+
+  /* ===== CTA final ===== */
+  .final-cta{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 100%);
+    color:var(--white);
+    text-align:center;
+  }
+  .final-cta h2{font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:800;max-width:720px;margin:0 auto 18px;}
+  .final-cta p{color:#B9C8E6;max-width:600px;margin:0 auto 36px;}
+
+  /* ===== Rodapé ===== */
+  footer{
+    background:var(--navy-deep);
+    color:#8FA6CE;
+    text-align:center;
+    padding:36px 24px;
+    font-size:.88rem;
+  }
+  footer .logo{display:inline-block;margin-bottom:12px;font-size:1.2rem;}
+  footer a{color:#8FA6CE;}
+  footer .back{display:block;margin-top:14px;font-size:.8rem;opacity:.75;}
+</style>
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#"><span class="mark">✦</span>Vante</a>
+    <a class="btn btn-sm" href="#candidatura">Quero me candidatar</a>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Estamos formando o time comercial Vante</span>
+    <h1>Venda tecnologia que o pequeno varejo <span class="hl">precisa</span> — e construa uma carteira que paga <span class="hl">cada vez mais</span></h1>
+    <p class="sub">Torne-se <strong>representante Vante</strong>: comissões progressivas de <strong>20% a 40%</strong> sobre cada implantação + bônus de performance de <strong>até R$ 5.000</strong>. Você vende uma plataforma de gestão com Inteligência Artificial — a <strong>implantação e o suporte ficam por conta da Vante</strong>. Seu trabalho é vender.</p>
+    <div class="cta-row">
+      <a class="btn" href="#candidatura">Quero me candidatar</a>
+      <a class="btn btn-ghost" href="#ganhos">Ver quanto posso ganhar</a>
+    </div>
+    <p class="micro">Sem custo de entrada · Treinamento e ferramentas fornecidos pela Vante · Ganhos conforme tabela oficial de comissionamento</p>
+  </div>
+</header>
+
+<!-- ===== BARRA DE PROVA ===== -->
+<div class="proofbar">
+  <div class="wrap">
+    <div class="proof-item"><div class="num">+15 anos</div><div class="lbl">de experiência em software</div></div>
+    <div class="proof-item"><div class="num">+30 anos</div><div class="lbl">de experiência em vendas no varejo</div></div>
+    <div class="proof-item"><div class="num">R$ 2,3 tri/ano</div><div class="lbl">movimentados pelo varejo brasileiro</div></div>
+  </div>
+</div>
+
+<!-- ===== O QUE VOCÊ VAI VENDER ===== -->
+<section id="produto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">O produto</span>
+      <h2>O que você vai vender</h2>
+      <p>A Vante é uma plataforma completa de gestão para o pequeno varejo: vendas, estoque, financeiro e atendimento integrados em um só lugar — com IA de verdade trabalhando para o cliente. Produto que resolve dor real é produto que fecha.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="icon">💬</div>
+        <h3>WhatsApp com Inteligência Artificial</h3>
+        <p>Atendimento automatizado que cria pedidos sozinho, gera resumo e nota, classifica mensagens (pedido, dúvida ou reclamação) e aceita até pedidos por voz. O lojista para de perder pedido no WhatsApp — e você tem uma demo que vende sozinha.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Gestão completa em um só lugar</h3>
+        <p>Vendas, controle de estoque, financeiro com fluxo de caixa, contas a pagar/receber, módulo fiscal (NFe/NFCe), dashboard e relatórios. O dono do negócio troca o caderno e as planilhas por decisões com dados.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🚚</div>
+        <h3>Logística inteligente</h3>
+        <p>Roteirização inteligente de entregas, previsão de demanda por região, monitoramento em tempo real, notificações de status para o cliente e app de delivery próprio. Menos combustível, menos tempo, mais entregas.</p>
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip">Distribuidoras de Gás</span>
+      <span class="chip">Adegas e Depósitos de Bebidas</span>
+      <span class="chip">Salões de Beleza</span>
+      <span class="chip">Barbearias</span>
+      <span class="chip">Petshops</span>
+      <span class="chip">Lojas de Utilidades</span>
+    </div>
+    <p class="footnote">Planos para o cliente final a partir de R$ 99/mês — preço acessível que facilita o "sim" do pequeno varejista.</p>
+  </div>
+</section>
+
+<!-- ===== QUANTO VOCÊ PODE GANHAR ===== -->
+<section id="ganhos" class="sec-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Remuneração</span>
+      <h2>Quanto você pode ganhar</h2>
+      <p>Comissão progressiva sobre a taxa de implantação: quanto mais clientes você fecha no mês, maior o percentual — aplicado a <strong style="color:#fff">todas</strong> as suas vendas do mês. E ainda há bônus por marcos acumulados.</p>
+    </div>
+
+    <h3 style="font-weight:700;margin-bottom:16px;font-size:1.05rem;color:#D7E3FA;">Faixas progressivas de comissão (por volume no mês)</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Faixa</th><th class="center">Clientes no mês</th><th class="center">% sobre implantação</th><th class="center">Básico (R$ 300)</th><th class="center">Intermediário (R$ 580)</th><th class="center">Avançado (R$ 990)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Faixa 1</td><td class="center">1 – 5</td><td class="center"><strong>20%</strong></td><td class="center">R$ 60</td><td class="center">R$ 116</td><td class="center">R$ 198</td></tr>
+          <tr><td>Faixa 2</td><td class="center">6 – 10</td><td class="center"><strong>25%</strong></td><td class="center">R$ 75</td><td class="center">R$ 145</td><td class="center">R$ 247,50</td></tr>
+          <tr><td>Faixa 3</td><td class="center">11 – 20</td><td class="center"><strong>30%</strong></td><td class="center">R$ 90</td><td class="center">R$ 174</td><td class="center">R$ 297</td></tr>
+          <tr><td>Faixa 4</td><td class="center">21 – 35</td><td class="center"><strong>35%</strong></td><td class="center">R$ 105</td><td class="center">R$ 203</td><td class="center">R$ 346,50</td></tr>
+          <tr><td>Faixa 5</td><td class="center">Acima de 35</td><td class="center"><strong>40%</strong></td><td class="center">R$ 120</td><td class="center">R$ 232</td><td class="center">R$ 396</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2" style="margin-top:32px;">
+      <div class="card">
+        <div class="icon">🏆</div>
+        <h3>Bônus por performance acumulada</h3>
+        <ul class="checks" style="color:var(--text);">
+          <li><strong>10 contratos</strong> acumulados → bônus de <strong>R$ 500</strong></li>
+          <li><strong>20 contratos</strong> acumulados → bônus de <strong>R$ 1.500</strong></li>
+          <li><strong>35 contratos</strong> acumulados → bônus de <strong>R$ 3.000</strong></li>
+          <li><strong>50 contratos</strong> acumulados → bônus de <strong>R$ 5.000</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Projeção oficial de ganhos (plano Avançado)</h3>
+        <ul class="checks" style="color:var(--text);">
+          <li>5 clientes/mês ≈ <strong>R$ 990</strong></li>
+          <li>10 clientes/mês ≈ <strong>R$ 2.475</strong></li>
+          <li>20 clientes/mês ≈ <strong>R$ 5.940</strong></li>
+          <li>35 clientes/mês ≈ <strong>R$ 12.127,50</strong></li>
+          <li>50 clientes/mês ≈ <strong>R$ 19.800</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Calculadora -->
+    <div class="calc">
+      <h3>🧮 Simule sua comissão do mês</h3>
+      <div class="field">
+        <label for="calc-plano">Plano vendido</label>
+        <select id="calc-plano">
+          <option value="basico">Básico — implantação R$ 300</option>
+          <option value="intermediario">Intermediário — implantação R$ 580</option>
+          <option value="avancado" selected>Avançado — implantação R$ 990</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="calc-vendas">Quantas vendas você faria por mês?</label>
+        <input type="number" id="calc-vendas" min="1" max="200" value="10">
+      </div>
+      <div class="calc-result">
+        <div>Sua comissão estimada no mês</div>
+        <div class="big" id="calc-total">R$ 2.475,00</div>
+        <div class="detail" id="calc-detalhe">10 vendas · Faixa 2 (25%) · R$ 247,50 por venda do plano Avançado</div>
+      </div>
+    </div>
+    <p class="footnote" style="color:#8FA6CE;">Valores conforme tabela oficial de comissionamento da Vante. Resultados dependem do seu desempenho — comissão é paga após contrato assinado, implantação concluída e pagamento confirmado. Não se trata de renda garantida.</p>
+  </div>
+</section>
+
+<!-- ===== VOCÊ NÃO ESTARÁ SOZINHO ===== -->
+<section id="suporte">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Estrutura de apoio</span>
+      <h2>Você não estará sozinho</h2>
+      <p>A Vante entrega a estrutura completa para você vender. Você entra com atitude e disciplina — a gente entra com todo o resto.</p>
+    </div>
+    <div class="grid4">
+      <div class="card"><div class="icon">🗂️</div><h3>CRM</h3><p>Ferramenta para organizar seus contatos, funil e follow-ups — nada de vender no caderninho.</p></div>
+      <div class="card"><div class="icon">🎓</div><h3>Treinamento comercial</h3><p>Capacitação em produto e vendas antes de você ir para a rua.</p></div>
+      <div class="card"><div class="icon">🖥️</div><h3>Apresentações prontas</h3><p>Material profissional de apresentação do produto para usar com o cliente.</p></div>
+      <div class="card"><div class="icon">🌐</div><h3>Landing pages</h3><p>Páginas de captação para apoiar sua prospecção digital.</p></div>
+      <div class="card"><div class="icon">🎬</div><h3>Vídeos</h3><p>Vídeos demonstrativos do produto para enviar aos prospects.</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3>Suporte técnico</h3><p>Implantação e suporte ao cliente são 100% da Vante — você não carrega esse peso.</p></div>
+      <div class="card"><div class="icon">📜</div><h3>Scripts de vendas</h3><p>Roteiros testados de abordagem, qualificação e contorno de objeções.</p></div>
+      <div class="card"><div class="icon">🤝</div><h3>Acompanhamento comercial</h3><p>Gestão próxima da sua evolução, com feedback e apoio nos fechamentos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMO FUNCIONA ===== -->
+<section id="como-funciona" style="background:var(--bg);padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Processo seletivo</span>
+      <h2>Como funciona</h2>
+    </div>
+    <div class="grid4">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Candidatura</h3>
+        <p>Preencha o formulário desta página. Leva menos de 2 minutos e sua mensagem chega direto no WhatsApp da equipe Vante.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Entrevista e dinâmica</h3>
+        <p>Conversa com o time comercial para alinhar perfil, expectativas, região de atuação e formato de trabalho.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Treinamento e certificação</h3>
+        <p>Você aprende o produto, os scripts e a metodologia de vendas Vante — e só vai a campo quando estiver pronto.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h3>Começar a vender</h3>
+        <p>Prospecção com acompanhamento comercial próximo. Você vende, a Vante implanta e dá suporte, você recebe a comissão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PERFIL ===== -->
+<section id="perfil" class="sec-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Perfil</span>
+      <h2>Quem estamos procurando</h2>
+      <p>Vamos ser diretos: não é para todo mundo. É para quem quer trabalhar vendas de verdade, com método.</p>
+    </div>
+    <div style="max-width:640px;margin:0 auto;">
+      <ul class="checks">
+        <li><strong>Experiência com vendas</strong> — ou vontade real de aprender e seguir o método (treinamos você).</li>
+        <li><strong>Boa comunicação</strong> — você vai conversar com donos de negócio todos os dias, presencialmente e pelo WhatsApp.</li>
+        <li><strong>Organização e disciplina</strong> — registrar tudo no CRM, fazer follow-up e cumprir agenda de prospecção.</li>
+        <li><strong>Postura consultiva</strong> — entender a dor do lojista antes de empurrar produto.</li>
+        <li><strong>Rede de contatos no comércio local é um grande plus</strong> — conhecer distribuidoras, adegas, salões, barbearias e petshops da sua região acelera muito seus resultados.</li>
+        <li><strong>Honestidade inegociável</strong> — vendemos o que o sistema faz, nunca o que ele não faz.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas e respostas</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Preciso ter CNPJ ou MEI para me candidatar?</summary>
+        <p>Não é exigido para se candidatar. O formato de contratação e a eventual necessidade de MEI/CNPJ para o repasse das comissões são definidos na etapa de entrevista, junto com o time da Vante.</p>
+      </details>
+      <details>
+        <summary>É um emprego CLT?</summary>
+        <p>Não. Trata-se de uma parceria comercial de representação: você atua como consultor autônomo, com liberdade de agenda e ganhos proporcionais ao seu desempenho, conforme a tabela oficial de comissionamento.</p>
+      </details>
+      <details>
+        <summary>Tem algum custo para entrar?</summary>
+        <p>Não há custo de entrada. A Vante fornece CRM, treinamento, apresentações, landing pages, vídeos, scripts de vendas, suporte técnico e acompanhamento comercial. Seu investimento é tempo e dedicação.</p>
+      </details>
+      <details>
+        <summary>Quando eu recebo minha comissão?</summary>
+        <p>A comissão é paga após três marcos: contrato assinado, implantação concluída pela equipe Vante e pagamento confirmado pelo cliente. Cancelamentos antes da implantação não geram comissão. Os bônus são pagos ao atingir os marcos acumulados de contratos (10, 20, 35 e 50).</p>
+      </details>
+      <details>
+        <summary>Preciso entender de tecnologia?</summary>
+        <p>Não. Você recebe treinamento completo sobre o produto e conta com vídeos e apresentações prontas. Toda a parte técnica — implantação, configuração e suporte ao cliente — é feita pela equipe da Vante. Seu foco é prospecção, qualificação e fechamento.</p>
+      </details>
+      <details>
+        <summary>Em qual região posso atuar?</summary>
+        <p>A definição de território e região de atuação é feita na etapa de entrevista, de acordo com a estratégia comercial da Vante e a sua localização. Conhecer bem o comércio da sua região é um diferencial importante.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMULÁRIO ===== -->
+<section id="candidatura" class="sec-dark" style="background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Candidatura</span>
+      <h2>Candidate-se agora</h2>
+      <p>Preencha os campos abaixo. Ao enviar, sua candidatura será encaminhada direto para o WhatsApp da equipe Vante.</p>
+    </div>
+    <div class="form-card">
+      <h3>Formulário de candidatura</h3>
+      <p class="sub">Leva menos de 2 minutos ⏱️</p>
+      <form id="form-candidatura">
+        <div class="field">
+          <label for="f-nome">Nome completo *</label>
+          <input type="text" id="f-nome" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="f-whats">Seu WhatsApp *</label>
+          <input type="tel" id="f-whats" required placeholder="(31) 9 9999-9999">
+        </div>
+        <div class="field">
+          <label for="f-cidade">Cidade / Estado *</label>
+          <input type="text" id="f-cidade" required placeholder="Ex.: Belo Horizonte / MG">
+        </div>
+        <div class="field">
+          <label for="f-exp">Experiência em vendas *</label>
+          <select id="f-exp" required>
+            <option value="" disabled selected>Selecione...</option>
+            <option>Nunca trabalhei com vendas, mas quero aprender</option>
+            <option>Até 2 anos de experiência</option>
+            <option>De 2 a 5 anos de experiência</option>
+            <option>Mais de 5 anos de experiência</option>
+            <option>Sou representante comercial / vendedor autônomo hoje</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-porque">Por que você seria um bom consultor Vante? *</label>
+          <textarea id="f-porque" rows="4" required placeholder="Conte rapidamente sua experiência, sua rede de contatos no comércio local e por que quer essa oportunidade."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-wide">Enviar candidatura pelo WhatsApp</button>
+          <p class="alt-link">Prefere e-mail? <a id="mailto-alt" href="#" target="_blank" rel="noopener">Enviar por e-mail</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>O varejo brasileiro movimenta R$ 2,3 trilhões por ano.<br>Sua carteira de clientes começa hoje.</h2>
+    <p>Comissões de 20% a 40% conforme tabela oficial + bônus de até R$ 5.000 por marcos de performance. Estrutura completa da Vante do treinamento ao pós-venda.</p>
+    <a class="btn" href="#candidatura">Quero me candidatar agora</a>
+  </div>
+</section>
+
+<!-- ===== RODAPÉ ===== -->
+<footer>
+  <span class="logo"><span class="mark" style="color:var(--blue-light);">✦</span>Vante</span><br>
+  Vante Gestão Tecnologia · <a href="https://vantetecnologia.com.br" target="_blank" rel="noopener">vantetecnologia.com.br</a> · (31) 2181-1044 · <a href="mailto:contato@vantetecnologia.com.br">contato@vantetecnologia.com.br</a>
+  <a class="back" href="index.html">← Voltar ao índice do pacote comercial</a>
+</footer>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO DE CONTATO
+   TROQUE AQUI: substitua o número abaixo pelo WhatsApp do
+   GESTOR COMERCIAL responsável pelo recrutamento, no formato
+   internacional (55 + DDD + número, apenas dígitos).
+   Valor atual: telefone oficial da Vante (31) 2181-1044.
+   ========================================================= */
+var WHATSAPP_DESTINO = "553121811044";
+var EMAIL_DESTINO = "contato@vantetecnologia.com.br";
+
+/* ===== Tabela oficial de comissionamento (BRIEF) ===== */
+// Faixas por total de clientes no mês: [min, max, %]
+var FAIXAS = [
+  { min: 1,  max: 5,        pct: 20, nome: "Faixa 1" },
+  { min: 6,  max: 10,       pct: 25, nome: "Faixa 2" },
+  { min: 11, max: 20,       pct: 30, nome: "Faixa 3" },
+  { min: 21, max: 35,       pct: 35, nome: "Faixa 4" },
+  { min: 36, max: Infinity, pct: 40, nome: "Faixa 5" }
+];
+// Comissão em R$ por venda, por plano, nas faixas 1..5 (tabela oficial)
+var COMISSAO_PLANO = {
+  basico:        { nome: "Básico",        valores: [60, 75, 90, 105, 120] },
+  intermediario: { nome: "Intermediário", valores: [116, 145, 174, 203, 232] },
+  avancado:      { nome: "Avançado",      valores: [198, 247.50, 297, 346.50, 396] }
+};
+
+function faixaPorTotal(total) {
+  for (var i = 0; i < FAIXAS.length; i++) {
+    if (total >= FAIXAS[i].min && total <= FAIXAS[i].max) return { idx: i, faixa: FAIXAS[i] };
+  }
+  return null;
+}
+function brl(v) {
+  return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+
+/* ===== Calculadora de comissão ===== */
+function atualizarCalc() {
+  var plano = document.getElementById("calc-plano").value;
+  var vendas = parseInt(document.getElementById("calc-vendas").value, 10);
+  var totalEl = document.getElementById("calc-total");
+  var detEl = document.getElementById("calc-detalhe");
+  if (!vendas || vendas < 1) {
+    totalEl.textContent = "R$ 0,00";
+    detEl.textContent = "Informe pelo menos 1 venda no mês.";
+    return;
+  }
+  var f = faixaPorTotal(vendas);
+  var porVenda = COMISSAO_PLANO[plano].valores[f.idx];
+  var total = porVenda * vendas;
+  totalEl.textContent = brl(total);
+  detEl.textContent = vendas + (vendas === 1 ? " venda" : " vendas") + " · " + f.faixa.nome + " (" + f.faixa.pct + "%) · " + brl(porVenda) + " por venda do plano " + COMISSAO_PLANO[plano].nome;
+}
+document.getElementById("calc-plano").addEventListener("change", atualizarCalc);
+document.getElementById("calc-vendas").addEventListener("input", atualizarCalc);
+atualizarCalc();
+
+/* ===== Formulário → WhatsApp / e-mail (sem backend) ===== */
+function montarMensagem() {
+  var nome = document.getElementById("f-nome").value.trim();
+  var whats = document.getElementById("f-whats").value.trim();
+  var cidade = document.getElementById("f-cidade").value.trim();
+  var exp = document.getElementById("f-exp").value;
+  var porque = document.getElementById("f-porque").value.trim();
+  return "Olá! Quero me candidatar como CONSULTOR COMERCIAL VANTE.\n\n" +
+    "*Nome:* " + nome + "\n" +
+    "*WhatsApp:* " + whats + "\n" +
+    "*Cidade:* " + cidade + "\n" +
+    "*Experiência em vendas:* " + exp + "\n" +
+    "*Por que eu:* " + porque + "\n\n" +
+    "(Candidatura enviada pela landing de consultores Vante)";
+}
+document.getElementById("form-candidatura").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var msg = montarMensagem();
+  window.open("https://wa.me/" + WHATSAPP_DESTINO + "?text=" + encodeURIComponent(msg), "_blank");
+});
+document.getElementById("mailto-alt").addEventListener("click", function (e) {
+  var form = document.getElementById("form-candidatura");
+  if (!form.checkValidity()) { form.reportValidity(); e.preventDefault(); return; }
+  var msg = montarMensagem().replace(/\*/g, "");
+  this.href = "mailto:" + EMAIL_DESTINO +
+    "?subject=" + encodeURIComponent("Candidatura — Consultor Comercial Vante") +
+    "&body=" + encodeURIComponent(msg);
+});
+</script>
+</body>
+</html>

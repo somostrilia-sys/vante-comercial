@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook de Prospecção — Vante Gestão Tecnologia</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563EB; --navy:#0E2A5C; --deep:#0A1B3A; --lightblue:#7FA8F0;
+    --bg:#EEF2F8; --white:#FFFFFF; --text:#1E293B; --gray:#64748B;
+    --success:#16A34A; --warn:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+  a{color:var(--blue);}
+  .container{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .topbar{background:var(--white);border-bottom:1px solid #DBE4F0;padding:14px 0;position:sticky;top:0;z-index:50;}
+  .topbar .container{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .wordmark{font-weight:700;font-size:1.3rem;color:var(--navy);text-decoration:none;}
+  .wordmark .star{color:var(--blue);}
+  .back{font-weight:600;text-decoration:none;font-size:.95rem;}
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--deep) 100%);color:var(--white);padding:64px 0 56px;}
+  .hero h1{font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.2;margin-bottom:14px;}
+  .hero p{color:#C7D6F5;max-width:780px;font-size:1.05rem;}
+  .chip{display:inline-block;background:rgba(127,168,240,.18);color:var(--lightblue);border:1px solid rgba(127,168,240,.4);border-radius:999px;padding:5px 16px;font-size:.8rem;font-weight:600;letter-spacing:.5px;margin-bottom:18px;text-transform:uppercase;}
+  section{padding:52px 0;}
+  section.alt{background:var(--white);}
+  section.dark{background:var(--navy);color:var(--white);}
+  section.dark h2{color:var(--white);}
+  h2{font-weight:800;font-size:clamp(1.35rem,3vw,1.8rem);color:var(--navy);margin-bottom:8px;}
+  .kicker{color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:.78rem;margin-bottom:6px;}
+  section.dark .kicker{color:var(--lightblue);}
+  .lead{color:var(--gray);max-width:820px;margin-bottom:28px;}
+  section.dark .lead{color:#A9BEE8;}
+  h3{font-weight:700;font-size:1.12rem;color:var(--navy);margin:26px 0 10px;}
+  section.dark h3{color:var(--lightblue);}
+  h4{font-weight:600;font-size:1rem;margin:16px 0 6px;color:var(--text);}
+  section.dark h4{color:var(--white);}
+  .grid{display:grid;gap:20px;}
+  .grid.c2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+  .grid.c3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+  .card{background:var(--white);border-radius:20px;padding:26px;box-shadow:0 6px 24px rgba(14,42,92,.07);}
+  section.alt .card{border:1px solid #E4EAF5;box-shadow:0 4px 16px rgba(14,42,92,.05);}
+  section.dark .card{background:rgba(255,255,255,.06);border:1px solid rgba(127,168,240,.25);box-shadow:none;color:#E3EBFA;}
+  section.dark .card h3,section.dark .card h4{color:var(--white);margin-top:0;}
+  .card h3{margin-top:0;}
+  ul.check{list-style:none;}
+  ul.check li{padding-left:30px;position:relative;margin-bottom:9px;}
+  ul.check li::before{content:"✔";position:absolute;left:0;top:0;color:var(--blue);font-weight:700;}
+  section.dark ul.check li::before{color:var(--lightblue);}
+  ul.plain{list-style:none;}
+  ul.plain li{padding-left:22px;position:relative;margin-bottom:8px;}
+  ul.plain li::before{content:"✦";position:absolute;left:0;color:var(--blue);font-size:.8rem;top:3px;}
+  ol.num{margin-left:22px;}
+  ol.num li{margin-bottom:9px;}
+  .tablewrap{overflow-x:auto;border-radius:16px;box-shadow:0 4px 16px rgba(14,42,92,.06);margin:18px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--white);min-width:640px;font-size:.92rem;}
+  th{background:var(--navy);color:var(--white);text-align:left;padding:13px 16px;font-weight:600;white-space:nowrap;}
+  td{padding:12px 16px;border-bottom:1px solid #E8EEF7;vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  tr:nth-child(even) td{background:#F7FAFE;}
+  .pill{display:inline-block;background:#E3ECFC;color:var(--blue);border-radius:999px;padding:3px 12px;font-size:.78rem;font-weight:600;white-space:nowrap;}
+  .pill.green{background:#E4F5EA;color:var(--success);}
+  .pill.amber{background:#FCF0E0;color:var(--warn);}
+  .callout{border-left:5px solid var(--blue);background:var(--white);border-radius:0 16px 16px 0;padding:18px 22px;margin:20px 0;box-shadow:0 4px 14px rgba(14,42,92,.05);}
+  .callout.warn{border-left-color:var(--warn);background:#FFF9F0;}
+  .callout.success{border-left-color:var(--success);background:#F2FBF5;}
+  .callout strong{color:var(--navy);}
+  .scriptbox{position:relative;background:var(--deep);color:#DBE7FB;border-radius:16px;padding:22px 22px 20px;margin:16px 0;font-size:.93rem;}
+  .scriptbox pre{white-space:pre-wrap;word-wrap:break-word;font-family:inherit;line-height:1.7;}
+  .scriptbox .label{display:inline-block;background:rgba(127,168,240,.2);color:var(--lightblue);border-radius:999px;padding:2px 12px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;margin-right:90px;}
+  .copybtn{position:absolute;top:14px;right:14px;background:var(--blue);color:#fff;border:none;border-radius:999px;padding:7px 16px;font-family:inherit;font-weight:600;font-size:.8rem;cursor:pointer;transition:background .2s;}
+  .copybtn:hover{background:#1D4FD7;}
+  .copybtn.copied{background:var(--success);}
+  .kpibar{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px;}
+  .kpibar span{background:#E3ECFC;color:var(--navy);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:600;}
+  .kpibar span b{color:var(--blue);}
+  .funnel{display:flex;flex-direction:column;gap:10px;margin:20px 0;}
+  .fstep{display:flex;align-items:center;gap:16px;background:var(--white);border-radius:16px;padding:14px 20px;box-shadow:0 4px 14px rgba(14,42,92,.06);flex-wrap:wrap;}
+  .fstep .n{background:var(--blue);color:#fff;font-weight:700;border-radius:12px;min-width:44px;text-align:center;padding:8px 4px;font-size:.95rem;}
+  .fstep .body{flex:1;min-width:200px;}
+  .fstep .body strong{color:var(--navy);}
+  .fstep .rate{color:var(--gray);font-size:.85rem;}
+  .statrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:24px 0;}
+  .stat{background:var(--white);border-radius:18px;padding:20px;text-align:center;box-shadow:0 4px 16px rgba(14,42,92,.06);}
+  .stat .big{font-size:1.6rem;font-weight:800;color:var(--blue);}
+  .stat .lbl{font-size:.82rem;color:var(--gray);font-weight:500;}
+  .footer{background:var(--deep);color:#9DB4E0;text-align:center;padding:34px 20px;font-size:.9rem;}
+  .footer strong{color:var(--white);}
+  .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .toc a{background:rgba(255,255,255,.1);border:1px solid rgba(127,168,240,.35);color:#DBE7FB;text-decoration:none;border-radius:999px;padding:7px 16px;font-size:.83rem;font-weight:500;transition:background .2s;}
+  .toc a:hover{background:rgba(127,168,240,.25);}
+  @media(max-width:640px){section{padding:40px 0;} .card{padding:20px;}}
+  @media print{.topbar,.copybtn{display:none;} body{background:#fff;} .scriptbox{border:1px solid #ccc;background:#fff;color:#000;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <a class="wordmark" href="index.html"><span class="star">✦</span> Vante</a>
+    <a class="back" href="index.html">← Voltar ao índice</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <span class="chip">Documento 05 · Manual do consultor</span>
+    <h1>Playbook de Prospecção</h1>
+    <p>Todas as formas de gerar oportunidade para o consultor Vante: passo a passo, scripts prontos para copiar, metas de atividade e KPIs por canal. O consultor prospecta, qualifica e acompanha até o fechamento — implantação e suporte são da equipe Vante.</p>
+    <div class="toc">
+      <a href="#c1">1. Porta a porta</a><a href="#c2">2. WhatsApp outbound</a><a href="#c3">3. Ligação fria</a><a href="#c4">4. Indicação</a><a href="#c5">5. Parcerias B2B</a><a href="#c6">6. Eventos e coquetel B2B</a><a href="#c7">7. Presença digital</a><a href="#c8">8. Baixo custo/criativos</a><a href="#m1">Matriz de priorização</a><a href="#m2">Agenda semanal</a><a href="#m3">Funil de vendas</a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== ARGUMENTO BASE ====== -->
+<section class="alt">
+  <div class="container">
+    <div class="kicker">Base de todo canal</div>
+    <h2>O argumento central em uma frase</h2>
+    <p class="lead">Em todos os canais, vendemos a solução das 4 dores do pequeno varejo: <strong>pedidos dispersos</strong> (telefone/WhatsApp/balcão sem integração), <strong>estoque sem controle</strong>, <strong>entregas desorganizadas</strong> e <strong>financeiro no escuro</strong>. A Vante integra vendas, estoque, financeiro e atendimento em um só lugar, com Inteligência Artificial no WhatsApp — planos a partir de R$ 99/mês. Nunca prometa ganho ou resultado "garantido"; use sempre exemplos genéricos ("Distribuidora do João") e números do material oficial.</p>
+  </div>
+</section>
+
+<!-- ====== 1. PORTA A PORTA ====== -->
+<section id="c1">
+  <div class="container">
+    <div class="kicker">Canal 1</div>
+    <h2>Porta a porta qualificado</h2>
+    <p class="lead">Não é "bater de porta em porta": é rota planejada por bairro comercial, no horário em que o dono está disponível, com abordagem de 30 segundos que marca uma conversa — não que tenta vender na porta.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Passo a passo</h3>
+        <ol class="num">
+          <li>Escolha 1 bairro comercial por dia e trace a rota no Google Maps na noite anterior (15-25 estabelecimentos dos nichos-alvo).</li>
+          <li>Pesquise os 5 principais antes de sair (nome do dono se possível, avaliações, movimento).</li>
+          <li>Aborde com o script de 30s. Objetivo único: <strong>agendar uma demonstração de 20 minutos</strong> ou pegar o WhatsApp do dono.</li>
+          <li>Se o dono não estiver: pegue nome e melhor horário com o funcionário, deixe um panfleto com QR code e registre no CRM.</li>
+          <li>Registre TODA visita no CRM (mesmo o "não") e agende o retorno.</li>
+        </ol>
+        <h3>Melhor horário por nicho</h3>
+        <ul class="plain">
+          <li><strong>Salões de beleza e barbearias:</strong> segunda de manhã (movimento fraco, dono presente) ou início da tarde de terça/quarta.</li>
+          <li><strong>Distribuidoras de gás e de água:</strong> fora do pico de entregas — meio da manhã (9h30–11h) após a primeira onda, ou 14h–16h.</li>
+          <li><strong>Adegas e depósitos de bebidas:</strong> manhã e início de tarde de segunda a quinta (evite sexta e véspera de feriado).</li>
+          <li><strong>Petshops:</strong> meio da tarde em dias de semana (banho e tosa da manhã já encaminhado).</li>
+          <li><strong>Lojas de utilidades:</strong> primeira hora após abrir ou meio da tarde, fora de horário de almoço.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Script de abordagem — 30 segundos</h3>
+        <div class="scriptbox" style="margin-top:0;"><span class="label">Porta a porta · abertura</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Bom dia! Meu nome é [NOME], sou consultor da Vante Gestão Tecnologia. Prometo ser rápido: o(a) senhor(a) é quem cuida do negócio aqui?
+
+[Se sim] Perfeito. A gente trabalha com comércios como o seu aqui do bairro — [cite o nicho: distribuidoras, salões, petshops...] — resolvendo um problema muito comum: pedido que chega por telefone, WhatsApp e balcão tudo separado, estoque no caderno e o financeiro no escuro no fim do mês. Nosso sistema junta tudo isso num lugar só, e ainda tem uma inteligência artificial que anota pedido sozinha no WhatsApp.
+
+Não vim vender nada agora — quero só agendar 20 minutinhos, no dia e horário que for melhor, para te mostrar funcionando com exemplos do seu ramo. Quinta às 9h ou às 15h fica melhor para o(a) senhor(a)?</pre></div>
+        <div class="callout" style="margin-bottom:0;"><strong>Se o dono não está:</strong> "Sem problema! Qual o nome dele(a) e o melhor horário para encontrá-lo(a)? Vou deixar este material com um QR code — pode entregar para ele(a)?" — e registre no CRM.</div>
+      </div>
+    </div>
+    <div class="kpibar">
+      <span>Meta de atividade: <b>15–20 portas/dia</b> em 2 blocos de rota</span>
+      <span>KPI principal: <b>conversas com decisor/dia ≥ 6</b></span>
+      <span>KPI secundário: <b>2 demos agendadas/dia de rota</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 2. WHATSAPP OUTBOUND ====== -->
+<section id="c2" class="alt">
+  <div class="container">
+    <div class="kicker">Canal 2</div>
+    <h2>WhatsApp outbound (lista via Google Maps)</h2>
+    <p class="lead">O canal de maior volume com custo zero. A qualidade da lista e a personalização por nicho fazem toda a diferença entre "resposta" e "bloqueio".</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Como montar a planilha de leads</h3>
+        <ol class="num">
+          <li>Abra o Google Maps e busque por nicho + bairro/cidade (ex.: "distribuidora de gás [bairro]", "petshop [cidade]").</li>
+          <li>Para cada resultado, copie para a planilha: <strong>Nome do negócio · Telefone/WhatsApp · Nicho · Bairro · Nota/nº de avaliações · Observação</strong> (ex.: "tem delivery", "responde rápido no Maps").</li>
+          <li>Priorize quem tem WhatsApp no perfil, responde avaliações e tem movimento (mais avaliações = negócio ativo).</li>
+          <li>Meta: 40–60 leads novos por semana na planilha, separados por nicho.</li>
+          <li>Importe para o CRM da Vante e trabalhe em lotes de 15–20 primeiras mensagens por dia (evita bloqueio e mantém qualidade de resposta).</li>
+        </ol>
+        <h3>Cadência de 4 toques em 10 dias</h3>
+        <div class="tablewrap" style="min-width:0;">
+          <table style="min-width:480px;">
+            <thead><tr><th>Toque</th><th>Dia</th><th>Conteúdo</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1</strong></td><td>D+0</td><td>Primeira mensagem personalizada por nicho (scripts ao lado).</td></tr>
+              <tr><td><strong>2</strong></td><td>D+2</td><td>Follow-up leve com valor: "Te mandei uma mensagem anteontem — deixo aqui um exemplo rápido: numa distribuidora como a sua, a IA da Vante anota o pedido do cliente no WhatsApp sozinha, sem ninguém digitar. Faz sentido te mostrar em 20 min?"</td></tr>
+              <tr><td><strong>3</strong></td><td>D+6</td><td>Prova/ângulo novo: áudio de 30s ou print da tela do sistema com uma dor específica do nicho ("controle de estoque de botijões em tempo real").</td></tr>
+              <tr><td><strong>4</strong></td><td>D+10</td><td>Encerramento educado: "Não quero insistir. Se organizar pedidos, estoque e caixa não é prioridade agora, tudo bem — fico à disposição. Posso te chamar de novo daqui a 2 meses?" (Muitos respondem justamente aqui.)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Boas práticas</h3>
+        <ul class="check">
+          <li>Use WhatsApp Business com perfil completo (nome, foto profissional, descrição Vante, catálogo).</li>
+          <li>Sempre cite o nome do negócio e algo específico (bairro, avaliação, serviço) — nada de mensagem em massa genérica.</li>
+          <li>1 pergunta por mensagem; CTA único: demo de 20 min.</li>
+          <li>Responda em até 5 min no horário comercial; registre tudo no CRM.</li>
+          <li>Não envie áudio no primeiro toque; áudio curto funciona bem no 3º.</li>
+        </ul>
+        <div class="kpibar">
+          <span>Meta: <b>15–20 primeiras msgs/dia</b></span>
+          <span>KPI: <b>taxa de resposta ≥ 15%</b></span>
+          <span>KPI: <b>1 demo a cada ~12 msgs</b></span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Scripts de primeira mensagem — um por nicho</h3>
+    <div class="grid c2">
+      <div>
+        <div class="scriptbox"><span class="label">Nicho 1 · Distribuidora de gás</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Olá! Falo com o responsável pela [NOME DA DISTRIBUIDORA]? 👋
+
+Meu nome é [NOME], da Vante Gestão Tecnologia. A Vante nasceu dentro de uma operação real de distribuição de gás — por isso nosso sistema entende o seu dia a dia: pedidos chegando por telefone e WhatsApp ao mesmo tempo, controle de botijões cheios e vazios, rota de entrega e o caixa no fim do dia.
+
+Nossa IA, a GásLink, anota o pedido do cliente direto no WhatsApp, sem ninguém digitar, e o sistema ainda monta a rota das entregas.
+
+Posso te mostrar funcionando em 20 minutos, sem compromisso? Tenho horário [DIA] às [HORA] ou [DIA] às [HORA].</pre></div>
+
+        <div class="scriptbox"><span class="label">Nicho 2 · Adega / depósito de bebidas</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Olá! Falo com o dono da [NOME DA ADEGA]? 🍾
+
+Sou [NOME], consultor da Vante Gestão Tecnologia. A gente atende adegas e depósitos de bebidas aqui da região com um sistema que junta num lugar só o que hoje costuma ficar espalhado: pedidos do WhatsApp e do balcão, estoque (para não faltar o que mais vende no fim de semana nem sobrar parado), entregas e o financeiro.
+
+Tem até inteligência artificial que anota o pedido do cliente no WhatsApp sozinha — ótimo para o pico de sexta e sábado.
+
+Topa ver uma demonstração de 20 minutos com exemplos de bebidas? Que dia fica bom para você?</pre></div>
+
+        <div class="scriptbox"><span class="label">Nicho 3 · Salão de beleza</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Olá, [NOME DO SALÃO]! Tudo bem? 💇‍♀️
+
+Aqui é [NOME], da Vante Gestão Tecnologia. Conversamos com vários salões da região e a história se repete: agenda e atendimento pelo WhatsApp o dia inteiro, estoque de produtos sem controle e, no fim do mês, difícil saber quanto realmente sobrou.
+
+Nosso sistema organiza atendimento, vendas, estoque e caixa num lugar só — com relatórios claros e até IA para responder e classificar as mensagens dos clientes no WhatsApp.
+
+Posso te mostrar em 20 minutinhos, na segunda de manhã, que costuma ser mais tranquilo? Sem compromisso.</pre></div>
+      </div>
+      <div>
+        <div class="scriptbox"><span class="label">Nicho 4 · Barbearia</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>E aí, [NOME DA BARBEARIA]! 💈
+
+Sou [NOME], da Vante Gestão Tecnologia. A gente trabalha com barbearias que estão crescendo e sentem na pele: cliente marcando pelo WhatsApp e pelo balcão ao mesmo tempo, venda de produto (pomada, minoxidil, bebida) sem controle de estoque, e o acerto com os barbeiros feito na base do caderno.
+
+Nosso sistema resolve isso num painel só: atendimento, vendas, estoque e financeiro — com IA no WhatsApp para não perder nenhuma mensagem de cliente.
+
+Bora ver 20 minutos de demonstração, sem compromisso? Me diz o melhor dia e horário que eu me encaixo na sua agenda.</pre></div>
+
+        <div class="scriptbox"><span class="label">Nicho 5 · Petshop</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Olá, [NOME DO PETSHOP]! 🐾
+
+Meu nome é [NOME], sou consultor da Vante Gestão Tecnologia. Atendemos petshops da região com um sistema que junta tudo o que hoje fica espalhado: agendamentos e pedidos que chegam pelo WhatsApp, venda de ração e acessórios, estoque (para a ração campeã de venda nunca faltar) e o financeiro do mês.
+
+Nossa inteligência artificial ainda anota pedidos e responde clientes no WhatsApp automaticamente — inclusive aquele cliente que sempre pede "a ração de todo mês".
+
+Posso te mostrar funcionando em 20 minutos, com exemplos de petshop? Qual o melhor dia para você?</pre></div>
+
+        <div class="scriptbox"><span class="label">Nicho 6 · Loja de utilidades</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Olá! Falo com o responsável pela [NOME DA LOJA]? 🛒
+
+Sou [NOME], da Vante Gestão Tecnologia. Loja de utilidades é campeã em variedade — e é justamente aí que mora o problema: centenas de itens, difícil saber o que está acabando, o que está parado e quanto a loja realmente lucrou no mês.
+
+Nosso sistema controla estoque e saldo item a item, organiza vendas e pedidos (inclusive os que chegam pelo WhatsApp, com ajuda de inteligência artificial) e mostra o financeiro num painel simples.
+
+Que tal uma demonstração de 20 minutos, sem compromisso, com exemplos do seu tipo de loja? Me diz o melhor horário!</pre></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 3. LIGAÇÃO FRIA ====== -->
+<section id="c3">
+  <div class="container">
+    <div class="kicker">Canal 3</div>
+    <h2>Ligação fria</h2>
+    <p class="lead">Complemento do WhatsApp: ligue para leads que não responderam ao toque 2 e para nichos que atendem telefone o dia todo (distribuidoras de gás e água são ideais). Estrutura AIDA em 60 segundos: Atenção → Interesse → Desejo → Ação.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Script AIDA — 60 segundos</h3>
+        <div class="scriptbox" style="margin-top:0;"><span class="label">Ligação fria · AIDA</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>[ATENÇÃO — 0-10s]
+"Bom dia! Falo com o(a) responsável pela [NOME DO NEGÓCIO]? Aqui é [NOME], da Vante Gestão Tecnologia. Vou ser direto e rápido, prometo: 60 segundos."
+
+[INTERESSE — 10-30s]
+"A gente trabalha com [nicho: distribuidoras / salões / petshops...] aqui da região, e o que mais escuto é: pedido chegando por telefone, WhatsApp e balcão tudo separado, estoque no caderno e o financeiro fechando no escuro. Acontece por aí também?"
+
+[DESEJO — 30-50s]
+"Então o senhor vai gostar de ver isso: nosso sistema junta pedidos, estoque, entregas e caixa num painel só — e tem uma inteligência artificial que anota o pedido do cliente no WhatsApp sozinha, sem ninguém digitar. Planos a partir de R$ 99 por mês, e quem implanta e dá suporte é a equipe da Vante."
+
+[AÇÃO — 50-60s]
+"Não dá para explicar tudo por telefone — o ideal é o senhor VER funcionando. São 20 minutos, sem compromisso. Fica melhor quinta às 9h ou às 15h?"</pre></div>
+      </div>
+      <div class="card">
+        <h3>Contorno das 3 objeções de agenda mais comuns</h3>
+        <div class="scriptbox" style="margin-top:0;"><span class="label">Objeções de agenda</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>1) "Estou sem tempo agora."
+"Perfeito, e é exatamente por isso que estou ligando — quem está sem tempo é quem mais precisa ver isso. Não quero falar agora: quero marcar 20 minutos no horário que O SENHOR escolher. Amanhã cedo ou no fim da tarde, qual atrapalha menos?"
+
+2) "Me manda no WhatsApp que eu vejo depois."
+"Mando sim, agora mesmo. Só que material parado a gente sabe como é — todo mundo tem 200 mensagens não lidas. Faz assim: te mando o resumo agora e já deixo reservado 20 minutos na quinta às 9h. Se depois de ver o material não fizer sentido, é só me avisar que eu desmarco. Combinado?"
+
+3) "Liga mês que vem / depois do fim do mês."
+"Combinado, eu ligo. Só uma pergunta antes: é questão de agenda ou o assunto não interessa? [Se agenda] Então vamos fazer o contrário: deixa marcado 20 minutos para o dia [X], logo depois do fechamento — assim o senhor já olha o sistema justamente na semana em que sente a dor do fechamento no caderno. Pode ser?"</pre></div>
+        <div class="kpibar">
+          <span>Meta: <b>10–15 ligações/dia</b> (bloco de 1h)</span>
+          <span>KPI: <b>falar com decisor ≥ 40%</b></span>
+          <span>KPI: <b>1 demo a cada ~8 conversas</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 4. INDICAÇÃO ====== -->
+<section id="c4" class="alt">
+  <div class="container">
+    <div class="kicker">Canal 4</div>
+    <h2>Indicação de clientes</h2>
+    <p class="lead">O lead mais quente que existe: comerciante confia em comerciante. O momento de ouro para pedir é logo <strong>após a implantação concluída</strong>, quando o cliente acabou de ver o sistema funcionando.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Programa "Indique e Ganhe" <span class="pill amber">mecânica a validar com a Vante</span></h3>
+        <ul class="plain">
+          <li><strong>Sugestão de mecânica:</strong> a cada indicação que virar cliente implantado, o cliente indicador recebe um benefício (ex.: desconto na mensalidade seguinte ou upgrade temporário de plano). Valores, formato e regras devem ser aprovados pela Vante antes de qualquer promessa.</li>
+          <li>Enquanto o programa não é oficializado, o pedido de indicação funciona sem recompensa — só pela satisfação (funciona mais do que parece).</li>
+          <li>Registre a origem "indicação" no CRM para medir o canal.</li>
+        </ul>
+        <h3>Passo a passo</h3>
+        <ol class="num">
+          <li>Implantação concluída + primeiro "uau" do cliente (ex.: primeiro pedido criado pela IA) → agende 5 min de conversa.</li>
+          <li>Pergunte como está sendo a experiência e <em>só então</em> peça a indicação com o script ao lado.</li>
+          <li>Peça nomes específicos ("quem é seu fornecedor? de quem você compra bebidas? qual colega tem loja no bairro?") — pergunta aberta gera "vou pensar".</li>
+          <li>Peça permissão para citar o nome do indicador na abordagem.</li>
+          <li>Aborde o indicado em até 48h e dê retorno ao indicador do que aconteceu.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Script do pedido de indicação pós-implantação</h3>
+        <div class="scriptbox" style="margin-top:0;"><span class="label">Pedido de indicação</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>"[NOME], que bom que a implantação correu bem e o sistema já está rodando! Posso te pedir uma coisa rápida?
+
+Meu trabalho é basicamente feito de confiança. Pensa aí em 2 ou 3 donos de comércio que você conhece — pode ser fornecedor, vizinho de rua, colega do ramo — que vivem aquele aperto que você vivia: pedido perdido no WhatsApp, estoque no caderno, financeiro no escuro...
+
+Quem te veio à cabeça?
+
+[Anote os nomes]
+
+Posso falar com ele(a) e dizer que foi você quem indicou? Prometo fazer uma abordagem respeitosa, do mesmo jeito que fiz com você. E depois te conto como foi."</pre></div>
+        <div class="kpibar">
+          <span>Meta: <b>pedir indicação a 100% dos clientes implantados</b></span>
+          <span>KPI: <b>≥ 2 nomes por pedido</b></span>
+          <span>KPI: <b>taxa de fechamento de indicados ≥ 2× a média</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 5. PARCERIAS B2B ====== -->
+<section id="c5">
+  <div class="container">
+    <div class="kicker">Canal 5</div>
+    <h2>Parcerias B2B</h2>
+    <p class="lead">Um bom parceiro entrega leads quentes todo mês. Priorize quem já tem a confiança do seu ICP: contador, distribuidor, associação.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Contadores — o parceiro perfeito</h3>
+        <p>O contador conhece o faturamento, as dores e o momento de cada cliente varejista — e é a voz mais ouvida pelo pequeno empresário. Bônus: o plano Intermediário tem módulo fiscal (NFe/NFCe), o que facilita a vida do próprio contador.</p>
+        <ol class="num">
+          <li>Liste 20 escritórios de contabilidade da região (Google Maps + indicações).</li>
+          <li>Aborde com o script ao lado; objetivo: reunião de 30 min.</li>
+          <li>Na reunião: demo focada no módulo fiscal e nos relatórios — mostre como cliente organizado dá menos trabalho para o contador.</li>
+          <li>Formalize a parceria (formato de retribuição: <span class="pill amber">a validar com a Vante</span>) e combine um ritual mensal de troca de indicações.</li>
+        </ol>
+        <div class="scriptbox"><span class="label">Proposta de parceria · contador</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Olá, [NOME DO CONTADOR]! Aqui é [NOME], consultor da Vante Gestão Tecnologia.
+
+Trabalho com sistema de gestão para o pequeno varejo — distribuidoras de gás, adegas, salões, barbearias, petshops — e imagino que boa parte dos seus clientes seja exatamente esse perfil.
+
+Quero te propor uma parceria em que todo mundo ganha:
+
+• Seus clientes ganham: sistema com vendas, estoque, financeiro e emissão de NFe/NFCe integrados, a partir de R$ 99/mês.
+• Você ganha: cliente organizado, com movimento registrado no sistema em vez de caderno e planilha solta — muito menos retrabalho no fechamento.
+• E podemos conversar sobre uma condição especial de parceria para as indicações.
+
+Topa um café de 30 minutos essa semana? Te mostro o sistema funcionando, em especial a parte fiscal e os relatórios.</pre></div>
+      </div>
+      <div class="card">
+        <h3>Demais parceiros estratégicos</h3>
+        <h4>Revendedoras de gás e distribuidores maiores</h4>
+        <ul class="plain">
+          <li>Revendas maiores e distribuidores regionais atendem dezenas de pontos menores — cada um é um lead do nicho de origem da Vante.</li>
+          <li>Proposta: o distribuidor indica revendas para modernizar a rede (revenda organizada compra melhor e atrasa menos).</li>
+        </ul>
+        <h4>Associações comerciais e CDL</h4>
+        <ul class="plain">
+          <li>Palestra gratuita "Gestão inteligente para o pequeno varejo" nos eventos da entidade + condição de boas-vindas para associados (formato <span class="pill amber">a validar com a Vante</span>).</li>
+          <li>Presença nos canais da associação (newsletter, grupos de WhatsApp).</li>
+        </ul>
+        <h4>Sindicatos patronais</h4>
+        <ul class="plain">
+          <li>Sindicatos do comércio varejista e de setores específicos (revenda de gás, beleza) têm mailing segmentado e credibilidade — proposta de conteúdo + benefício ao sindicalizado.</li>
+        </ul>
+        <h4>Fornecedores dos nichos</h4>
+        <ul class="plain">
+          <li>Distribuidores de bebidas (adegas), de cosméticos (salões e barbearias) e de produtos pet visitam os clientes toda semana.</li>
+          <li>O vendedor do fornecedor indica a Vante; cliente organizado compra melhor e paga em dia — o fornecedor também ganha.</li>
+        </ul>
+        <div class="kpibar">
+          <span>Meta: <b>2 reuniões de parceria/semana</b></span>
+          <span>KPI: <b>4 parcerias ativas em 90 dias</b></span>
+          <span>KPI: <b>≥ 4 leads/mês por parceiro ativo</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 6. EVENTOS ====== -->
+<section id="c6" class="dark">
+  <div class="container">
+    <div class="kicker">Canal 6</div>
+    <h2>Eventos, feiras locais e o coquetel para CLIENTES</h2>
+    <p class="lead">A versão B2B do evento-assinatura: em vez de recrutar vendedores, encantar donos de comércio — de preferência num café da manhã, o horário em que o comerciante consegue sair da loja.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Feiras e eventos locais</h3>
+        <ol class="num">
+          <li>Mapeie feiras de empreendedorismo, eventos de associações, encontros setoriais (beleza, pet, bebidas) da região.</li>
+          <li>Participe primeiro como visitante: colete contatos e sinta o ambiente; estande só quando houver volume que justifique.</li>
+          <li>Meta em evento: conversas rápidas + QR code para agendar demo depois (não tente vender no corredor).</li>
+          <li>Follow-up em 24h com todos os contatos coletados.</li>
+        </ol>
+        <div class="kpibar" style="margin-top:14px;">
+          <span>Meta: <b>1 evento/mês</b></span>
+          <span>KPI: <b>≥ 15 contatos e ≥ 3 demos por evento</b></span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Café da manhã empresarial — roteiro resumido (2h)</h3>
+        <ul class="check">
+          <li><strong>Formato:</strong> 10–20 donos de comércio do mesmo bairro/nicho, das 8h às 10h, em padaria parceira, associação ou espaço simples. Convite nominal via WhatsApp + reforço de véspera.</li>
+          <li><strong>8h00–8h30 · Recepção e café:</strong> networking livre; consultor circula e conhece cada convidado (nome, ramo, principal aperto).</li>
+          <li><strong>8h30–9h00 · Talk "As 4 dores do pequeno varejo":</strong> pedidos dispersos, estoque sem controle, entregas desorganizadas, financeiro no escuro — com exemplos genéricos do tipo "Distribuidora do João". Contexto de mercado: varejo brasileiro movimenta R$ 2,3 trilhões/ano e +60% dos negócios estão em transformação digital — quem se organiza sai na frente.</li>
+          <li><strong>9h00–9h20 · Demo ao vivo:</strong> pedido chegando pelo WhatsApp e a IA criando o pedido sozinha; painel financeiro na sequência.</li>
+          <li><strong>9h20–9h50 · Conversas individuais:</strong> agendamento de demo particular na loja de cada interessado (leve a agenda aberta).</li>
+          <li><strong>9h50–10h00 · Encerramento:</strong> agradecimento + material com QR code + foto.</li>
+          <li><strong>Follow-up em 24h</strong> com todos os presentes; KPI: ≥ 50% dos presentes com demo agendada.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 7. PRESENÇA DIGITAL ====== -->
+<section id="c7" class="alt">
+  <div class="container">
+    <div class="kicker">Canal 7</div>
+    <h2>Presença digital do consultor</h2>
+    <p class="lead">O comerciante SEMPRE confere quem é você antes de responder. Perfil profissional bem montado dobra a taxa de resposta do outbound.</p>
+
+    <div class="grid c3">
+      <div class="card">
+        <h3>WhatsApp Business</h3>
+        <ul class="check">
+          <li>Foto profissional (não é logo da Vante: é você, apresentável).</li>
+          <li>Nome: "[Seu nome] · Consultor Vante".</li>
+          <li>Descrição: "Gestão inteligente para o pequeno varejo — vendas, estoque, financeiro e IA num só lugar. Planos a partir de R$ 99/mês."</li>
+          <li>Catálogo com os 3 planos (Básico R$ 99, Intermediário R$ 199, Avançado R$ 399) e link do site vantetecnologia.com.br.</li>
+          <li>Respostas rápidas salvas: apresentação, agendamento de demo, follow-up.</li>
+          <li>Etiquetas espelhando o funil: novo lead, em conversa, demo marcada, proposta, cliente.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Instagram local</h3>
+        <ul class="check">
+          <li>Perfil profissional com bio clara e link de agendamento/WhatsApp.</li>
+          <li>Siga e interaja com os comércios da sua rota (comentário genuíno vale mais que like).</li>
+          <li>3 posts/semana + stories diários nos dias de rota ("hoje o dia é no bairro X").</li>
+          <li>Use os vídeos e materiais oficiais fornecidos pela Vante.</li>
+        </ul>
+        <h3>Google Meu Negócio</h3>
+        <ul class="check">
+          <li>Perfil "Consultor Vante — [Cidade]" com área de atendimento, telefone e link.</li>
+          <li>Peça avaliação aos clientes implantados — prova social local.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>5 ideias de conteúdo por semana</h3>
+        <ol class="num">
+          <li><strong>Segunda — Dor da semana:</strong> "Quantos pedidos você perdeu no WhatsApp esse fim de semana?" (carrossel simples).</li>
+          <li><strong>Terça — Bastidor da rota:</strong> story da visita do dia, bairro e nicho (com autorização do comerciante).</li>
+          <li><strong>Quarta — Recurso em 30s:</strong> vídeo curto de uma função (IA criando pedido, rota de entrega, painel financeiro).</li>
+          <li><strong>Quinta — Mito ou verdade:</strong> "Sistema de gestão é caro? A partir de R$ 99/mês, menos que um lanche por dia."</li>
+          <li><strong>Sexta — História genérica:</strong> "A Distribuidora do João vivia refém do caderno..." (caso ilustrativo, sempre fictício e sinalizado como exemplo).</li>
+        </ol>
+        <div class="kpibar"><span>KPI: <b>≥ 2 leads inbound/mês</b> via perfil</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 8. BAIXO CUSTO ====== -->
+<section id="c8">
+  <div class="container">
+    <div class="kicker">Canal 8</div>
+    <h2>Canais de baixo custo e criativos</h2>
+    <p class="lead">Táticas de guerrilha que custam quase nada e aproveitam quem já circula pelo comércio do bairro todos os dias.</p>
+
+    <div class="grid c3">
+      <div class="card">
+        <h3>Parceria com entregadores de gás e água</h3>
+        <p>Quem entrega conhece TODO comércio do bairro — inclusive o dono, o horário calmo e quem está reclamando de bagunça na operação.</p>
+        <ol class="num">
+          <li>Combine com 2-3 entregadores de rota: eles indicam comércios "quentes" (dono acessível, negócio crescendo).</li>
+          <li>Agradecimento por indicação que virar demo/cliente: <span class="pill amber">formato a validar com a Vante</span>.</li>
+          <li>Bônus: o entregador de uma distribuidora cliente vira o melhor divulgador do sistema que ele mesmo usa nas notificações de entrega.</li>
+        </ol>
+        <div class="kpibar"><span>KPI: <b>≥ 4 indicações/mês</b> por entregador parceiro</span></div>
+      </div>
+      <div class="card">
+        <h3>Grupos de bairro (Facebook/WhatsApp)</h3>
+        <ol class="num">
+          <li>Entre nos grupos de comerciantes e moradores dos bairros da sua rota.</li>
+          <li>Regra 90/10: ajude 90% do tempo (responda dúvidas, indique soluções) e apresente-se em 10%.</li>
+          <li>Post quinzenal útil: "3 sinais de que o caderno já não dá conta do seu estoque" com convite para chamar no privado.</li>
+          <li>Monitore pedidos de recomendação ("alguém indica um sistema...?") — responda rápido.</li>
+        </ol>
+        <div class="kpibar"><span>Meta: <b>participação diária de 10 min</b></span><span>KPI: <b>≥ 2 conversas/semana</b> originadas em grupos</span></div>
+      </div>
+      <div class="card">
+        <h3>Panfleto com QR code na porta do comércio</h3>
+        <ol class="num">
+          <li>Panfleto no design Vante: título de dor ("Cansado de perder pedido no WhatsApp?"), 3 checkmarks de solução, "a partir de R$ 99/mês" e QR code para o WhatsApp do consultor com mensagem pré-preenchida.</li>
+          <li>Use como "cartão de visita turbinado" no porta a porta — principalmente quando o dono não está.</li>
+          <li>Anote no CRM onde deixou; o QR code identifica a origem quando o lead chama.</li>
+        </ol>
+        <div class="kpibar"><span>Meta: <b>100 panfletos/semana</b> nas rotas</span><span>KPI: <b>taxa de leitura do QR ≥ 3%</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MATRIZ ====== -->
+<section id="m1" class="alt">
+  <div class="container">
+    <div class="kicker">Gestão do esforço</div>
+    <h2>Matriz de priorização dos canais (esforço × retorno)</h2>
+    <p class="lead">Onde investir a energia primeiro. Classificação qualitativa baseada em custo, tempo até resultado e potencial de volume — <strong>a calibrar com os dados reais do CRM</strong>.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Canal</th><th>Esforço</th><th>Retorno esperado</th><th>Tempo até resultado</th><th>Prioridade</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. WhatsApp outbound</strong></td><td>Baixo</td><td>Alto (volume)</td><td>Imediato (dias)</td><td><span class="pill green">Começar já · Top 3</span></td></tr>
+          <tr><td><strong>2. Porta a porta qualificado</strong></td><td>Médio</td><td>Alto (conversão)</td><td>Imediato (dias)</td><td><span class="pill green">Começar já · Top 3</span></td></tr>
+          <tr><td><strong>3. Indicação de clientes</strong></td><td>Baixo</td><td>Muito alto (lead quente)</td><td>Após 1ªs implantações</td><td><span class="pill green">Ativar desde o 1º cliente · Top 3</span></td></tr>
+          <tr><td>4. Ligação fria</td><td>Médio</td><td>Médio</td><td>Imediato</td><td><span class="pill">Complemento diário</span></td></tr>
+          <tr><td>5. Parcerias B2B (contadores etc.)</td><td>Médio/Alto</td><td>Alto e recorrente</td><td>30–90 dias</td><td><span class="pill">Construir em paralelo</span></td></tr>
+          <tr><td>6. Presença digital</td><td>Baixo (constância)</td><td>Médio (suporte aos demais)</td><td>60+ dias</td><td><span class="pill">Manutenção contínua</span></td></tr>
+          <tr><td>7. Baixo custo/criativos</td><td>Baixo</td><td>Médio</td><td>30+ dias</td><td><span class="pill">Oportunista</span></td></tr>
+          <tr><td>8. Eventos e café empresarial</td><td>Alto</td><td>Alto (em lote)</td><td>30–60 dias</td><td><span class="pill">Mensal, quando houver base</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout success"><strong>Os 3 primeiros para começar:</strong> WhatsApp outbound (volume imediato) + porta a porta qualificado (conversão e relacionamento) + indicação (desde o primeiro cliente implantado). Os demais entram conforme a agenda estabiliza.</div>
+  </div>
+</section>
+
+<!-- ====== AGENDA ====== -->
+<section id="m2">
+  <div class="container">
+    <div class="kicker">Rotina</div>
+    <h2>Plano semanal de atividade do consultor (agenda-modelo)</h2>
+    <p class="lead">Prospecção é agenda, não inspiração. Blocos fixos de geração de demanda todos os dias — demos e propostas se encaixam nos espaços, nunca no lugar da prospecção.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Horário</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>8h–9h</strong></td><td>Planejamento da semana + daily WhatsApp</td><td>Daily + WhatsApp outbound (15-20 msgs)</td><td>Daily + WhatsApp outbound</td><td>Daily + WhatsApp outbound</td><td>Daily + follow-ups da cadência (toques 2-4)</td></tr>
+          <tr><td><strong>9h–12h</strong></td><td><strong>Rota porta a porta</strong> — salões/barbearias (segunda de manhã é o melhor horário)</td><td><strong>Rota porta a porta</strong> — distribuidoras de gás/água (9h30–11h, fora do pico)</td><td>Demos agendadas + bloco de ligação fria (1h)</td><td><strong>Rota porta a porta</strong> — adegas e lojas de utilidades</td><td>Demos agendadas + propostas</td></tr>
+          <tr><td><strong>12h–14h</strong></td><td colspan="5">Almoço + resposta de WhatsApp (leads respondem no almoço!)</td></tr>
+          <tr><td><strong>14h–17h</strong></td><td>WhatsApp outbound + montagem de lista (Google Maps)</td><td>Demos agendadas + reunião de parceria (contador/fornecedor)</td><td><strong>Rota porta a porta</strong> — petshops (meio da tarde) e utilidades</td><td>Demos + ligação fria (leads sem resposta no WhatsApp)</td><td>Pedidos de indicação a clientes implantados + grupos de bairro</td></tr>
+          <tr><td><strong>17h–18h</strong></td><td>CRM em dia + agendamentos</td><td>CRM + follow-ups</td><td>CRM + 1:1 semanal com a liderança</td><td>CRM + preparação das demos de sexta</td><td>Fechamento da semana no CRM + planejamento de rotas da próxima</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="statrow">
+      <div class="stat"><div class="big">3</div><div class="lbl">manhãs/tardes de rota por semana</div></div>
+      <div class="stat"><div class="big">75+</div><div class="lbl">primeiras mensagens de WhatsApp/semana</div></div>
+      <div class="stat"><div class="big">20+</div><div class="lbl">ligações frias/semana</div></div>
+      <div class="stat"><div class="big">8–10</div><div class="lbl">demos realizadas/semana (meta em rampa completa)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FUNIL ====== -->
+<section id="m3" class="alt">
+  <div class="container">
+    <div class="kicker">Métricas</div>
+    <h2>Funil de vendas — métricas de referência</h2>
+    <p class="lead"><strong>Estimativas conservadoras a calibrar</strong> nos primeiros 60-90 dias com os dados reais do CRM. Servem para dimensionar a atividade necessária, não como promessa de resultado.</p>
+
+    <div class="funnel">
+      <div class="fstep"><div class="n">1</div><div class="body"><strong>Contatos</strong> — portas batidas + mensagens enviadas + ligações<div class="rate">Base semanal de referência: <strong>~150 contatos</strong> (todas as fontes)</div></div><span class="pill">150/sem</span></div>
+      <div class="fstep"><div class="n">2</div><div class="body"><strong>Conversas com decisor</strong> — respondeu, atendeu ou conversou na porta<div class="rate">~30% dos contatos → <strong>~45 conversas</strong></div></div><span class="pill">30%</span></div>
+      <div class="fstep"><div class="n">3</div><div class="body"><strong>Demos realizadas</strong> — demonstração de 20 min agendada e cumprida<div class="rate">~20% das conversas → <strong>~9 demos</strong></div></div><span class="pill">20%</span></div>
+      <div class="fstep"><div class="n">4</div><div class="body"><strong>Propostas apresentadas</strong> — plano + implantação por escrito<div class="rate">~60% das demos → <strong>~5 propostas</strong></div></div><span class="pill">60%</span></div>
+      <div class="fstep"><div class="n">5</div><div class="body"><strong>Fechamentos</strong> — contrato assinado<div class="rate">~40% das propostas → <strong>~2 vendas/semana ≈ 8/mês</strong></div></div><span class="pill green">~8/mês</span></div>
+    </div>
+
+    <div class="callout"><strong>Leitura do funil:</strong> com ~150 contatos/semana, o consultor em rampa completa tende a 8+ vendas/mês — dentro da Faixa 2 de comissão (6–10 clientes/mês = 25% sobre a implantação) e caminhando para a Faixa 3 (11–20 = 30%). Lembre a regra oficial: comissão é paga após contrato assinado + implantação concluída + pagamento confirmado; cancelamento antes da implantação não gera comissão — por isso venda bem qualificada vale mais que venda empurrada.</div>
+    <div class="callout warn"><strong>Diagnóstico rápido por etapa:</strong> pouca conversa → melhore lista e horário de abordagem; poucas demos → revise o script e o CTA único; poucas propostas → demo está genérica, personalize pela dor do nicho; pouco fechamento → revisite objeções e urgência (ver 06-metodologia-vendas.html).</div>
+  </div>
+</section>
+
+<div class="footer">
+  <p><strong>Vante Gestão Tecnologia</strong> · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+</div>
+
+<script>
+function copiar(btn){
+  var pre = btn.parentElement.querySelector('pre');
+  var texto = pre.innerText;
+  function ok(){ btn.textContent='Copiado ✔'; btn.classList.add('copied'); setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('copied');},2000); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(texto).then(ok).catch(function(){fallback();});
+  } else { fallback(); }
+  function fallback(){
+    var ta=document.createElement('textarea'); ta.value=texto; document.body.appendChild(ta);
+    ta.select(); try{document.execCommand('copy'); ok();}catch(e){} document.body.removeChild(ta);
+  }
+}
+</script>
+</body>
+</html>

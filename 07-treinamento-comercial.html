@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vante · Treinamento Comercial — do Zero à Certificação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563EB; --navy:#0E2A5C; --deep:#0A1B3A; --lightblue:#7FA8F0;
+    --bg:#EEF2F8; --white:#FFFFFF; --text:#1E293B; --gray:#64748B;
+    --success:#16A34A; --warn:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-weight:400;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{color:var(--blue);text-decoration:none;}
+  h1,h2,h3,h4{color:var(--navy);line-height:1.25;}
+  h1{font-weight:800;} h2{font-weight:800;font-size:1.7rem;} h3{font-weight:700;font-size:1.15rem;} h4{font-weight:700;font-size:1rem;}
+  .backlink{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:.9rem;color:#DCE7FB;background:rgba(127,168,240,.18);border:1px solid rgba(127,168,240,.4);padding:7px 16px;border-radius:999px;}
+  .backlink:hover{background:rgba(127,168,240,.3);}
+
+  .hero{background:linear-gradient(135deg,var(--deep) 0%,var(--navy) 60%,#123a7d 100%);color:#fff;padding:40px 0 72px;position:relative;overflow:hidden;}
+  .hero::after{content:"✦";position:absolute;right:-30px;top:-60px;font-size:320px;color:rgba(127,168,240,.08);line-height:1;}
+  .wordmark{font-weight:700;font-size:1.5rem;letter-spacing:.5px;display:inline-flex;align-items:center;gap:10px;color:#fff;}
+  .wordmark .star{color:var(--lightblue);font-size:1.1rem;}
+  .hero-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .hero h1{color:#fff;font-size:clamp(1.7rem,4vw,2.6rem);margin:26px 0 14px;max-width:860px;}
+  .hero p.lead{color:#CBD8F2;font-size:1.05rem;max-width:800px;}
+  .chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{background:rgba(127,168,240,.18);border:1px solid rgba(127,168,240,.4);color:#DCE7FB;font-size:.8rem;font-weight:500;padding:6px 15px;border-radius:999px;}
+
+  section{padding:60px 0;}
+  .section-navy{background:var(--navy);color:#fff;}
+  .section-navy h2,.section-navy h3,.section-navy h4{color:#fff;}
+  .kicker{color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:.76rem;display:block;margin-bottom:8px;}
+  .section-navy .kicker{color:var(--lightblue);}
+  .sub{color:var(--gray);max-width:820px;margin-top:10px;}
+  .section-navy .sub{color:#B9C8E8;}
+  .section-navy p{color:#C7D4EE;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:34px;}
+  .card{background:var(--white);border-radius:20px;padding:26px 24px;box-shadow:0 6px 24px rgba(14,42,92,.08);border:1px solid rgba(37,99,235,.06);}
+  .card h3{margin-bottom:10px;}
+  .card p{font-size:.92rem;color:var(--gray);}
+  .card ul,.check{list-style:none;margin-top:8px;}
+  .card li,.check li{padding-left:26px;position:relative;font-size:.92rem;margin-bottom:7px;}
+  .card li::before,.check li::before{content:"✔";position:absolute;left:0;color:var(--blue);font-size:.85rem;font-weight:700;}
+  .section-navy .card{background:rgba(255,255,255,.06);border:1px solid rgba(127,168,240,.25);box-shadow:none;}
+  .section-navy .card p,.section-navy .card li{color:#C7D4EE;}
+  .section-navy .card li::before{color:var(--lightblue);}
+  .check{margin-top:14px;}
+
+  .pill{display:inline-block;background:#E4ECFB;color:var(--blue);font-size:.76rem;font-weight:600;padding:5px 14px;border-radius:999px;margin-bottom:10px;}
+  .pill.green{background:#E3F4E8;color:var(--success);}
+  .pill.amber{background:#FBEEDC;color:var(--warn);}
+  .section-navy .pill{background:rgba(127,168,240,.2);color:#DCE7FB;}
+
+  /* Trilha (fases) */
+  .fases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:36px;}
+  .fase{background:var(--white);border-radius:20px;padding:24px 20px;box-shadow:0 6px 24px rgba(14,42,92,.09);border-top:5px solid var(--blue);}
+  .fase .semana{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);}
+  .fase h3{font-size:1.02rem;margin:6px 0 8px;}
+  .fase p{font-size:.85rem;color:var(--gray);}
+
+  /* Scripts / blocos copiáveis */
+  .script{background:var(--white);border-radius:18px;border:1px solid rgba(37,99,235,.14);box-shadow:0 6px 20px rgba(14,42,92,.07);margin-top:20px;overflow:hidden;}
+  .script header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:#E4ECFB;}
+  .script header h4{font-size:.92rem;color:var(--navy);}
+  .script .body{padding:18px 20px;font-size:.93rem;white-space:pre-line;color:var(--text);}
+  .copy-btn{background:var(--blue);color:#fff;border:none;font-family:inherit;font-weight:600;font-size:.78rem;padding:8px 16px;border-radius:999px;cursor:pointer;flex-shrink:0;transition:background .15s;}
+  .copy-btn:hover{background:#1d4fc4;}
+  .copy-btn.ok{background:var(--success);}
+  .section-navy .script{background:rgba(255,255,255,.05);border-color:rgba(127,168,240,.3);}
+  .section-navy .script header{background:rgba(127,168,240,.15);}
+  .section-navy .script header h4{color:#fff;}
+  .section-navy .script .body{color:#DCE7FB;}
+
+  /* Quiz accordion */
+  details.quiz{background:var(--white);border-radius:16px;box-shadow:0 5px 18px rgba(14,42,92,.07);margin-top:12px;border:1px solid rgba(37,99,235,.08);overflow:hidden;}
+  details.quiz summary{cursor:pointer;padding:15px 20px;font-weight:600;color:var(--navy);font-size:.95rem;list-style:none;display:flex;gap:12px;align-items:flex-start;}
+  details.quiz summary::-webkit-details-marker{display:none;}
+  details.quiz summary .qn{background:var(--blue);color:#fff;font-weight:800;font-size:.8rem;min-width:28px;height:28px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  details.quiz .inner{padding:0 20px 18px 60px;font-size:.9rem;}
+  details.quiz .inner .gab{background:#E3F4E8;border-left:4px solid var(--success);border-radius:0 12px 12px 0;padding:10px 14px;margin-top:8px;}
+  details.quiz .inner .gab b{color:var(--success);}
+  .section-navy details.quiz{background:rgba(255,255,255,.06);border-color:rgba(127,168,240,.25);}
+  .section-navy details.quiz summary{color:#fff;}
+  .section-navy details.quiz .inner{color:#C7D4EE;}
+  .section-navy details.quiz .inner .gab{background:rgba(22,163,74,.15);color:#D7F0DF;}
+
+  /* Role-play cards */
+  details.rp{background:var(--white);border-radius:18px;box-shadow:0 6px 20px rgba(14,42,92,.08);margin-top:16px;border:1px solid rgba(37,99,235,.1);overflow:hidden;}
+  details.rp summary{cursor:pointer;padding:18px 22px;list-style:none;display:flex;gap:14px;align-items:center;}
+  details.rp summary::-webkit-details-marker{display:none;}
+  details.rp summary .rpn{background:var(--navy);color:#fff;font-weight:800;font-size:1rem;min-width:40px;height:40px;border-radius:13px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  details.rp summary h3{font-size:1rem;}
+  details.rp summary .tag{margin-left:auto;font-size:.72rem;font-weight:600;background:#E4ECFB;color:var(--blue);padding:4px 12px;border-radius:999px;white-space:nowrap;}
+  details.rp .inner{padding:0 22px 22px;}
+  .rp-block{border-left:4px solid var(--blue);background:var(--bg);border-radius:0 12px 12px 0;padding:12px 16px;margin-top:10px;font-size:.9rem;}
+  .rp-block b{color:var(--navy);display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+  .rp-block.humor{border-color:var(--warn);}
+  .rp-block.aprov{border-color:var(--success);}
+  .rp-block ul{list-style:none;margin-top:4px;}
+  .rp-block li{padding-left:20px;position:relative;margin-bottom:4px;}
+  .rp-block li::before{content:"›";position:absolute;left:4px;color:var(--blue);font-weight:800;}
+
+  .table-scroll{overflow-x:auto;margin-top:24px;border-radius:16px;box-shadow:0 6px 20px rgba(14,42,92,.07);}
+  table{width:100%;border-collapse:collapse;background:var(--white);min-width:640px;font-size:.88rem;}
+  th{background:var(--navy);color:#fff;font-weight:600;text-align:left;padding:12px 16px;white-space:nowrap;}
+  td{padding:11px 16px;border-top:1px solid #E5EAF3;vertical-align:top;}
+  tr:nth-child(even) td{background:#F7F9FD;}
+
+  .callout{background:#FBEEDC;border-left:5px solid var(--warn);border-radius:0 14px 14px 0;padding:16px 20px;margin-top:22px;font-size:.92rem;}
+  .callout b{color:var(--warn);}
+  .callout.blue{background:#E4ECFB;border-color:var(--blue);}
+  .callout.blue b{color:var(--blue);}
+  .callout.green{background:#E3F4E8;border-color:var(--success);}
+  .callout.green b{color:var(--success);}
+
+  /* Selo certificação */
+  .selo{background:linear-gradient(135deg,var(--deep),#123a7d);border-radius:24px;color:#fff;padding:38px 32px;margin-top:36px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;box-shadow:0 14px 40px rgba(14,42,92,.25);}
+  .selo .badge{width:120px;height:120px;border-radius:32px;background:rgba(127,168,240,.15);border:2px solid var(--lightblue);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
+  .selo .badge .st{font-size:2.2rem;color:var(--lightblue);line-height:1;}
+  .selo .badge span{font-size:.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#DCE7FB;text-align:center;margin-top:6px;padding:0 8px;}
+  .selo h3{color:#fff;font-size:1.3rem;}
+  .selo p{color:#C7D4EE;font-size:.92rem;max-width:640px;}
+
+  footer{background:var(--deep);color:#9FB2D6;text-align:center;padding:28px 24px;font-size:.85rem;}
+  footer .star{color:var(--lightblue);}
+  @media(max-width:640px){section{padding:44px 0;} details.rp summary .tag{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="wordmark"><span class="star">✦</span>Vante</div>
+      <a class="backlink" href="index.html">← Voltar ao índice</a>
+    </div>
+    <h1>Programa de Treinamento Comercial — do Zero ao Consultor Vante Certificado</h1>
+    <p class="lead">Trilha completa para transformar um recrutado em consultor certificado em 4 semanas: 2 semanas intensivas de formação + 2 semanas de campo assistido, com quiz, role-plays avaliados por rubrica, checklists e o cronograma dia a dia do treinador.</p>
+    <div class="chips">
+      <span class="chip">~40h de carga total</span>
+      <span class="chip">2 semanas intensivas + 2 de campo</span>
+      <span class="chip">6 módulos + certificação</span>
+      <span class="chip">Formato híbrido: encontros · estudo dirigido · role-play</span>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 1. VISÃO DA TRILHA ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">1 · Visão da trilha</span>
+    <h2>4 semanas, ~40 horas, um destino: a certificação</h2>
+    <p class="sub">A trilha é <strong>híbrida</strong>: encontros ao vivo (presenciais ou por vídeo), estudo dirigido com os materiais oficiais do pacote comercial e muito role-play — porque ninguém aprende a vender lendo. Nas semanas 1 e 2, o consultor domina produto, nichos e método; nas semanas 3 e 4, vai a campo com o líder ao lado.</p>
+
+    <div class="fases">
+      <div class="fase"><span class="semana">Semana 1</span><h3>Produto + Nichos</h3><p>Módulos 1 e 2 — o que vendemos, para quem e por quê. Quiz de produto ao final.</p></div>
+      <div class="fase"><span class="semana">Semana 2</span><h3>Método + Role-plays + Processo</h3><p>Módulos 3, 4 e 5 — como vender, treinado à exaustão, e as ferramentas do dia a dia.</p></div>
+      <div class="fase"><span class="semana">Semanas 3–4</span><h3>Campo assistido</h3><p>Módulo 6 — 3 visitas sombra + 5 visitas invertidas com checklist e debriefing.</p></div>
+      <div class="fase" style="border-top-color:var(--success);"><span class="semana" style="color:var(--success);">Ao final</span><h3>Certificação</h3><p>Quiz ≥ 8/10, role-play ≥ 4/5, 10 diagnósticos no CRM, 1 venda acompanhada.</p></div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>Módulo</th><th>Tema</th><th>Carga</th><th>Formato</th><th>Entregável do consultor</th></tr>
+        <tr><td><strong>1</strong></td><td>Produto Vante</td><td>8h</td><td>Encontros + estudo dirigido</td><td>Pitch de 1 minuto gravado + quiz ≥ 8/10</td></tr>
+        <tr><td><strong>2</strong></td><td>Nichos e ICP</td><td>4h</td><td>Encontro + trabalho de campo leve</td><td>Mapa do território com 30 comércios reais</td></tr>
+        <tr><td><strong>3</strong></td><td>Método de vendas</td><td>8h</td><td>Encontros + estudo dos scripts</td><td>SPIN e proposta apresentados de cor</td></tr>
+        <tr><td><strong>4</strong></td><td>Role-plays</td><td>8h</td><td>Prática avaliada</td><td>6 cenários com nota ≥ 4/5 em todas as competências</td></tr>
+        <tr><td><strong>5</strong></td><td>Ferramentas e processo</td><td>4h</td><td>Encontro prático (mão no CRM)</td><td>Pipeline configurado + agenda semanal montada</td></tr>
+        <tr><td><strong>6</strong></td><td>Campo assistido</td><td>2 semanas (~8h de visitas + debriefings)</td><td>Campo com o líder</td><td>3 sombras + 5 invertidas com checklist preenchido</td></tr>
+      </table>
+    </div>
+    <p class="sub" style="font-size:.83rem;">Carga total: 32h de módulos 1–5 + ~8h de campo assistido e debriefings ≈ 40h.</p>
+  </div>
+</section>
+
+<!-- ========== 2. MÓDULO 1 ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">2 · Módulo 1 — Produto Vante (8h)</span>
+    <h2>Ninguém vende o que não domina</h2>
+    <p class="sub">Objetivo: ao final, o consultor explica a Vante em 1 minuto, conhece as 4 dores, os 3 planos com preços de cabeça, a IA e o processo de implantação. Material-base: BRIEF mestre, <a style="color:var(--lightblue);" href="01-analise-estrategica.html">Análise Estratégica</a> e <a style="color:var(--lightblue);" href="02-apresentacao-produto.html">Apresentação do Produto</a>.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Conteúdo programático</h3>
+        <ul>
+          <li><strong>A empresa (1h):</strong> Vante Gestão Tecnologia — +15 anos em software, +30 anos em varejo; nasceu dentro de uma operação real de distribuição de gás (daí a IA GásLink). Propósito: simplificar a operação e aumentar a lucratividade para o cliente focar em crescer.</li>
+          <li><strong>As 4 dores (1h30):</strong> atendimento &amp; pedidos dispersos; estoque sem controle; roteirização &amp; logística; gestão financeira "no escuro". Cada dor com exemplos por nicho.</li>
+          <li><strong>Funcionalidades e IA (2h):</strong> vendas, estoque, financeiro, dashboard, relatórios, acompanhamento; IA no WhatsApp (pedido automático, resumo e nota, classificação de mensagens), IA assistiva, preditiva/logística (roteirização, previsão de demanda, anomalias) e analítica/prescritiva (insights, precificação dinâmica, pedidos por voz).</li>
+          <li><strong>Planos e preços (1h30):</strong> Básico R$ 99 (1 usuário, impl. R$ 300) · Intermediário R$ 199 (2 usuários, NFe/NFCe, impl. R$ 580) · Avançado R$ 399 (3 usuários, IA GásLink, impl. R$ 990); usuário adicional R$ 99. O que entra em cada plano, de cor.</li>
+          <li><strong>Implantação e evolução (1h):</strong> 4 etapas (cadastros → atendimento → estoque e logística → financeiro), feitas pela Vante; ciclo ágil Discovery → Dev → Test → Delivery. Mercado: varejo brasileiro = R$ 2,3 trilhões/ano, ~20% do PIB, +60% dos negócios em transformação digital.</li>
+          <li><strong>Exercício + quiz (1h):</strong> abaixo.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Exercício: "explique a Vante em 1 minuto"</h3>
+        <p>Cada consultor grava um vídeo de até 60 segundos explicando a Vante como se falasse com um dono de comércio. Critérios: citar pelo menos 2 das 4 dores, o que a plataforma integra (vendas, estoque, financeiro, atendimento), 1 diferencial de IA e o preço de entrada. Proibido: jargão técnico e promessa não oficial. O grupo assiste e vota no mais claro — o vencedor vira referência da turma.</p>
+        <div class="script">
+          <header><h4>Gabarito de referência — pitch de 1 minuto</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+          <div class="body">"A Vante é uma plataforma de gestão feita para o pequeno varejo — distribuidoras de gás, adegas, salões, barbearias, petshops, lojas de utilidades. Ela junta num lugar só o que hoje vive espalhado: os pedidos que chegam por WhatsApp, telefone e balcão, o estoque, as entregas e o caixa. O diferencial é a inteligência artificial: ela atende o WhatsApp, classifica a mensagem e cria o pedido sozinha, e ainda ajuda a montar rota de entrega e prever demanda. A implantação e o treinamento são feitos pela equipe da própria Vante — o comerciante não fica sozinho. E começa em R$ 99 por mês, uns R$ 3,30 por dia. Nasceu dentro de uma distribuidora de gás de verdade, com mais de 30 anos de varejo por trás — é gestão feita por quem vive o balcão."</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:44px;">Quiz de produto — 10 questões (clique para ver o gabarito)</h3>
+    <p class="sub">Aprovação: <strong>8 acertos ou mais</strong>. Aplicar sem consulta, corrigir em grupo.</p>
+
+    <details class="quiz"><summary><span class="qn">1</span>Quais são as 4 dores do pequeno varejo que a Vante resolve?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> 1) Atendimento &amp; pedidos dispersos (telefone/WhatsApp/presencial sem integração); 2) Gestão de estoque sem controle automatizado; 3) Roteirização &amp; logística de entregas; 4) Gestão financeira com dados dispersos e decisão "no escuro".</div></div></details>
+    <details class="quiz"><summary><span class="qn">2</span>Quais os preços de mensalidade e implantação dos 3 planos, e quantos usuários cada um inclui?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> Básico R$ 99/mês, 1 usuário, implantação R$ 300; Intermediário R$ 199/mês, 2 usuários, implantação R$ 580; Avançado R$ 399/mês, 3 usuários, implantação R$ 990. Usuário adicional: R$ 99 em qualquer plano.</div></div></details>
+    <details class="quiz"><summary><span class="qn">3</span>A partir de qual plano o cliente tem módulo fiscal (NFe/NFCe)?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> A partir do Intermediário. O Básico não tem módulo fiscal.</div></div></details>
+    <details class="quiz"><summary><span class="qn">4</span>O que a IA GásLink faz no WhatsApp do cliente, e em qual plano ela está?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> Atendimento automatizado: criação automática de pedidos, geração de resumo e nota, classificação de mensagens (pedido/dúvida/reclamação). Está no plano Avançado.</div></div></details>
+    <details class="quiz"><summary><span class="qn">5</span>Quais são as 4 etapas da implantação e quem as executa?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> 1) Cadastros (produtos, clientes, equipe); 2) Atendimento (treinamento completo + módulo educacional); 3) Estoque e Logística; 4) Financeiro. Quem executa é a equipe da Vante — o representante só vende (e acompanha).</div></div></details>
+    <details class="quiz"><summary><span class="qn">6</span>O que a implantação opcional inclui?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> Migração de dados + treinamento.</div></div></details>
+    <details class="quiz"><summary><span class="qn">7</span>Cite os 6 nichos-alvo (ICP) da Vante e diga qual é o nicho de origem.</summary><div class="inner"><div class="gab"><b>Gabarito:</b> Distribuidoras de gás (nicho de origem, mais maduro), adegas/depósitos de bebidas, salões de beleza, barbearias, petshops e lojas de utilidades.</div></div></details>
+    <details class="quiz"><summary><span class="qn">8</span>Cite 3 funcionalidades que só existem no plano Avançado.</summary><div class="inner"><div class="gab"><b>Gabarito (quaisquer 3):</b> app mobile de delivery próprio; monitoramento logístico em tempo real; ponto via app (RH digital); gestão de crédito de clientes; notificações automáticas de status do pedido para clientes; IA GásLink.</div></div></details>
+    <details class="quiz"><summary><span class="qn">9</span>Quais os números oficiais do mercado usados no pitch?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> Varejo brasileiro movimenta R$ 2,3 trilhões/ano, representa ~20% do PIB, e +60% dos negócios estão passando por transformação digital.</div></div></details>
+    <details class="quiz"><summary><span class="qn">10</span>Quando a comissão do representante é paga?</summary><div class="inner"><div class="gab"><b>Gabarito:</b> Após contrato assinado + implantação concluída + pagamento confirmado. Cancelamento antes da implantação não gera comissão — por isso o consultor acompanha a implantação até o fim.</div></div></details>
+  </div>
+</section>
+
+<!-- ========== 3. MÓDULO 2 ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">3 · Módulo 2 — Nichos e ICP (4h)</span>
+    <h2>Seis nichos, seis dores dominantes, seis aberturas diferentes</h2>
+    <p class="sub">Objetivo: o consultor sabe adaptar o discurso a cada nicho e sai do módulo com o próprio território mapeado.</p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>Nicho</th><th>Dor dominante</th><th>Abordagem de entrada</th></tr>
+        <tr><td><strong>Distribuidoras de gás</strong> (origem, mais maduro)</td><td>Pedidos por telefone/WhatsApp no pico + rota de entrega ineficiente + controle de botijões cheios/vazios.</td><td>Entrar pela entrega e pelo WhatsApp: "quantas entregas/dia e como o cliente pede?" — gancho natural para a IA GásLink e roteirização (Avançado).</td></tr>
+        <tr><td><strong>Adegas / depósitos de bebidas</strong></td><td>Estoque com muitos itens e giro rápido: falta o que vende, sobra o que não vende; delivery desorganizado.</td><td>Entrar pelo estoque: "você sabe o que está acabando antes de acabar?" — e pelo pedido via WhatsApp no fim de semana.</td></tr>
+        <tr><td><strong>Salões de beleza</strong></td><td>Agenda/atendimento por WhatsApp que se perde + acerto de comissão dos profissionais + caixa misturado.</td><td>Entrar pelo atendimento e pelo financeiro: "o acerto dos profissionais sai sem discussão?" — RH e financeiro avançado (Intermediário+).</td></tr>
+        <tr><td><strong>Barbearias</strong></td><td>Horário furado, fila desorganizada, revenda de produtos (pomada, etc.) sem controle.</td><td>Entrar pela ocupação da cadeira: "cadeira parada uma hora por dia custa quanto no mês?" — pedidos, pagamentos e estoque de revenda.</td></tr>
+        <tr><td><strong>Petshops</strong></td><td>Recompra recorrente (ração, banho e tosa) sem histórico do cliente + estoque de itens perecíveis.</td><td>Entrar pelo histórico: "você sabe quando o cliente da ração de 15 kg vai voltar?" — acompanhamento + notificações + previsão de demanda.</td></tr>
+        <tr><td><strong>Lojas de utilidades</strong></td><td>Milhares de itens sem catálogo organizado; compra por impulso do dono; margem desconhecida por produto.</td><td>Entrar pelo financeiro: "qual produto te dá lucro e qual só ocupa prateleira?" — catálogo, estoque e relatórios.</td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:32px;">
+      <span class="pill">Exercício de campo · obrigatório para certificação</span>
+      <h3>Mapa do território: 30 comércios reais</h3>
+      <p>Cada consultor lista <strong>30 comércios reais da sua região</strong>, distribuídos entre os 6 nichos (mínimo 8 distribuidoras de gás — nicho prioritário). Para cada um: nome, nicho, endereço/bairro, contato (telefone/WhatsApp/Instagram se houver), e uma hipótese de dor dominante baseada na observação (tem entrega? anota em caderno? responde rápido no WhatsApp?). A lista é cadastrada no CRM no estágio "Mapeado" durante o Módulo 5 — e vira a matéria-prima do campo assistido. Prazo: entregar até o início da semana 2.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. MÓDULO 3 ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">4 · Módulo 3 — Método de vendas (8h)</span>
+    <h2>O Método Vante em 5 passos, dominado de cor</h2>
+    <p class="sub">Material-base obrigatório: <a style="color:var(--lightblue);" href="06-metodologia-vendas.html">06 · Metodologia de Vendas</a> — este módulo é o estudo guiado daquele documento. Resumo dos 5 passos: <strong>ABRIR</strong> (rapport + contexto) → <strong>DIAGNOSTICAR</strong> (dores via SPIN) → <strong>DEMONSTRAR</strong> (demo personalizada, máx. 4 telas) → <strong>RESOLVER</strong> (objeções em 3 tempos + proposta) → <strong>FECHAR</strong> (compromisso + implantação agendada).</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Bloco A — Diagnóstico SPIN (3h)</h3>
+        <ul>
+          <li>Estudo das 17 perguntas por extenso (4 Situação, 6 Problema, 4 Implicação, 3 Necessidade) e das versões para gás e salão/barbearia.</li>
+          <li>Treino em duplas: um pergunta, o outro responde como dono de comércio; troca de papéis a cada rodada.</li>
+          <li>Critério de saída: conduzir o SPIN completo sem ler, anotando as respostas como faria no CRM.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Bloco B — Demo e scripts (2h30)</h3>
+        <ul>
+          <li>Roteiro de demo de 15 minutos: WhatsApp → pedido → entrega → caixa, com 2-3 produtos reais do cliente.</li>
+          <li>Regra "máximo 4 telas, sempre ligadas à dor declarada" — treinar as frases-ponte.</li>
+          <li>Estudo dos scripts oficiais: abertura fria, proposta, follow-up D+1/D+3/D+7/D+15.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Bloco C — Ancoragem de preço e objeções (2h30)</h3>
+        <ul>
+          <li>Apresentação dos 3 planos ancorando no Avançado (R$ 399) e recomendando o que serve; implantação como investimento único; valor por dia (Básico ≈ R$ 3,30/dia).</li>
+          <li>Quando usar o argumento fiscal: NFe/NFCe do Intermediário para cima.</li>
+          <li>As 12 objeções em 3 tempos (validar → reenquadrar → avançar): leitura dramatizada em grupo, uma objeção por dupla.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout blue" style="background:rgba(127,168,240,.15);border-color:var(--lightblue);"><b style="color:var(--lightblue);">Dever de casa da semana 2:</b> decorar a tabela de planos (mensalidade, usuários, implantação, o que entra em cada plano) e as 3 perguntas de Necessidade. No Módulo 4, ninguém consulta material.</div>
+  </div>
+</section>
+
+<!-- ========== 5. MÓDULO 4 ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">5 · Módulo 4 — Role-plays (8h)</span>
+    <h2>Seis cenários completos — o treinador interpreta, o consultor vende</h2>
+    <p class="sub">Cada cenário dura 20 minutos de simulação + 10 de feedback pela rubrica. O treinador (ou um colega experiente) interpreta a persona <em>sem facilitar</em>: levanta as objeções listadas e só "compra" se o consultor cumprir o critério de aprovação. Todos os personagens são fictícios e genéricos. Grave as simulações — elas alimentam a biblioteca de treinamento.</p>
+
+    <details class="rp"><summary><span class="rpn">1</span><h3>Seu Geraldo — dono de distribuidora de gás, cético com tecnologia</h3><span class="tag">Foco: dor 3 + objeções 9 e 11</span></summary><div class="inner">
+      <div class="rp-block"><b>Persona</b>58 anos, 22 anos de distribuidora, 3 entregadores, tudo no caderno e na memória. Orgulhoso da operação: "sempre funcionou assim". O filho insiste para ele modernizar.</div>
+      <div class="rp-block humor"><b>Humor e comportamento</b>Desconfiado e irônico, mas educado. Testa o consultor com perguntas práticas ("e quando o sistema errar o troco?"). Amolece se o consultor mostrar que conhece a rotina de distribuidora (botijão cheio/vazio, pico de fim de tarde).</div>
+      <div class="rp-block"><b>Objeções que vai levantar</b><ul><li>"Não confio nessa história de nuvem — meu caderno nunca deu tela azul."</li><li>"IA não funciona pra mim, meu cliente gosta de falar com gente."</li><li>"E se a internet cair no sábado, dia de mais entrega?"</li></ul></div>
+      <div class="rp-block aprov"><b>Critério de aprovação</b>Consultor aplica o SPIN versão gás sem ler; usa a origem da Vante (nasceu numa distribuidora de gás, +30 anos de varejo) para gerar confiança; responde as 3 objeções em 3 tempos sem discutir; fecha pelo menos o agendamento de demo com data e hora.</div>
+    </div></details>
+
+    <details class="rp"><summary><span class="rpn">2</span><h3>Dona Márcia — dona de salão de beleza, sem tempo nenhum</h3><span class="tag">Foco: objeção 4 + implantação Vante</span></summary><div class="inner">
+      <div class="rp-block"><b>Persona</b>41 anos, salão com 4 profissionais, atende enquanto conversa, interrompe a reunião duas vezes para responder cliente. Agenda no WhatsApp pessoal, acerto de comissão em caderno, já brigou com profissional por anotação divergente.</div>
+      <div class="rp-block humor"><b>Humor e comportamento</b>Simpática, acelerada, dispersa. Dá sinais de dor claros mas corta assuntos: "amor, resume". Se a conversa passar de 15 minutos sem valor, encerra.</div>
+      <div class="rp-block"><b>Objeções que vai levantar</b><ul><li>"Não tenho tempo de implantar sistema nenhum, olha essa loucura aqui."</li><li>"Minhas meninas não vão aprender isso."</li><li>"Vou pensar" (no fim, como fuga educada).</li></ul></div>
+      <div class="rp-block aprov"><b>Critério de aprovação</b>Consultor adapta o SPIN à versão salão em linguagem rápida; posiciona a implantação como trabalho da equipe da Vante em 4 etapas (ela não fica sozinha); trata o "vou pensar" isolando o motivo real; sai com retorno agendado com dia e hora — não com um "te chamo".</div>
+    </div></details>
+
+    <details class="rp"><summary><span class="rpn">3</span><h3>Rodrigo — dono de adega, "já tenho um sistema"</h3><span class="tag">Foco: objeção 2 + demo comparativa</span></summary><div class="inner">
+      <div class="rp-block"><b>Persona</b>34 anos, adega com delivery forte no fim de semana, usa um sistema de caixa simples há 3 anos. Acha que "sistema é tudo igual". WhatsApp explode na sexta à noite e os pedidos são digitados manualmente no caixa.</div>
+      <div class="rp-block humor"><b>Humor e comportamento</b>Prático, direto, um pouco impaciente: "vai me mostrar algo diferente ou é a mesma coisa?". Responde bem a demonstração objetiva; detesta enrolação.</div>
+      <div class="rp-block"><b>Objeções que vai levantar</b><ul><li>"Já tenho um sistema, troca dá trabalho."</li><li>"O que muda de verdade? Fala em 1 minuto."</li><li>"Migrar meu cadastro de produtos vai ser um parto."</li></ul></div>
+      <div class="rp-block aprov"><b>Critério de aprovação</b>Consultor pergunta o que o sistema atual resolve bem <em>antes</em> de atacar; foca no gap (WhatsApp → pedido automático, estoque em tempo real, relatórios financeiros) sem falar mal do concorrente; usa a migração de dados inclusa na implantação como resposta à troca; propõe demo de 15 minutos focada só no gap.</div>
+    </div></details>
+
+    <details class="rp"><summary><span class="rpn">4</span><h3>Fernanda — dona de petshop, preocupada com preço</h3><span class="tag">Foco: ancoragem + objeções 1 e 8</span></summary><div class="inner">
+      <div class="rp-block"><b>Persona</b>29 anos, petshop de bairro aberto há 18 meses, margem apertada, faz tudo sozinha com uma ajudante. Interessada de verdade, mas cada real conta. Já pesquisou concorrentes mais baratos.</div>
+      <div class="rp-block humor"><b>Humor e comportamento</b>Engajada e transparente: fala abertamente que achou caro e cita valores de concorrentes. Reage bem a contas feitas junto com ela; reage mal a pressão.</div>
+      <div class="rp-block"><b>Objeções que vai levantar</b><ul><li>"Tá caro pra mim agora."</li><li>"O mercado tá devagar, quero esperar melhorar."</li><li>"Tem um mais barato que me ofereceram."</li></ul></div>
+      <div class="rp-block aprov"><b>Critério de aprovação</b>Consultor ancora no Avançado mas recomenda honestamente o Básico (R$ 99, 1 usuário — cabe na operação dela); faz a conta do valor por dia (≈ R$ 3,30) amarrada à dor declarada (recompra de ração sem histórico); não inventa desconto nem promoção; fecha no plano certo ou agenda decisão com data.</div>
+    </div></details>
+
+    <details class="rp"><summary><span class="rpn">5</span><h3>Tiago — gerente de loja de utilidades, entusiasmado mas sem poder de decisão</h3><span class="tag">Foco: objeção 7 + venda ao decisor</span></summary><div class="inner">
+      <div class="rp-block"><b>Persona</b>26 anos, gerente (o dono é o tio, que só aparece à tarde). Adora tecnologia, quer o sistema ontem, promete "convencer o tio". Não assina nada e não conhece os números do negócio a fundo.</div>
+      <div class="rp-block humor"><b>Humor e comportamento</b>Empolgado, concorda com tudo, pede material "para mostrar pro tio". A armadilha do cenário: o consultor gastar a demo inteira com quem não decide e ir embora sem acesso ao decisor.</div>
+      <div class="rp-block"><b>Objeções que vai levantar</b><ul><li>"Pode deixar comigo que eu convenço ele" (bloqueio de acesso ao decisor).</li><li>"Me manda a proposta por WhatsApp que eu mostro pra ele."</li><li>"Ele é meio fechado com gasto novo."</li></ul></div>
+      <div class="rp-block aprov"><b>Critério de aprovação</b>Consultor identifica em até 5 minutos que Tiago não decide (pergunta de qualificação: "além de você, quem participa da decisão?"); valoriza Tiago como aliado sem entregar a venda a ele; usa a lógica da objeção do sócio ("demo de segunda mão não convence") e agenda demo com o tio presente, com dia e hora, antes de encerrar.</div>
+    </div></details>
+
+    <details class="rp"><summary><span class="rpn">6</span><h3>Seu Antônio — dono de depósito de bebidas, caçador de desconto</h3><span class="tag">Foco: urgência honesta + defesa de preço</span></summary><div class="inner">
+      <div class="rp-block"><b>Persona</b>52 anos, negociador nato, compra tudo "no pechincho". Já decidiu que quer o sistema — a simulação inteira é uma negociação de preço. Vai testar se o consultor inventa desconto.</div>
+      <div class="rp-block humor"><b>Humor e comportamento</b>Jovial e insistente: "me faz um precinho", "tira essa implantação que eu fecho agora", "o outro vendedor me daria 20%". Se o consultor ceder ou inventar promoção, ele aumenta a pressão; se o consultor segurar com respeito e valor, ele fecha.</div>
+      <div class="rp-block"><b>Objeções que vai levantar</b><ul><li>"Sem desconto eu não fecho." </li><li>"Tira a taxa de implantação, vocês ganham na mensalidade."</li><li>"Me liga mês que vem que aí a gente vê."</li></ul></div>
+      <div class="rp-block aprov"><b>Critério de aprovação</b>Consultor defende a tabela oficial sem inventar desconto ou promoção; reposiciona a implantação como migração de dados + treinamento pela equipe Vante (é o que garante o sistema rodando); usa urgência honesta (custo de esperar, implantação agendável já na próxima semana); fecha no preço de tabela ou encerra com follow-up firme — sem ceder.</div>
+    </div></details>
+
+    <h3 style="margin-top:44px;">Rubrica de avaliação — nota 1 a 5 por competência</h3>
+    <p class="sub">Aprovação no módulo (e pré-requisito da certificação): <strong>nota ≥ 4 em todas as competências</strong>, em todos os 6 cenários. Nota abaixo de 4 = repete o cenário em outra sessão.</p>
+    <div class="table-scroll">
+      <table>
+        <tr><th>Competência</th><th>1 — Insuficiente</th><th>3 — Em desenvolvimento</th><th>5 — Excelente</th></tr>
+        <tr><td><strong>Abertura e rapport</strong></td><td>Vai direto ao produto; ignora o contexto do comércio.</td><td>Faz rapport genérico; usa parcialmente a pesquisa prévia.</td><td>Personaliza a abertura com dados reais do comércio e ganha o direito de perguntar em 90 segundos.</td></tr>
+        <tr><td><strong>Diagnóstico (SPIN)</strong></td><td>Pergunta pouco ou lê as perguntas; não anota.</td><td>Cobre S-P-N mas pula Implicação; anota parcialmente.</td><td>Conduz S-P-I-N de cor, adapta ao nicho, faz o "dono" verbalizar dor e custo, anota tudo.</td></tr>
+        <tr><td><strong>Demonstração</strong></td><td>Tour de sistema; telas soltas, sem ligação com a dor.</td><td>Usa o roteiro mas passa de 4 telas ou esquece produtos reais.</td><td>Máx. 4 telas, produtos reais, cada tela com frase-ponte ligada à dor declarada, cliente opera a tela.</td></tr>
+        <tr><td><strong>Proposta e preço</strong></td><td>Fala o preço com insegurança, sem âncora, esconde a implantação.</td><td>Apresenta os 3 planos mas sem recomendação clara.</td><td>Ancora no Avançado, recomenda o plano que serve, posiciona implantação como investimento único e usa valor/dia.</td></tr>
+        <tr><td><strong>Objeções</strong></td><td>Discute, cede desconto inexistente ou congela.</td><td>Responde certo mas pula o "validar" ou não avança.</td><td>3 tempos completos (valida → reenquadra → avança) em todas as objeções do cenário, com naturalidade.</td></tr>
+        <tr><td><strong>Fechamento</strong></td><td>Não pede o fechamento; sai sem próximo passo.</td><td>Pede o fechamento mas aceita "vou pensar" sem isolar o motivo.</td><td>Lê sinais de compra, aplica a técnica adequada e sai com contrato ou próximo passo com data e hora.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. MÓDULO 5 ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">6 · Módulo 5 — Ferramentas e processo (4h)</span>
+    <h2>CRM, agenda, materiais oficiais e as regras do jogo</h2>
+    <p class="sub">A Vante fornece ao representante: CRM, treinamento comercial, apresentações, landing pages, vídeos, scripts de vendas, suporte técnico e acompanhamento comercial. Este módulo coloca tudo isso na mão do consultor.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>CRM e registro (1h30)</h3>
+        <ul>
+          <li>Configurar o funil com os 7 estágios + Perdido/Nutrição (ver <a style="color:var(--lightblue);" href="06-metodologia-vendas.html">Metodologia, seção 9</a>).</li>
+          <li>Cadastrar os 30 comércios do mapa de território no estágio "Mapeado".</li>
+          <li>Regras de higiene: todo card com próximo passo datado; registro no mesmo dia; motivo de perda obrigatório.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Agenda semanal do consultor (45min)</h3>
+        <ul>
+          <li>Blocos fixos: manhãs de campo (visitas), início de tarde para follow-ups e CRM, sexta para revisão semanal de 30 minutos.</li>
+          <li>Meta de atividade sugerida para iniciante: 20 visitas/semana, 10 diagnósticos completos, 5 demos.</li>
+          <li>Prospecção contínua: técnicas e scripts no <a style="color:var(--lightblue);" href="05-playbook-prospeccao.html">Playbook de Prospecção</a>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Comissionamento (1h)</h3>
+        <ul>
+          <li>Comissão progressiva sobre a taxa de implantação, por volume no mês: 1–5 clientes → 20%; 6–10 → 25%; 11–20 → 30%; 21–35 → 35%; acima de 35 → 40%.</li>
+          <li>Bônus por performance acumulada: 10 contratos → R$ 500; 20 → R$ 1.500; 35 → R$ 3.000; 50 → R$ 5.000.</li>
+          <li>Regra de pagamento: contrato assinado + implantação concluída + pagamento confirmado. Cancelou antes da implantação, não há comissão.</li>
+          <li>Simulações completas, tabela por plano e plano de carreira: <a style="color:var(--lightblue);" href="08-comissionamento-carreira.html">08 · Comissionamento &amp; Carreira</a>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Código de conduta do Consultor Vante (45min)</h3>
+        <ul>
+          <li>Nunca inventar promoção, desconto ou condição fora da tabela oficial.</li>
+          <li>Nunca prometer funcionalidade que não existe nem citar métricas/cases não oficiais — exemplos sempre fictícios e genéricos ("Distribuidora do João").</li>
+          <li>Falar de ganhos sempre "conforme tabela oficial", nunca "renda garantida".</li>
+          <li>Recomendar o plano que serve ao cliente, não o que paga mais comissão.</li>
+          <li>Implantação e suporte são da Vante — o consultor não "vira suporte", mas acompanha a implantação até a conclusão (é dela que nasce a comissão).</li>
+          <li>Representar a marca: pontualidade, respeito ao tempo do comerciante, follow-up cumprido na data prometida.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. MÓDULO 6 ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">7 · Módulo 6 — Campo assistido (semanas 3 e 4)</span>
+    <h2>3 visitas sombra + 5 visitas invertidas</h2>
+    <p class="sub">O campo assistido transforma teoria em reflexo. Nas <strong>visitas sombra</strong>, o líder conduz e o consultor observa com checklist; nas <strong>visitas invertidas</strong>, o consultor conduz e o líder observa em silêncio — só intervém se a venda estiver em risco real.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="pill">Semana 3 · Visitas 1–3</span>
+        <h3>Sombra — o consultor observa</h3>
+        <p>Checklist do observador (preencher durante a visita):</p>
+        <ul>
+          <li>Como o líder abriu? Que dado da pesquisa de 5 minutos ele usou?</li>
+          <li>Quais perguntas SPIN foram feitas e em que ordem? Qual fez o dono "abrir o jogo"?</li>
+          <li>Quantas telas na demo? Quais frases-ponte?</li>
+          <li>Que objeções surgiram e como foram tratadas nos 3 tempos?</li>
+          <li>Como terminou: fechamento, agendamento ou cadência? Ficou data marcada?</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill">Semanas 3–4 · Visitas 4–8</span>
+        <h3>Invertidas — o consultor conduz</h3>
+        <p>Checklist do líder (uma linha por item, nota 1-5 usando a rubrica do Módulo 4):</p>
+        <ul>
+          <li>Preparação: fez a pesquisa de 5 minutos? Definiu objetivo da visita no CRM?</li>
+          <li>Abertura, diagnóstico, demo, proposta, objeções, fechamento — nota por competência.</li>
+          <li>Usou apenas fatos e preços oficiais? (eliminatório se inventar)</li>
+          <li>Registrou a visita no CRM no mesmo dia, com próximo passo datado?</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill green">Após cada visita</span>
+        <h3>Debriefing estruturado — 15 minutos, ainda no carro</h3>
+        <ul>
+          <li><strong>1. Autoavaliação primeiro:</strong> "o que você faria igual? o que faria diferente?" — o consultor fala antes do líder.</li>
+          <li><strong>2. Dois pontos fortes</strong> observados pelo líder, com exemplo concreto da visita.</li>
+          <li><strong>3. Um ponto de melhoria</strong> — só um — com ensaio imediato: repetir a fala do jeito certo, ali mesmo.</li>
+          <li><strong>4. Próximo passo do cliente</strong> confirmado e registrado no CRM antes de ligar o carro.</li>
+          <li><strong>5. Meta da próxima visita:</strong> o ponto de melhoria vira o foco da visita seguinte.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. CERTIFICAÇÃO ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">8 · Certificação</span>
+    <h2>Consultor Vante Certificado — critérios objetivos, sem exceção</h2>
+    <p class="sub">A certificação não é cerimônia, é régua. Os 4 critérios são objetivos e todos obrigatórios:</p>
+
+    <div class="grid">
+      <div class="card"><span class="pill">Critério 1</span><h3>Quiz de produto ≥ 8/10</h3><p>O quiz do Módulo 1, sem consulta. Abaixo de 8, reestuda e refaz em outra data (nova versão das questões).</p></div>
+      <div class="card"><span class="pill">Critério 2</span><h3>Role-play ≥ 4/5 em todas as competências</h3><p>Nos 6 cenários do Módulo 4, nota mínima 4 nas 6 competências da rubrica (abertura, diagnóstico, demo, proposta, objeções, fechamento).</p></div>
+      <div class="card"><span class="pill">Critério 3</span><h3>10 diagnósticos reais registrados no CRM</h3><p>Dez comércios reais com SPIN aplicado e registrado (dores, nº de usuários, próximo passo datado) durante o campo assistido.</p></div>
+      <div class="card"><span class="pill">Critério 4</span><h3>1 venda acompanhada</h3><p>Um fechamento real conduzido pelo consultor com o líder presente — do diagnóstico ao contrato assinado com implantação agendada junto à Vante.</p></div>
+    </div>
+
+    <div class="selo">
+      <div class="badge"><div class="st">✦</div><span>Consultor Vante Certificado</span></div>
+      <div>
+        <h3>O selo "Consultor Vante Certificado"</h3>
+        <p>Quem cumpre os 4 critérios recebe o selo — que autoriza atuação solo no território, uso dos materiais oficiais em nome da Vante e entrada no plano de carreira (ver <a style="color:var(--lightblue);" href="08-comissionamento-carreira.html">08 · Comissionamento &amp; Carreira</a>). Quem não cumpre algum critério não é reprovado: recebe um plano de reforço de 1 semana no critério pendente e nova banca. A régua não desce — o suporte sobe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 9. EDUCAÇÃO CONTINUADA ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">9 · Educação continuada</span>
+    <h2>Certificação é o começo — o ritmo semanal mantém a lâmina afiada</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Ritual semanal — 1h, dia e hora fixos</h3>
+        <ul>
+          <li><strong>Pipeline review (30min):</strong> cada consultor apresenta seu funil de trás para frente (fechados aguardando implantação primeiro); 3 perguntas por card: próximo passo? tem data? o que impede?</li>
+          <li><strong>Role-play da objeção da semana (25min):</strong> a objeção que mais travou negociações na semana (vinda dos motivos de perda do CRM) é encenada por uma dupla e refinada pelo grupo nos 3 tempos.</li>
+          <li><strong>Fecho (5min):</strong> um compromisso individual por consultor para a semana seguinte.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Biblioteca de gravações</h3>
+        <ul>
+          <li>Todos os role-plays da formação e dos rituais semanais gravados e organizados por tema (abertura, SPIN, demo, cada objeção, fechamento).</li>
+          <li>Os melhores pitches de 1 minuto e as melhores respostas a objeções viram "padrão-ouro" da equipe.</li>
+          <li>Novo consultor assiste à biblioteca no estudo dirigido — a formação melhora a cada turma.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Reciclagem trimestral — meio dia</h3>
+        <ul>
+          <li>Atualização de produto: novas funcionalidades entregues pelo ciclo Discovery → Dev → Test → Delivery da Vante.</li>
+          <li>Reaplicação do quiz de produto (versão atualizada) — manter ≥ 8/10 é condição para manter o selo.</li>
+          <li>1 role-play com o cenário mais difícil do trimestre (construído a partir das perdas reais do CRM).</li>
+          <li>Revisão dos números do trimestre por consultor: funil, conversão por etapa, faixa de comissão atingida.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10. KIT DO TREINADOR ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">10 · Kit do treinador</span>
+    <h2>Agenda dos encontros, checklists e dinâmicas — pronto para rodar</h2>
+
+    <h3 style="margin-top:24px;">Cronograma dia a dia — 10 dias úteis (semanas 1 e 2)</h3>
+    <div class="table-scroll">
+      <table>
+        <tr><th>Dia</th><th>Manhã (2h)</th><th>Tarde (2h)</th><th>Estudo dirigido (após o encontro)</th></tr>
+        <tr><td><strong>D1</strong></td><td>Boas-vindas + dinâmica de abertura + Módulo 1: a empresa e as 4 dores</td><td>Módulo 1: funcionalidades e IA (demo guiada da plataforma)</td><td>Ler BRIEF mestre + 01-analise-estrategica.html</td></tr>
+        <tr><td><strong>D2</strong></td><td>Módulo 1: planos, preços e implantação (tabela de cor)</td><td>Exercício "Vante em 1 minuto" (gravação e votação)</td><td>Assistir 02-apresentacao-produto.html e ensaiar o pitch</td></tr>
+        <tr><td><strong>D3</strong></td><td><strong>Quiz de produto (10 questões)</strong> + correção em grupo</td><td>Módulo 2: os 6 nichos, dor dominante e abordagem</td><td>Iniciar mapa do território (30 comércios)</td></tr>
+        <tr><td><strong>D4</strong></td><td>Módulo 2: exercício de território em campo (observação de comércios reais)</td><td>Consolidação do mapa + hipóteses de dor por comércio</td><td>Finalizar lista dos 30 comércios</td></tr>
+        <tr><td><strong>D5</strong></td><td>Módulo 3: os 5 passos + SPIN (Situação e Problema)</td><td>Módulo 3: SPIN (Implicação e Necessidade) + treino em duplas</td><td>Decorar as 17 perguntas; ler 06-metodologia-vendas.html seções 1–3</td></tr>
+        <tr><td><strong>D6</strong></td><td>Módulo 3: demo de 15 minutos + regra das 4 telas (prática na plataforma)</td><td>Módulo 3: ancoragem de preço + argumento fiscal + implantação como investimento</td><td>Ler seções 4–5 da metodologia; decorar tabela de planos</td></tr>
+        <tr><td><strong>D7</strong></td><td>Módulo 3: as 12 objeções em 3 tempos (leitura dramatizada)</td><td>Módulo 4: role-plays 1 e 2 (Seu Geraldo, Dona Márcia) + rubrica</td><td>Ensaiar objeções 1–6 em voz alta</td></tr>
+        <tr><td><strong>D8</strong></td><td>Módulo 4: role-plays 3 e 4 (Rodrigo, Fernanda)</td><td>Módulo 4: role-play 5 (Tiago) + feedback coletivo</td><td>Ensaiar objeções 7–12; rever gravações próprias</td></tr>
+        <tr><td><strong>D9</strong></td><td>Módulo 4: role-play 6 (Seu Antônio) + repescagem de cenários com nota &lt; 4</td><td>Módulo 5: CRM na prática — funil, cadastro dos 30 mapeados, higiene</td><td>Completar cadastro no CRM</td></tr>
+        <tr><td><strong>D10</strong></td><td>Módulo 5: agenda semanal, comissionamento (com 08-comissionamento-carreira.html) e código de conduta</td><td>Fechamento da fase intensiva: plano individual de campo + agendamento das visitas sombra</td><td>Preparar pesquisa de 5 minutos dos 3 primeiros alvos da semana 3</td></tr>
+      </table>
+    </div>
+
+    <h3 style="margin-top:44px;">Checklists imprimíveis</h3>
+    <div class="script">
+      <header><h4>Checklist · Antes de cada encontro (treinador)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">[ ] Sala/link de vídeo testado, plataforma Vante logada e com dados de demonstração prontos
+[ ] Materiais do dia impressos ou compartilhados (tabela de planos, rubrica, cenário de role-play)
+[ ] Gravador/celular pronto para registrar role-plays (com consentimento da turma)
+[ ] Lista de presença e quadro de notas da rubrica atualizados
+[ ] Dever de casa do dia anterior conferido (quem não fez, conversa individual no intervalo)
+[ ] Dinâmica de abertura escolhida e cronometrada (máx. 10 minutos)</div>
+    </div>
+    <div class="script">
+      <header><h4>Checklist · Visita de campo assistido (líder)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">ANTES: [ ] Consultor mostrou a pesquisa de 5 minutos  [ ] Objetivo da visita definido e anotado no CRM  [ ] Combinado quem conduz (sombra ou invertida)  [ ] Materiais: tablet/celular com plataforma, tabela de preços, contrato
+DURANTE (invertida — nota 1-5): [ ] Abertura e rapport __  [ ] Diagnóstico SPIN __  [ ] Demonstração (máx. 4 telas, produtos reais) __  [ ] Proposta e preço (âncora no Avançado) __  [ ] Objeções em 3 tempos __  [ ] Fechamento com data __  [ ] Usou somente fatos e preços oficiais? (sim/não — "não" é eliminatório)
+DEPOIS: [ ] Debriefing de 15 min feito (autoavaliação → 2 fortes → 1 melhoria com ensaio)  [ ] CRM atualizado no mesmo dia  [ ] Próximo passo do cliente com data  [ ] Foco da próxima visita definido</div>
+    </div>
+
+    <h3 style="margin-top:40px;">Dinâmicas de abertura (10 minutos, uma por dia)</h3>
+    <div class="grid">
+      <div class="card"><h3>"O balcão"</h3><p>Cada participante conta, em 1 minuto, a pior experiência que já viveu como <em>cliente</em> de um pequeno comércio (pedido perdido, entrega errada, falta de produto). O treinador conecta cada história a uma das 4 dores que a Vante resolve. Ideal para D1 e para reciclagens.</p></div>
+      <div class="card"><h3>"Objeção na roda"</h3><p>Em círculo, o treinador joga uma objeção ("tá caro!") para um participante, que responde só o 1º tempo (validar) e joga para o colega seguinte fazer o 2º (reenquadrar), e o próximo o 3º (avançar). Errou o tempo, recomeça. Aquece para os dias de role-play (D7–D9).</p></div>
+      <div class="card"><h3>"Pitch relâmpago"</h3><p>Dois participantes sorteados abrem o dia repetindo o pitch de 1 minuto — sem aviso prévio. A turma dá 1 ponto forte e 1 ajuste cada. Mantém o pitch afiado do D2 até a certificação; nas semanas de campo, vira "objeção relâmpago" no ritual semanal.</p></div>
+    </div>
+
+    <div class="callout green"><b>Regra do treinador:</b> tudo o que o consultor apresenta ao mercado sai dos materiais oficiais deste pacote — fatos, preços e números do BRIEF mestre, sem improviso. Se a resposta não está no material, o treinador anota, confirma com a Vante pelo (31) 2181-1044 ou contato@vantetecnologia.com.br, e devolve à turma no dia seguinte.</div>
+  </div>
+</section>
+
+<footer>
+  <span class="star">✦</span> <strong>Vante Gestão Tecnologia</strong> · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br
+</footer>
+
+<script>
+function copiar(btn){
+  var body = btn.closest('.script').querySelector('.body');
+  var texto = body.innerText;
+  function ok(){ btn.textContent='Copiado!'; btn.classList.add('ok');
+    setTimeout(function(){ btn.textContent='Copiar'; btn.classList.remove('ok'); },2000); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(texto).then(ok).catch(function(){ fallback(); });
+  } else { fallback(); }
+  function fallback(){
+    var ta=document.createElement('textarea'); ta.value=texto; document.body.appendChild(ta);
+    ta.select(); try{ document.execCommand('copy'); ok(); }catch(e){} document.body.removeChild(ta);
+  }
+}
+</script>
+</body>
+</html>

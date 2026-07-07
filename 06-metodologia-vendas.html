@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vante · Metodologia de Vendas — Método Vante em 5 Passos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563EB; --navy:#0E2A5C; --deep:#0A1B3A; --lightblue:#7FA8F0;
+    --bg:#EEF2F8; --white:#FFFFFF; --text:#1E293B; --gray:#64748B;
+    --success:#16A34A; --warn:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-weight:400;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{color:var(--blue);text-decoration:none;}
+  h1,h2,h3,h4{color:var(--navy);line-height:1.25;}
+  h1{font-weight:800;} h2{font-weight:800;font-size:1.7rem;} h3{font-weight:700;font-size:1.15rem;} h4{font-weight:700;font-size:1rem;}
+  .backlink{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:.9rem;color:#DCE7FB;background:rgba(127,168,240,.18);border:1px solid rgba(127,168,240,.4);padding:7px 16px;border-radius:999px;}
+  .backlink:hover{background:rgba(127,168,240,.3);}
+
+  .hero{background:linear-gradient(135deg,var(--deep) 0%,var(--navy) 60%,#123a7d 100%);color:#fff;padding:40px 0 72px;position:relative;overflow:hidden;}
+  .hero::after{content:"✦";position:absolute;right:-30px;top:-60px;font-size:320px;color:rgba(127,168,240,.08);line-height:1;}
+  .wordmark{font-weight:700;font-size:1.5rem;letter-spacing:.5px;display:inline-flex;align-items:center;gap:10px;color:#fff;}
+  .wordmark .star{color:var(--lightblue);font-size:1.1rem;}
+  .hero-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .hero h1{color:#fff;font-size:clamp(1.7rem,4vw,2.6rem);margin:26px 0 14px;max-width:840px;}
+  .hero p.lead{color:#CBD8F2;font-size:1.05rem;max-width:780px;}
+  .chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{background:rgba(127,168,240,.18);border:1px solid rgba(127,168,240,.4);color:#DCE7FB;font-size:.8rem;font-weight:500;padding:6px 15px;border-radius:999px;}
+
+  section{padding:60px 0;}
+  .section-navy{background:var(--navy);color:#fff;}
+  .section-navy h2,.section-navy h3,.section-navy h4{color:#fff;}
+  .kicker{color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:.76rem;display:block;margin-bottom:8px;}
+  .section-navy .kicker{color:var(--lightblue);}
+  .sub{color:var(--gray);max-width:800px;margin-top:10px;}
+  .section-navy .sub{color:#B9C8E8;}
+  .section-navy p{color:#C7D4EE;}
+
+  /* Diagrama 5 passos */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:40px;align-items:stretch;}
+  .step{background:var(--white);border-radius:20px;padding:24px 16px 20px;box-shadow:0 6px 24px rgba(14,42,92,.09);text-align:center;position:relative;margin:0 9px;border-top:5px solid var(--blue);display:flex;flex-direction:column;gap:8px;}
+  .step .n{width:44px;height:44px;border-radius:14px;background:var(--blue);color:#fff;font-weight:800;font-size:1.15rem;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 8px 18px rgba(37,99,235,.35);}
+  .step h3{font-size:.98rem;letter-spacing:.5px;}
+  .step p{font-size:.78rem;color:var(--gray);}
+  .step::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:var(--blue);font-weight:800;font-size:1.3rem;z-index:2;}
+  .step:last-child::after{display:none;}
+  @media(max-width:860px){
+    .steps{grid-template-columns:1fr;gap:18px;}
+    .step{margin:0;}
+    .step::after{content:"↓";right:auto;left:50%;top:auto;bottom:-20px;transform:translateX(-50%);}
+  }
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:34px;}
+  .card{background:var(--white);border-radius:20px;padding:26px 24px;box-shadow:0 6px 24px rgba(14,42,92,.08);border:1px solid rgba(37,99,235,.06);}
+  .card h3{margin-bottom:10px;}
+  .card h4{margin:14px 0 6px;}
+  .card p{font-size:.92rem;color:var(--gray);}
+  .card ul{list-style:none;margin-top:8px;}
+  .card li,.check li{padding-left:26px;position:relative;font-size:.92rem;margin-bottom:7px;}
+  .card li::before,.check li::before{content:"✔";position:absolute;left:0;color:var(--blue);font-size:.85rem;font-weight:700;}
+  .section-navy .card{background:rgba(255,255,255,.06);border:1px solid rgba(127,168,240,.25);box-shadow:none;}
+  .section-navy .card p,.section-navy .card li{color:#C7D4EE;}
+  .section-navy .card li::before{color:var(--lightblue);}
+
+  .check{list-style:none;margin-top:14px;}
+
+  .pill{display:inline-block;background:#E4ECFB;color:var(--blue);font-size:.76rem;font-weight:600;padding:5px 14px;border-radius:999px;margin-bottom:10px;}
+  .pill.green{background:#E3F4E8;color:var(--success);}
+  .pill.amber{background:#FBEEDC;color:var(--warn);}
+
+  /* Blocos de script */
+  .script{background:var(--white);border-radius:18px;border:1px solid rgba(37,99,235,.14);box-shadow:0 6px 20px rgba(14,42,92,.07);margin-top:20px;overflow:hidden;}
+  .script header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:#E4ECFB;}
+  .script header h4{font-size:.92rem;color:var(--navy);}
+  .script .body{padding:18px 20px;font-size:.93rem;white-space:pre-line;color:var(--text);}
+  .copy-btn{background:var(--blue);color:#fff;border:none;font-family:inherit;font-weight:600;font-size:.78rem;padding:8px 16px;border-radius:999px;cursor:pointer;flex-shrink:0;transition:background .15s;}
+  .copy-btn:hover{background:#1d4fc4;}
+  .copy-btn.ok{background:var(--success);}
+  .section-navy .script{background:rgba(255,255,255,.05);border-color:rgba(127,168,240,.3);}
+  .section-navy .script header{background:rgba(127,168,240,.15);}
+  .section-navy .script header h4{color:#fff;}
+  .section-navy .script .body{color:#DCE7FB;}
+
+  /* Perguntas SPIN */
+  .qlist{counter-reset:q;list-style:none;margin-top:14px;}
+  .qlist li{counter-increment:q;position:relative;padding:12px 16px 12px 52px;background:var(--white);border-radius:14px;margin-bottom:10px;font-size:.93rem;box-shadow:0 4px 14px rgba(14,42,92,.06);}
+  .qlist li::before{content:counter(q);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:9px;background:var(--blue);color:#fff;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;}
+  .qlist li em{display:block;color:var(--gray);font-style:normal;font-size:.8rem;margin-top:3px;}
+
+  /* Objeções — details */
+  details.obj{background:var(--white);border-radius:16px;box-shadow:0 5px 18px rgba(14,42,92,.07);margin-top:14px;border:1px solid rgba(37,99,235,.08);overflow:hidden;}
+  details.obj summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--navy);font-size:.98rem;list-style:none;display:flex;align-items:center;gap:12px;}
+  details.obj summary::-webkit-details-marker{display:none;}
+  details.obj summary::before{content:"＋";color:var(--blue);font-weight:800;font-size:1.1rem;width:28px;height:28px;border-radius:9px;background:#E4ECFB;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  details.obj[open] summary::before{content:"－";}
+  details.obj .inner{padding:0 20px 20px;}
+  .tempo{border-left:4px solid var(--blue);background:var(--bg);border-radius:0 12px 12px 0;padding:12px 16px;margin-top:10px;font-size:.9rem;}
+  .tempo b{color:var(--navy);display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+  .tempo.t2{border-color:var(--warn);}
+  .tempo.t3{border-color:var(--success);}
+
+  .table-scroll{overflow-x:auto;margin-top:24px;border-radius:16px;box-shadow:0 6px 20px rgba(14,42,92,.07);}
+  table{width:100%;border-collapse:collapse;background:var(--white);min-width:620px;font-size:.88rem;}
+  th{background:var(--navy);color:#fff;font-weight:600;text-align:left;padding:12px 16px;white-space:nowrap;}
+  td{padding:11px 16px;border-top:1px solid #E5EAF3;vertical-align:top;}
+  tr:nth-child(even) td{background:#F7F9FD;}
+
+  .callout{background:#FBEEDC;border-left:5px solid var(--warn);border-radius:0 14px 14px 0;padding:16px 20px;margin-top:22px;font-size:.92rem;}
+  .callout b{color:var(--warn);}
+  .callout.blue{background:#E4ECFB;border-color:var(--blue);}
+  .callout.blue b{color:var(--blue);}
+  .callout.green{background:#E3F4E8;border-color:var(--success);}
+  .callout.green b{color:var(--success);}
+
+  footer{background:var(--deep);color:#9FB2D6;text-align:center;padding:28px 24px;font-size:.85rem;}
+  footer .star{color:var(--lightblue);}
+  @media(max-width:640px){section{padding:44px 0;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="wordmark"><span class="star">✦</span>Vante</div>
+      <a class="backlink" href="index.html">← Voltar ao índice</a>
+    </div>
+    <h1>Metodologia de Vendas — o Método Vante em 5 Passos</h1>
+    <p class="lead">O "como vender", passo a passo: venda consultiva em ciclo curto para o pequeno varejo. Da preparação de 5 minutos ao fechamento com implantação agendada — com todos os roteiros, perguntas e respostas a objeções escritos por extenso, prontos para usar amanhã de manhã.</p>
+    <div class="chips">
+      <span class="chip">Venda consultiva · ciclo curto</span>
+      <span class="chip">SPIN adaptado ao pequeno varejo</span>
+      <span class="chip">12 objeções respondidas</span>
+      <span class="chip">Follow-up D+1 · D+3 · D+7 · D+15</span>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 1. VISÃO GERAL ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">1 · Visão geral do método</span>
+    <h2>Venda consultiva em ciclo curto: 1 a 2 visitas, decisão do dono na hora</h2>
+    <p class="sub">O comprador da Vante é o dono do comércio — a mesma pessoa que atende no balcão, controla o caixa e decide. Isso permite um ciclo curto: uma boa visita pode fechar no mesmo dia. Mas ciclo curto não é venda empurrada: o método é <strong>consultivo</strong> — primeiro entendemos a dor (atendimento disperso, estoque sem controle, entregas desorganizadas, finanças no escuro), depois mostramos só o que resolve essa dor. Batizamos o processo de <strong>Método Vante em 5 passos</strong>:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>ABRIR</h3>
+        <p>Rapport + contexto. Ganhar 15 minutos de atenção genuína do dono, no horário certo do comércio.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>DIAGNOSTICAR</h3>
+        <p>Dores. Perguntas SPIN adaptadas ao pequeno varejo até o dono verbalizar o problema com números.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>DEMONSTRAR</h3>
+        <p>Solução personalizada. Demo com os produtos reais do cliente, no máximo 4 telas, sempre ligadas à dor declarada.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h3>RESOLVER</h3>
+        <p>Objeções + proposta. Ancorar no Avançado, recomendar o plano que serve, responder em 3 tempos.</p>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <h3>FECHAR</h3>
+        <p>Compromisso + implantação agendada. O "sim" só vale com data de implantação marcada com a Vante.</p>
+      </div>
+    </div>
+
+    <div class="callout blue"><b>Regra de ouro do método:</b> nunca pule o passo 2. Demonstração sem diagnóstico vira "tour de sistema" — e tour de sistema não vende. Cada tela mostrada deve responder a uma dor que o <em>próprio dono</em> acabou de declarar.</div>
+  </div>
+</section>
+
+<!-- ========== 2. PREPARAÇÃO ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">2 · Preparação</span>
+    <h2>A pesquisa de 5 minutos que dobra sua taxa de conversão</h2>
+    <p class="sub">Antes de qualquer visita, invista 5 minutos. Chegar sabendo o nome do comércio, o que ele vende e como ele atende muda completamente a abertura da conversa.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Pesquisa de 5 minutos</h3>
+        <ul>
+          <li><strong>Instagram do comércio</strong>: o que ele posta? Divulga pedidos por WhatsApp? Tem link de pedido? Anota 2 produtos que ele destaca — você vai usá-los na demo.</li>
+          <li><strong>Google Maps</strong>: avaliações recentes (elogios e reclamações — reclamação de demora na entrega é ouro para o passo 2), horário de funcionamento, fotos do ponto.</li>
+          <li><strong>Movimento</strong>: observe o comércio por 2 minutos antes de entrar. Quantas pessoas atendendo? Caderno no balcão? Motoboy esperando? Tudo isso vira pergunta de Situação.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Objetivo da visita — defina antes de entrar</h3>
+        <ul>
+          <li><strong>Visita fria (1ª vez)</strong>: objetivo mínimo = diagnóstico completo + agendar demo. Objetivo ideal = demo na hora, se o dono tiver tempo.</li>
+          <li><strong>Visita agendada (demo)</strong>: objetivo mínimo = proposta apresentada. Objetivo ideal = contrato assinado + implantação agendada.</li>
+          <li>Anote o objetivo no CRM <em>antes</em> da visita. Depois, registre se atingiu — é isso que a revisão semanal vai olhar.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Materiais na mochila</h3>
+        <ul>
+          <li>Celular ou tablet com acesso à plataforma Vante (demo ao vivo) e internet móvel testada.</li>
+          <li>Tabela de planos e preços (Básico R$ 99 · Intermediário R$ 199 · Avançado R$ 399) e da implantação (R$ 300 / R$ 580 / R$ 990).</li>
+          <li>Apresentação oficial da Vante e cartão/contato com o WhatsApp (31) 2181-1044.</li>
+          <li>Contrato ou link de contratação pronto para preencher na hora.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px;">Passo 1 — ABRIR: os primeiros 90 segundos</h3>
+    <p class="sub">Escolha o horário de menor movimento do comércio (você viu no Maps e na observação). Nada de vender na porta: o objetivo da abertura é ganhar o direito de fazer perguntas.</p>
+
+    <div class="script">
+      <header><h4>Script de abertura — visita fria</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">"Bom dia! Meu nome é [SEU NOME], sou consultor da Vante, uma plataforma de gestão feita para comércios como o seu — a gente nasceu dentro de uma distribuidora de gás, então conhecemos a rotina do balcão na prática. Eu passei aqui porque vi no Instagram de vocês que os pedidos chegam bastante pelo WhatsApp, certo? Eu não vim tomar seu tempo com apresentação: queria só fazer três ou quatro perguntas rápidas sobre como funciona a operação aqui, e se fizer sentido eu te mostro uma coisa em 15 minutos. Se não fizer, eu vou embora e você ganha um contato útil. Pode ser? Qual o melhor horário — agora ou eu volto no fim da tarde?"</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. DIAGNOSTICAR ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">3 · Diagnosticar</span>
+    <h2>Roteiro SPIN adaptado ao pequeno varejo — as perguntas por extenso</h2>
+    <p class="sub">SPIN = Situação → Problema → Implicação → Necessidade. A sequência leva o dono a <strong>verbalizar</strong> a dor e o custo dela, antes de você mostrar qualquer tela. Anote as respostas: elas definem quais das 4 telas você vai mostrar na demo e qual plano recomendar.</p>
+
+    <h3 style="margin-top:36px;">S — Situação <span class="pill">4 perguntas · mapear a operação</span></h3>
+    <ol class="qlist">
+      <li>"Me conta como funciona um dia normal aqui: por onde chegam os pedidos — telefone, WhatsApp, balcão? Quem anota e onde anota?"<em>Objetivo: mapear os canais e descobrir se há caderno/planilha.</em></li>
+      <li>"Quantas pessoas trabalham na operação hoje, contando você? Quem cuida do caixa e quem cuida do estoque?"<em>Objetivo: dimensionar usuários (define Básico 1, Intermediário 2, Avançado 3).</em></li>
+      <li>"Como você controla o estoque hoje? Tem alguma contagem, planilha, ou é 'no olho'?"<em>Objetivo: abrir a porta para a dor de estoque.</em></li>
+      <li>"E o financeiro — você fecha o caixa todo dia? Onde ficam os números: caderno, planilha, aplicativo?"<em>Objetivo: abrir a porta para a dor financeira.</em></li>
+    </ol>
+
+    <h3 style="margin-top:36px;">P — Problema <span class="pill">6 perguntas · uma âncora para cada dor</span></h3>
+    <ol class="qlist">
+      <li>"Já aconteceu de um pedido chegar pelo WhatsApp e passar despercebido, ou de anotar errado e mandar o produto errado?"<em>Dor 1 — atendimento &amp; pedidos dispersos.</em></li>
+      <li>"Quando um cliente antigo liga, você tem o histórico do que ele costuma pedir, ou depende da memória de quem atende?"<em>Dor 1 — sem histórico do cliente.</em></li>
+      <li>"Já perdeu venda por falta de produto na prateleira? E o contrário — produto parado ocupando espaço e dinheiro?"<em>Dor 2 — gestão de estoque.</em></li>
+      <li>"Como você monta a rota das entregas hoje? Já teve dia em que o entregador cruzou a cidade duas vezes para o mesmo bairro?"<em>Dor 3 — roteirização &amp; logística.</em></li>
+      <li>"No fim do mês, você sabe dizer quanto sobrou de verdade — ou o número só aparece quando o dinheiro falta?"<em>Dor 4 — gestão financeira, decisão no escuro.</em></li>
+      <li>"Dos produtos que você vende, você sabe qual dá mais lucro e qual só dá trabalho?"<em>Dor 4 — sem visão de rentabilidade.</em></li>
+    </ol>
+
+    <h3 style="margin-top:36px;">I — Implicação <span class="pill amber">4 perguntas · o custo da dor</span></h3>
+    <ol class="qlist">
+      <li>"Se você perde, digamos, dois pedidos por semana no WhatsApp, quanto isso dá por mês em dinheiro? E por ano?"<em>Transforma pedido perdido em número.</em></li>
+      <li>"Quanto tempo por dia você ou alguém da equipe gasta passando anotação de caderno para planilha, conferindo caixa, refazendo conta?"<em>Transforma retrabalho em horas — horas do dono são as mais caras do negócio.</em></li>
+      <li>"Quando falta produto e o cliente compra no concorrente, ele volta — ou você acabou de pagar para o vizinho ganhar um cliente fiel?"<em>Transforma ruptura de estoque em perda de cliente.</em></li>
+      <li>"Tomar decisão sem saber o lucro real já te fez segurar uma compra boa ou fazer uma compra ruim? Quanto custou?"<em>Transforma "decisão no escuro" em prejuízo concreto.</em></li>
+    </ol>
+
+    <h3 style="margin-top:36px;">N — Necessidade <span class="pill green">3 perguntas · o dono verbaliza o valor</span></h3>
+    <ol class="qlist">
+      <li>"Se todo pedido — WhatsApp, telefone, balcão — caísse num lugar só, com histórico de cada cliente, o que isso mudaria no seu dia?"</li>
+      <li>"E se você abrisse o celular e visse, em tempo real, o caixa do dia, o estoque e o que está a caminho de acabar — isso te ajudaria a decidir compra e preço?"</li>
+      <li>"Se isso tudo custasse menos por dia do que um lanche, e a implantação e o treinamento fossem feitos por uma equipe especializada, faria sentido você ver funcionando com os seus próprios produtos, agora, em 15 minutos?"</li>
+    </ol>
+
+    <div class="grid" style="margin-top:44px;">
+      <div class="card">
+        <span class="pill">Versão · Distribuidora de gás</span>
+        <h3>Adaptações para o nicho de origem</h3>
+        <ul>
+          <li><strong>Situação:</strong> "Quantas entregas de botijão você faz por dia? Quantos entregadores e veículos? Como o cliente pede — liga, manda WhatsApp?"</li>
+          <li><strong>Problema:</strong> "Você sabe, sem contar agora, quantos botijões cheios e vazios tem no depósito? Já vendeu sem ter, ou deixou capital parado em casco?"</li>
+          <li><strong>Problema:</strong> "Nos horários de pico — fim de tarde, domingo — o telefone e o WhatsApp dão conta, ou pedido fica sem resposta?"</li>
+          <li><strong>Implicação:</strong> "Gás é recompra: se o cliente liga, não é atendido e pede no concorrente, você perdeu o cliente por anos, não uma venda. Quantos são por mês?"</li>
+          <li><strong>Necessidade:</strong> "E se uma IA atendesse o WhatsApp, criasse o pedido sozinha e o sistema montasse a rota das entregas — quanto tempo e combustível você economizaria por semana?" <em style="font-style:normal;color:var(--gray);font-size:.8rem;">(gancho direto para a IA GásLink, do plano Avançado)</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill">Versão · Salão de beleza / Barbearia</span>
+        <h3>Adaptações para serviços com agenda</h3>
+        <ul>
+          <li><strong>Situação:</strong> "Como o cliente marca horário — WhatsApp, telefone, direto com o profissional? Quem controla a agenda e o caixa?"</li>
+          <li><strong>Problema:</strong> "Já teve horário furado que ficou vazio, ou dois clientes marcados no mesmo horário porque a mensagem se perdeu?"</li>
+          <li><strong>Problema:</strong> "Os produtos que você usa e revende — tintura, pomada, cosmético — você sabe quando estão acabando, ou descobre na hora do serviço?"</li>
+          <li><strong>Implicação:</strong> "Uma cadeira parada uma hora por dia, no seu ticket médio, dá quanto por mês? E o acerto de comissão dos profissionais, quanto tempo consome — e quanta discussão gera quando a anotação não bate?"</li>
+          <li><strong>Necessidade:</strong> "Se as mensagens do WhatsApp fossem classificadas e viraram atendimento organizado, e o acerto de cada profissional saísse do sistema sem discussão, o que isso mudaria no seu fim de mês?"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. DEMONSTRAR ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">4 · Demonstrar</span>
+    <h2>Demo personalizada: no máximo 4 telas, sempre ligadas à dor declarada</h2>
+    <p class="sub">A demo não é um tour pela plataforma — é a <strong>prova</strong> de que a dor que o dono acabou de descrever tem solução. Duas regras inegociáveis:</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Regra 1 — Use 2-3 produtos reais do cliente</h3>
+        <p>Antes de projetar a tela, cadastre (ou peça para o dono cadastrar com você) 2 ou 3 produtos que ele realmente vende — o botijão P13, a cerveja mais vendida, o corte + barba. Ver o <em>próprio produto</em> dentro do sistema transforma "um software" em "o meu sistema". Você pegou esses produtos na pesquisa de 5 minutos (Instagram) ou na conversa.</p>
+      </div>
+      <div class="card">
+        <h3>Regra 2 — Máximo 4 telas, cada uma amarrada a uma dor</h3>
+        <p>Só mostre a tela se o dono declarou a dor correspondente no diagnóstico. Sequência padrão: <strong>WhatsApp → pedido → entrega → caixa</strong>. Se ele não tem entrega (salão), troque a tela de logística pela de acompanhamento/atendimento. Tela extra é ruído: quem mostra tudo não mostra nada.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px;">Roteiro de demo — 15 minutos cronometrados</h3>
+    <div class="table-scroll">
+      <table>
+        <tr><th>Tempo</th><th>Tela</th><th>O que fazer</th><th>Frase-ponte (liga a tela à dor)</th></tr>
+        <tr><td><strong>0–2 min</strong></td><td>Nenhuma</td><td>Recapitular o diagnóstico em voz alta: "Você me disse que perde pedido no WhatsApp, que o estoque é no olho e que o caixa fecha tarde. Vou te mostrar exatamente esses três pontos."</td><td>"Combinado? Se em 15 minutos isso não resolver o que você me contou, a decisão é fácil."</td></tr>
+        <tr><td><strong>2–6 min</strong></td><td>1 · WhatsApp → pedido</td><td>Simular uma mensagem de cliente chegando; mostrar a classificação automática (pedido/dúvida/reclamação) e a criação automática do pedido com resumo e nota, usando um produto real do cliente.</td><td>"Aquele pedido que se perdia na conversa? Ele agora vira pedido sozinho, com histórico do cliente."</td></tr>
+        <tr><td><strong>6–9 min</strong></td><td>2 · Pedido → estoque</td><td>Mostrar o pedido criado baixando o saldo de estoque do produto real; mostrar o saldo atualizado e o controle de pagamentos do pedido.</td><td>"Vendeu, baixou. Você sabe o que tem na prateleira sem contar nada — acabou o 'no olho'."</td></tr>
+        <tr><td><strong>9–12 min</strong></td><td>3 · Entrega / logística</td><td>Mostrar a entrega vinculada ao pedido: motorista, veículo, notificação por WhatsApp para o entregador. No Avançado, citar roteirização inteligente e monitoramento em tempo real.</td><td>"O entregador recebe tudo no WhatsApp dele e você vê onde a entrega está — sem telefone tocando."</td></tr>
+        <tr><td><strong>12–14 min</strong></td><td>4 · Caixa / financeiro</td><td>Mostrar o caixa do dia com a venda registrada e o dashboard de vendas; no Intermediário+, contas a pagar/receber.</td><td>"O caixa fecha sozinho enquanto você vende. O número que hoje aparece 'quando falta' está aqui, ao vivo."</td></tr>
+        <tr><td><strong>14–15 min</strong></td><td>Nenhuma</td><td>Fechar a demo com pergunta de avanço e ir para a proposta.</td><td>"Das quatro coisas que você viu, qual resolveria o problema maior aí no dia a dia?"</td></tr>
+      </table>
+    </div>
+
+    <div class="callout blue" style="background:rgba(127,168,240,.15);border-color:var(--lightblue);"><b style="color:var(--lightblue);">Dica de condução:</b> deixe o dono mexer. Peça para ele mesmo digitar a mensagem "quero um botijão" no WhatsApp de teste. Quem opera, compra. E lembre: a implantação completa (cadastros → atendimento → estoque e logística → financeiro) é feita pela equipe da Vante — a demo é vitrine, não treinamento.</div>
+  </div>
+</section>
+
+<!-- ========== 5. PROPOSTA E PREÇO ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">5 · Proposta e ancoragem de preço</span>
+    <h2>Ancorar no Avançado, recomendar o que serve</h2>
+    <p class="sub">Apresente sempre os 3 planos, <strong>começando pelo Avançado</strong> (âncora) e terminando com a sua recomendação honesta baseada no diagnóstico. Recomendar plano maior do que o cliente precisa gera cancelamento; recomendar o certo gera indicação.</p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>Plano</th><th>Mensalidade</th><th>Usuários inclusos</th><th>Usuário adicional</th><th>Implantação (única)</th><th>Custo por dia*</th></tr>
+        <tr><td><strong>Avançado</strong> — app de delivery próprio, monitoramento em tempo real, ponto via app, crédito de clientes, notificações automáticas ao cliente, <strong>IA GásLink</strong></td><td><strong>R$ 399/mês</strong></td><td>3</td><td>R$ 99/usuário</td><td>R$ 990</td><td>≈ R$ 13,30</td></tr>
+        <tr><td><strong>Intermediário</strong> — tudo do Básico + fiscal (NFe/NFCe), logística, RH, financeiro avançado (contas a pagar/receber), WhatsApp para entregadores, relatórios financeiros e de estoque</td><td><strong>R$ 199/mês</strong></td><td>2</td><td>R$ 99/usuário</td><td>R$ 580</td><td>≈ R$ 6,63</td></tr>
+        <tr><td><strong>Básico</strong> — dashboard de vendas, catálogo, estoque e saldo, pedidos e pagamentos, caixa e acerto de venda, relatórios de vendas</td><td><strong>R$ 99/mês</strong></td><td>1</td><td>R$ 99/usuário</td><td>R$ 300</td><td>≈ R$ 3,30</td></tr>
+      </table>
+    </div>
+    <p class="sub" style="font-size:.82rem;">*Custo por dia calculado sobre mês de 30 dias, apenas como comparação de valor. A implantação (opcional) inclui migração de dados + treinamento completo pela equipe da Vante.</p>
+
+    <div class="grid" style="margin-top:36px;">
+      <div class="card">
+        <h3>Como apresentar (ordem e fala)</h3>
+        <ul>
+          <li><strong>1º — Âncora no Avançado:</strong> "O plano completo, com IA no WhatsApp, app de delivery e monitoramento em tempo real, é o Avançado: R$ 399 por mês, com 3 usuários."</li>
+          <li><strong>2º — Recomendação honesta:</strong> "Agora, pelo que você me contou — 2 pessoas na operação, precisa de nota fiscal e entrega — o plano que te serve hoje é o Intermediário, R$ 199."</li>
+          <li><strong>3º — Piso de comparação:</strong> "E se quiser começar só organizando pedido, estoque e caixa, o Básico sai por R$ 99 — uns R$ 3,30 por dia."</li>
+          <li><strong>Sempre feche com uma pergunta:</strong> "Faz mais sentido começar completo ou começar pelo que resolve a dor de hoje e crescer depois?"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Implantação = investimento único, não custo</h3>
+        <p>Nunca "esconda" a taxa de implantação — posicione:</p>
+        <ul>
+          <li>"A implantação é <strong>uma vez só</strong>: R$ 580 no Intermediário. Nela a equipe da Vante migra seus dados, cadastra produtos e clientes e treina a sua equipe, em 4 etapas — cadastros, atendimento, estoque e logística, financeiro."</li>
+          <li>"É o que garante que o sistema não vira um app abandonado: você não fica sozinho aprendendo."</li>
+          <li>Compare: "É menos do que muitos comércios gastam num mês de retrabalho e pedido perdido — e você paga uma única vez."</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Quando usar o argumento fiscal</h3>
+        <p>O módulo fiscal (NFe/NFCe) entra <strong>do Intermediário para cima</strong>. Use quando:</p>
+        <ul>
+          <li>O cliente emite nota hoje em sistema separado ou no site da prefeitura/Sefaz ("você paga duas ferramentas e digita tudo duas vezes").</li>
+          <li>O cliente vende para empresas/condomínios que exigem nota — comum em distribuidoras de gás.</li>
+          <li>O cliente está crescendo e quer regularizar a operação: "emitir a nota do mesmo lugar de onde sai o pedido elimina o retrabalho e o erro de digitação".</li>
+          <li><strong>Não use</strong> como ameaça fiscal ("o fisco vai te pegar") — tom Vante é consultivo, não amedrontador.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="script">
+      <header><h4>Script — apresentação da proposta (após a demo)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">"Deixa eu te mostrar o investimento. A plataforma tem três planos. O completo é o Avançado: R$ 399 por mês, 3 usuários, com o app de delivery próprio, monitoramento das entregas em tempo real e a Inteligência Artificial GásLink atendendo seu WhatsApp — é o plano de quem quer automatizar de ponta a ponta.
+
+Agora, pelo que você me contou aqui — [retomar as dores declaradas] — o plano que eu recomendo para você começar é o [PLANO], por R$ [VALOR] por mês. Isso dá cerca de R$ [VALOR/30] por dia para resolver [dor principal declarada].
+
+A implantação é um investimento único de R$ [300/580/990]: a equipe da Vante migra seus dados, faz os cadastros e treina você e sua equipe — você não fica sozinho em nenhum momento. Depois disso, suporte é com a gente.
+
+Fechando hoje, eu já agendo a sua implantação com a equipe da Vante para os próximos dias. Podemos preencher juntos agora?"</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. OBJEÇÕES ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">6 · Resolver objeções</span>
+    <h2>As 12 objeções mais prováveis — resposta em 3 tempos</h2>
+    <p class="sub">Toda resposta segue o mesmo formato: <strong>Validar</strong> (mostrar que entendeu, sem discutir) → <strong>Reenquadrar</strong> (mudar o ângulo com fato ou pergunta) → <strong>Avançar</strong> (propor o próximo passo concreto). Nunca discuta com a objeção; conduza através dela. Clique em cada card para abrir a resposta completa.</p>
+
+    <details class="obj"><summary>1 · "Tá caro."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Entendo — todo real que sai do caixa de um comércio precisa se justificar, e você faz bem em questionar."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Deixa eu colocar na sua régua: o Básico custa R$ 99 por mês — uns R$ 3,30 por dia. Você me disse que perde uns dois pedidos por semana no WhatsApp. Se um pedido médio seu vale mais que isso, o sistema se paga com <em>meio pedido recuperado por mês</em>. Caro é continuar perdendo venda sem saber quantas."</div>
+      <div class="tempo t3"><b>Avançar</b>"Que tal fazermos assim: começamos no plano que resolve a sua dor de hoje, e se em três meses você não enxergar esse retorno no seu próprio caixa, você cancela. Fechamos no [PLANO]?"</div>
+    </div></details>
+
+    <details class="obj"><summary>2 · "Já tenho um sistema."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Ótimo — isso mostra que você já entendeu que não dá para tocar o comércio no caderno. Me conta: o que ele resolve bem para você?"</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"E ele atende o seu WhatsApp e cria o pedido sozinho? Monta a rota das entregas? Te mostra o caixa e o lucro em tempo real no celular? A maioria dos sistemas é um caixa eletrônico melhorado — a Vante integra vendas, estoque, financeiro, atendimento e IA num lugar só. A pergunta não é 'ter sistema', é 'quanto do seu dia ainda é manual mesmo tendo sistema'."</div>
+      <div class="tempo t3"><b>Avançar</b>"Me dá 15 minutos para eu te mostrar só o que o seu atual não faz — se ele já fizer tudo, eu mesmo te digo para ficar onde está. Posso?"</div>
+    </div></details>
+
+    <details class="obj"><summary>3 · "Planilha me atende."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Respeito muito quem mantém planilha em dia — é sinal de disciplina, e é mais do que a maioria faz."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Só que a planilha depende de alguém digitar depois que a venda aconteceu — ela conta a história, não opera o negócio. Ela não atende WhatsApp, não baixa estoque na hora da venda, não avisa que o produto vai acabar, não fecha o caixa sozinha. Quanto tempo por semana você gasta alimentando essa planilha? Esse tempo é seu, e é o mais caro do comércio."</div>
+      <div class="tempo t3"><b>Avançar</b>"Na implantação, a equipe da Vante migra a sua planilha para dentro do sistema — você não perde nada do histórico. Quer ver como ela fica lá dentro?"</div>
+    </div></details>
+
+    <details class="obj"><summary>4 · "Não tenho tempo de implantar."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Faz sentido — você já tem um dia inteiro de operação, a última coisa que precisa é de um projeto de tecnologia nas costas."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Por isso a implantação não é sua: é da equipe da Vante. São 4 etapas conduzidas por eles — cadastros, atendimento com treinamento completo, estoque e logística, e financeiro. Você participa de sessões marcadas, no seu horário, e a plataforma tem módulo educacional. Quem não tem tempo é justamente quem mais precisa: o sistema existe para devolver as horas que hoje somem em anotação e conferência."</div>
+      <div class="tempo t3"><b>Avançar</b>"Vamos escolher juntos, agora, o dia e horário mais tranquilos da sua semana para a primeira etapa? Você não precisa preparar nada."</div>
+    </div></details>
+
+    <details class="obj"><summary>5 · "Meu funcionário não vai aprender."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Entendo a preocupação — sistema que a equipe não usa é dinheiro jogado fora, você tem razão."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Dois pontos: primeiro, o treinamento da sua equipe faz parte da implantação e é conduzido pela Vante, com módulo educacional dentro da plataforma para consultar depois. Segundo: seu funcionário já usa WhatsApp o dia inteiro, certo? Boa parte da operação acontece exatamente ali, no aplicativo que ele já domina — a IA classifica a mensagem e cria o pedido. A tela do sistema é mais simples que o aplicativo do banco dele."</div>
+      <div class="tempo t3"><b>Avançar</b>"Traz ele aqui um minuto? Deixa eu mostrar a tela de pedido para ele agora — você vai ver a reação."</div>
+    </div></details>
+
+    <details class="obj"><summary>6 · "Vou pensar."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Claro, decisão de negócio se pensa mesmo — não quero que você assine nada sem convicção."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Só me ajuda a te ajudar: quando alguém me diz 'vou pensar', normalmente é uma de três coisas — o preço, uma dúvida sobre o sistema, ou não é o momento. Qual das três é a sua? Porque se for dúvida, eu resolvo agora em dois minutos; se for preço, a gente olha o plano certo; se for momento, eu quero entender o que muda no mês que vem."</div>
+      <div class="tempo t3"><b>Avançar</b>"Vamos fazer o seguinte: eu te mando hoje o resumo do que conversamos com a proposta, e deixo agendado um retorno de 10 minutos na quinta às 9h. Se até lá surgir qualquer dúvida, você me chama no WhatsApp. Fechado quinta às 9h?"</div>
+    </div></details>
+
+    <details class="obj"><summary>7 · "Preciso falar com meu sócio."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Perfeito — decisão de sócio se toma junto, e eu prefiro que seja assim."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Só que tem um detalhe: você viu a demonstração com os seus produtos, sentiu a dor na pele — o seu sócio vai receber um resumo de segunda mão. A chance de ele dizer 'não' para algo que não viu é enorme, e aí quem perde é a operação de vocês. O melhor argumento não sou eu, é o sistema rodando."</div>
+      <div class="tempo t3"><b>Avançar</b>"Quando vocês dois estão aqui juntos? Eu volto e faço a mesma demonstração de 15 minutos para ele — pode ser na quarta de manhã ou quinta no fim da tarde?"</div>
+    </div></details>
+
+    <details class="obj"><summary>8 · "O mercado tá ruim."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Entendo — quando a venda aperta, todo gasto novo parece pesar em dobro."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Mas pensa comigo: em mercado apertado, quem sobrevive é quem não desperdiça. Pedido perdido, produto parado no estoque, entrega com rota ruim queimando combustível, compra feita sem saber o lucro — em época boa isso passa despercebido; em época ruim, isso decide quem fecha as portas. O sistema existe exatamente para estancar esses vazamentos, e o plano de entrada custa R$ 3,30 por dia."</div>
+      <div class="tempo t3"><b>Avançar</b>"Vamos começar pelo plano mais enxuto, focado só em estancar a sua maior perda de hoje, que você me disse que é [dor declarada]? Se o cenário melhorar, você evolui de plano."</div>
+    </div></details>
+
+    <details class="obj"><summary>9 · "Não confio em sistema / em nuvem."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Justo — seus dados são o seu negócio, e desconfiar antes de entregar é sinal de dono cuidadoso."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Deixa eu te dar dois pontos. Primeiro: hoje seus dados estão num caderno que pode molhar, numa planilha num computador que pode queimar — na nuvem eles ficam guardados fora do seu balcão, protegidos e acessíveis só por você. Segundo: a Vante não é uma startup de laboratório — são mais de 15 anos de desenvolvimento de software e mais de 30 anos de varejo, e a plataforma nasceu dentro de uma operação real de distribuição de gás. Quem construiu isso vive de comércio como você."</div>
+      <div class="tempo t3"><b>Avançar</b>"Que tal conhecer a plataforma por dentro agora, comigo do lado, e me perguntar tudo o que te deixa desconfiado? Pergunta difícil é a que eu mais gosto."</div>
+    </div></details>
+
+    <details class="obj"><summary>10 · "E se a internet cair?"</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Boa pergunta — e é a pergunta certa de quem depende da operação rodando."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Primeiro: se a sua internet cair hoje, o seu WhatsApp — por onde chegam seus pedidos — já para do mesmo jeito; o risco já existe e o sistema não o aumenta. Segundo: a plataforma roda na nuvem, então o problema nunca é 'o sistema caiu junto com o seu modem' — de qualquer celular com 4G você continua vendo pedidos, estoque e caixa. O plano B cabe no seu bolso: o seu próprio telefone."</div>
+      <div class="tempo t3"><b>Avançar</b>"Quer testar? Desliga o Wi-Fi do seu celular agora e abre comigo pelo 4G — 10 segundos e você tira a prova."</div>
+    </div></details>
+
+    <details class="obj"><summary>11 · "IA não funciona pra mim / meu cliente gosta de gente."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Concordo com uma parte: cliente de bairro gosta de ser reconhecido, e nenhuma tecnologia deve tirar isso."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"A IA da Vante não substitui o seu atendimento — ela tira o serviço burocrático dele. Ela classifica a mensagem, cria o pedido, gera o resumo e a nota; quem conversa com o cliente continua sendo você, só que sem digitar pedido no meio da conversa. E nos horários em que você não dá conta — pico, domingo, depois do fechamento — ela garante que o pedido não se perde. O cliente prefere 'gente' a robô, mas prefere robô a ficar sem resposta."</div>
+      <div class="tempo t3"><b>Avançar</b>"Manda uma mensagem de pedido no nosso WhatsApp de demonstração agora, como se você fosse seu próprio cliente. Vê o que acontece e me diz se o seu cliente reclamaria disso."</div>
+    </div></details>
+
+    <details class="obj"><summary>12 · "Me liga mês que vem."</summary><div class="inner">
+      <div class="tempo"><b>Validar</b>"Posso ligar, sem problema — agenda de dono de comércio é corrida mesmo."</div>
+      <div class="tempo t2"><b>Reenquadrar</b>"Só me responde uma coisa antes: o que muda no mês que vem? Porque os pedidos que se perdem no WhatsApp e o caixa que fecha tarde não vão tirar férias — cada mês adiado é um mês pagando essas perdas. Se a questão é fôlego financeiro agora, me fala abertamente que a gente olha o plano de R$ 99. Se é prioridade, me diz o que está na frente, que talvez o sistema até ajude nisso."</div>
+      <div class="tempo t3"><b>Avançar</b>"Fechamos assim: eu te ligo dia [DATA], às [HORA] — anota aí que eu também anoto. E até lá eu te mando por WhatsApp um material de 2 minutos sobre [dor declarada], para a conversa do mês que vem já começar adiantada. Combinado?"</div>
+    </div></details>
+  </div>
+</section>
+
+<!-- ========== 7. FECHAR ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">7 · Fechar</span>
+    <h2>Cinco técnicas de fechamento — e o que fazer no minuto seguinte ao "sim"</h2>
+    <p class="sub">Fechar não é pressionar: é ajudar quem já se convenceu a decidir. Use a técnica que combinar com o momento — e nunca invente promoção, desconto-relâmpago ou "condição só hoje" que não exista oficialmente.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="pill">Técnica 1</span>
+        <h3>Resumo de valor</h3>
+        <p>Recapitule as dores declaradas e as soluções vistas, na fala do próprio cliente: "Você me disse que perde pedido no WhatsApp, que o estoque é no olho e que o caixa fecha tarde. Você viu o pedido se criando sozinho, o estoque baixando e o caixa ao vivo. Ficou faltando alguma coisa para a gente começar?"</p>
+      </div>
+      <div class="card">
+        <span class="pill">Técnica 2</span>
+        <h3>Alternativa de plano</h3>
+        <p>Troque "vai fechar?" por uma escolha entre dois sins: "Faz mais sentido começar pelo Intermediário, com nota fiscal e logística, ou pelo Básico e evoluir em três meses?" Qualquer resposta avança a venda.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Técnica 3</span>
+        <h3>Agenda de implantação</h3>
+        <p>Feche pelo calendário, não pelo contrato: "A equipe da Vante consegue iniciar sua implantação já na próxima semana. Para você, é melhor a etapa de cadastros começar na terça ou na quinta?" Data marcada torna a decisão concreta.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Técnica 4</span>
+        <h3>Urgência honesta</h3>
+        <p>Urgência verdadeira vem do custo de esperar, nunca de promoção inventada: "Cada mês sem sistema são mais pedidos perdidos e mais horas de retrabalho — isso tem preço, e é maior que a mensalidade. Começando hoje, em poucas semanas a implantação está concluída e rodando." <strong>Proibido:</strong> "desconto só hoje", "última vaga", "promoção que acaba amanhã".</p>
+      </div>
+      <div class="card">
+        <span class="pill">Técnica 5</span>
+        <h3>Fechamento por etapas</h3>
+        <p>Colecione pequenos sins ao longo da conversa: "Essa tela de pedidos resolve o seu WhatsApp?" — "Resolve." — "O caixa ao vivo te ajuda?" — "Ajuda." No fim: "Então o que estamos decidindo é só o plano e a data. Certo?" O sim final vira consequência.</p>
+      </div>
+      <div class="card">
+        <span class="pill green">Radar</span>
+        <h3>Sinais de compra — pare de vender e feche</h3>
+        <ul>
+          <li>Pergunta sobre prazo: "quanto tempo demora para implantar?"</li>
+          <li>Pergunta operacional: "meu funcionário vai ter acesso?", "funciona no meu celular?"</li>
+          <li>Fala no futuro possessivo: "aí quando <em>o meu</em> pedido cair..."</li>
+          <li>Chama o funcionário ou o sócio para ver a tela.</li>
+          <li>Pergunta forma de pagamento ou detalhe do contrato.</li>
+          <li>Ao notar qualquer um: pare a apresentação e aplique a Técnica 3 (agenda de implantação).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:44px;">Depois do "sim" — checklist imediato (faça na frente do cliente)</h3>
+    <ul class="check">
+      <li><strong>Contrato na hora:</strong> preencha e colha a assinatura (ou envie o link de contratação) antes de sair do comércio. "Sim" sem assinatura é um "vou pensar" disfarçado.</li>
+      <li><strong>Implantação agendada com a Vante:</strong> marque, junto com o cliente, a data da etapa 1 (cadastros). Lembre que quem executa é a equipe da Vante — mas quem agenda e confirma é você.</li>
+      <li><strong>Expectativa de prazos:</strong> explique as 4 etapas (cadastros → atendimento e treinamento → estoque e logística → financeiro) e quem são os contatos: suporte e implantação = Vante, pelo (31) 2181-1044; relacionamento comercial = você.</li>
+      <li><strong>Registro no CRM:</strong> mova o card para "Fechado — aguardando implantação" com data agendada, plano, valor e observações da negociação.</li>
+      <li><strong>Mensagem de boas-vindas em até 2 horas:</strong> resumo do que foi contratado, data da implantação e seu contato direto.</li>
+    </ul>
+
+    <div class="callout"><b>Regra de ouro da comissão:</b> a comissão só é paga após <strong>contrato assinado + implantação concluída + pagamento confirmado</strong> — e cancelamento antes da implantação não gera comissão. Tradução prática: <strong>acompanhar a implantação é parte da venda</strong>. Ligue para o cliente na véspera de cada etapa, confirme presença, resolva ruído com a Vante. Venda "abandonada" entre a assinatura e a implantação é comissão jogada fora.</div>
+  </div>
+</section>
+
+<!-- ========== 8. FOLLOW-UP ========== -->
+<section class="section-navy">
+  <div class="wrap">
+    <span class="kicker">8 · Follow-up</span>
+    <h2>Cadência pós-visita para quem não fechou</h2>
+    <p class="sub">Boa parte dos fechamentos acontece depois da visita — mas só para quem faz follow-up com método. A cadência padrão tem 4 toques em 15 dias. Personalize os campos entre colchetes e envie pelo WhatsApp; registre cada toque no CRM.</p>
+
+    <div class="script">
+      <header><h4>D+1 · Resumo da conversa (um dia após a visita)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">"Olá, [NOME]! Aqui é o [SEU NOME], da Vante — obrigado pela conversa de ontem no(a) [NOME DO COMÉRCIO]. Resumindo o que vimos: você me contou que hoje [DOR PRINCIPAL DECLARADA], e na demonstração o que mais te interessou foi [PONTO DE MAIOR INTERESSE]. A proposta ficou assim: plano [PLANO], R$ [VALOR]/mês, com implantação única de R$ [VALOR] feita pela equipe da Vante (migração de dados + treinamento). Qualquer dúvida que apareça, me chama por aqui. Posso te ligar na [DIA] às [HORA] para a gente definir?"</div>
+    </div>
+
+    <div class="script">
+      <header><h4>D+3 · Conteúdo de valor (três dias depois)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">"[NOME], lembrei de você hoje. Você comentou que [DOR DECLARADA — ex.: o controle de estoque é 'no olho'], e eu separei um material rápido da Vante mostrando exatamente como o controle de estoque e saldo funciona na prática: [LINK/MATERIAL OFICIAL]. Leva 2 minutos. Vale especialmente a parte em que a venda baixa o estoque sozinha — era esse o ponto que te tomava tempo, certo?"</div>
+    </div>
+
+    <div class="script">
+      <header><h4>D+7 · Exemplo prático (uma semana depois)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">"[NOME], um exemplo do tipo de situação que a plataforma resolve — imagina a 'Distribuidora do João': pedidos chegando por telefone, WhatsApp e balcão, cada um anotado num canto, entregador cruzando a cidade duas vezes. Com a plataforma, todo pedido cai num lugar só com histórico do cliente, o estoque baixa sozinho e a entrega sai organizada. É exatamente o cenário que você me descreveu no(a) [NOME DO COMÉRCIO]. Que tal a gente retomar de onde paramos? Tenho horário na [DIA] às [HORA] ou [DIA] às [HORA] — qual fica melhor?"</div>
+    </div>
+
+    <div class="script">
+      <header><h4>D+15 · Última tentativa com CTA claro (quinze dias depois)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
+      <div class="body">"[NOME], vou ser direto e respeitar o seu tempo: esse é meu último contato sobre a proposta, prometo. 😊 Ela segue de pé — plano [PLANO], R$ [VALOR]/mês, implantação única de R$ [VALOR] com migração de dados e treinamento pela equipe da Vante. Se fizer sentido, me responde com um 'vamos' que eu já agendo sua implantação para esta semana. Se não for o momento, me responde 'depois' que eu guardo seu contato e volto só daqui a alguns meses — sem insistência. Combinado? Fico no aguardo do seu 'vamos' ou 'depois'."</div>
+    </div>
+
+    <div class="callout blue" style="background:rgba(127,168,240,.15);border-color:var(--lightblue);"><b style="color:var(--lightblue);">Disciplina de cadência:</b> quem respondeu "depois" no D+15 vai para o estágio "Nutrição" no CRM, com tarefa agendada para 90 dias. Quem não respondeu nada é marcado como "Perdido — sem resposta" com o motivo registrado. Pipeline limpo é pipeline que fecha.</div>
+  </div>
+</section>
+
+<!-- ========== 9. CRM ========== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">9 · CRM e disciplina</span>
+    <h2>O funil no CRM: o que não está registrado não aconteceu</h2>
+    <p class="sub">O CRM é fornecido pela Vante como ferramenta oficial do representante. Ele só funciona com disciplina: registre no mesmo dia, com o próximo passo sempre agendado.</p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>Estágio</th><th>Critério de entrada</th><th>Próximo passo obrigatório</th></tr>
+        <tr><td><strong>1 · Mapeado</strong></td><td>Comércio identificado no território (nome, nicho, endereço, contato).</td><td>Pesquisa de 5 minutos + tentativa de visita agendada na semana.</td></tr>
+        <tr><td><strong>2 · Contatado</strong></td><td>Houve conversa real com o dono (visita, telefone ou WhatsApp).</td><td>Diagnóstico completo ou agendamento de demo com data.</td></tr>
+        <tr><td><strong>3 · Diagnosticado</strong></td><td>SPIN aplicado: dores e nº de usuários anotados no card.</td><td>Demo realizada ou agendada com data e hora.</td></tr>
+        <tr><td><strong>4 · Demo + Proposta</strong></td><td>Demo feita e proposta apresentada (plano + valores registrados).</td><td>Fechamento ou entrada na cadência D+1/D+3/D+7/D+15.</td></tr>
+        <tr><td><strong>5 · Negociação</strong></td><td>Cliente engajado na cadência, objeções mapeadas no card.</td><td>Cada toque da cadência registrado com resultado.</td></tr>
+        <tr><td><strong>6 · Fechado — aguardando implantação</strong></td><td>Contrato assinado + implantação agendada com a Vante.</td><td>Acompanhar cada etapa da implantação até a conclusão e o pagamento (é aqui que a comissão nasce).</td></tr>
+        <tr><td><strong>7 · Implantado / Ativo</strong></td><td>Implantação concluída + pagamento confirmado (comissão liberada).</td><td>Contato de satisfação em 30 dias + pedido de indicação.</td></tr>
+        <tr><td><strong>Perdido / Nutrição</strong></td><td>Recusa registrada com motivo, ou "depois" no D+15.</td><td>Nutrição: tarefa de recontato em 90 dias. Perdido: motivo obrigatório.</td></tr>
+      </table>
+    </div>
+
+    <div class="grid" style="margin-top:36px;">
+      <div class="card">
+        <h3>Higiene de pipeline — regras mínimas</h3>
+        <ul>
+          <li>Todo card tem <strong>próximo passo com data</strong>. Card sem tarefa futura é card morto.</li>
+          <li>Registro no mesmo dia da atividade — memória de véspera inventa detalhes.</li>
+          <li>Card parado há mais de 15 dias sem interação: ou reativa com um toque da cadência, ou move para Perdido/Nutrição com motivo.</li>
+          <li>Motivo de perda é obrigatório e padronizado (preço, timing, concorrente, sem dor, sem resposta) — é ele que alimenta o treinamento de objeções.</li>
+          <li>Valores sempre preenchidos: plano proposto, mensalidade e implantação. Sem isso, não existe previsão de comissão.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Revisão semanal — 30 minutos, mesma hora, toda semana</h3>
+        <ul>
+          <li><strong>Funil de trás para frente:</strong> comece pelos cards em "Fechado — aguardando implantação" (sua comissão está ali) e venha até "Mapeado".</li>
+          <li><strong>3 perguntas por card ativo:</strong> qual o próximo passo? tem data? o que me impede de avançar?</li>
+          <li><strong>Números da semana:</strong> visitas feitas, diagnósticos completos, demos, propostas, fechamentos — compare com a meta pessoal.</li>
+          <li><strong>1 objeção da semana:</strong> escolha a que mais travou e ensaie a resposta em 3 tempos (validar → reenquadrar → avançar) para a semana seguinte.</li>
+          <li>Abasteça o topo: garanta no mínimo o dobro de "Mapeados" novos em relação aos fechamentos que você quer no mês.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout green"><b>Fecho do método:</b> o Método Vante em 5 passos só vira resultado com volume + disciplina. Prospecção constante (ver <a href="05-playbook-prospeccao.html">Playbook de Prospecção</a>), diagnóstico bem feito, demo enxuta, objeção respondida com respeito e follow-up pontual — e a comissão progressiva (20% a 40% sobre a implantação, conforme tabela oficial em <a href="08-comissionamento-carreira.html">Comissionamento &amp; Carreira</a>) faz o resto.</div>
+  </div>
+</section>
+
+<footer>
+  <span class="star">✦</span> <strong>Vante Gestão Tecnologia</strong> · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br
+</footer>
+
+<script>
+function copiar(btn){
+  var body = btn.closest('.script').querySelector('.body');
+  var texto = body.innerText;
+  function ok(){ btn.textContent='Copiado!'; btn.classList.add('ok');
+    setTimeout(function(){ btn.textContent='Copiar'; btn.classList.remove('ok'); },2000); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(texto).then(ok).catch(function(){ fallback(); });
+  } else { fallback(); }
+  function fallback(){
+    var ta=document.createElement('textarea'); ta.value=texto; document.body.appendChild(ta);
+    ta.select(); try{ document.execCommand('copy'); ok(); }catch(e){} document.body.removeChild(ta);
+  }
+}
+</script>
+</body>
+</html>

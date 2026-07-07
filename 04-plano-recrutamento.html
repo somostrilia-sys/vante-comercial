@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Formação de Equipe e Contratação — Vante Gestão Tecnologia</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563EB; --navy:#0E2A5C; --deep:#0A1B3A; --lightblue:#7FA8F0;
+    --bg:#EEF2F8; --white:#FFFFFF; --text:#1E293B; --gray:#64748B;
+    --success:#16A34A; --warn:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+  a{color:var(--blue);}
+  .container{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .topbar{background:var(--white);border-bottom:1px solid #DBE4F0;padding:14px 0;position:sticky;top:0;z-index:50;}
+  .topbar .container{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .wordmark{font-weight:700;font-size:1.3rem;color:var(--navy);text-decoration:none;}
+  .wordmark .star{color:var(--blue);}
+  .back{font-weight:600;text-decoration:none;font-size:.95rem;}
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--deep) 100%);color:var(--white);padding:64px 0 56px;}
+  .hero h1{font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.2;margin-bottom:14px;}
+  .hero p{color:#C7D6F5;max-width:760px;font-size:1.05rem;}
+  .chip{display:inline-block;background:rgba(127,168,240,.18);color:var(--lightblue);border:1px solid rgba(127,168,240,.4);border-radius:999px;padding:5px 16px;font-size:.8rem;font-weight:600;letter-spacing:.5px;margin-bottom:18px;text-transform:uppercase;}
+  section{padding:52px 0;}
+  section.alt{background:var(--white);}
+  section.dark{background:var(--navy);color:var(--white);}
+  section.dark h2{color:var(--white);}
+  section.dark p{color:#C7D6F5;}
+  h2{font-weight:800;font-size:clamp(1.35rem,3vw,1.8rem);color:var(--navy);margin-bottom:8px;}
+  .kicker{color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:.78rem;margin-bottom:6px;}
+  .lead{color:var(--gray);max-width:800px;margin-bottom:28px;}
+  section.dark .lead{color:#A9BEE8;}
+  h3{font-weight:700;font-size:1.12rem;color:var(--navy);margin:26px 0 10px;}
+  section.dark h3{color:var(--lightblue);}
+  h4{font-weight:600;font-size:1rem;margin:16px 0 6px;color:var(--text);}
+  .grid{display:grid;gap:20px;}
+  .grid.c2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+  .grid.c3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+  .card{background:var(--white);border-radius:20px;padding:26px;box-shadow:0 6px 24px rgba(14,42,92,.07);}
+  section.alt .card{border:1px solid #E4EAF5;box-shadow:0 4px 16px rgba(14,42,92,.05);}
+  section.dark .card{background:rgba(255,255,255,.06);border:1px solid rgba(127,168,240,.25);box-shadow:none;color:#E3EBFA;}
+  section.dark .card h3,section.dark .card h4{color:var(--white);margin-top:0;}
+  .card h3{margin-top:0;}
+  ul.check{list-style:none;}
+  ul.check li{padding-left:30px;position:relative;margin-bottom:9px;}
+  ul.check li::before{content:"✔";position:absolute;left:0;top:0;color:var(--blue);font-weight:700;}
+  section.dark ul.check li::before{color:var(--lightblue);}
+  ul.x li::before{content:"✕";color:var(--warn);}
+  ul.plain{list-style:none;}
+  ul.plain li{padding-left:22px;position:relative;margin-bottom:8px;}
+  ul.plain li::before{content:"✦";position:absolute;left:0;color:var(--blue);font-size:.8rem;top:3px;}
+  ol.num{margin-left:22px;}
+  ol.num li{margin-bottom:9px;}
+  .tablewrap{overflow-x:auto;border-radius:16px;box-shadow:0 4px 16px rgba(14,42,92,.06);margin:18px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--white);min-width:640px;font-size:.92rem;}
+  th{background:var(--navy);color:var(--white);text-align:left;padding:13px 16px;font-weight:600;white-space:nowrap;}
+  td{padding:12px 16px;border-bottom:1px solid #E8EEF7;vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  tr:nth-child(even) td{background:#F7FAFE;}
+  .pill{display:inline-block;background:#E3ECFC;color:var(--blue);border-radius:999px;padding:3px 12px;font-size:.78rem;font-weight:600;white-space:nowrap;}
+  .pill.green{background:#E4F5EA;color:var(--success);}
+  .pill.amber{background:#FCF0E0;color:var(--warn);}
+  .callout{border-left:5px solid var(--blue);background:var(--white);border-radius:0 16px 16px 0;padding:18px 22px;margin:20px 0;box-shadow:0 4px 14px rgba(14,42,92,.05);}
+  .callout.warn{border-left-color:var(--warn);background:#FFF9F0;}
+  .callout.success{border-left-color:var(--success);background:#F2FBF5;}
+  .callout strong{color:var(--navy);}
+  .scriptbox{position:relative;background:var(--deep);color:#DBE7FB;border-radius:16px;padding:22px 22px 20px;margin:16px 0;font-size:.93rem;}
+  .scriptbox pre{white-space:pre-wrap;word-wrap:break-word;font-family:inherit;line-height:1.7;}
+  .scriptbox .label{display:inline-block;background:rgba(127,168,240,.2);color:var(--lightblue);border-radius:999px;padding:2px 12px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+  .copybtn{position:absolute;top:14px;right:14px;background:var(--blue);color:#fff;border:none;border-radius:999px;padding:7px 16px;font-family:inherit;font-weight:600;font-size:.8rem;cursor:pointer;transition:background .2s;}
+  .copybtn:hover{background:#1D4FD7;}
+  .copybtn.copied{background:var(--success);}
+  .funnel{display:flex;flex-direction:column;gap:10px;margin:20px 0;}
+  .fstep{display:flex;align-items:center;gap:16px;background:var(--white);border-radius:16px;padding:14px 20px;box-shadow:0 4px 14px rgba(14,42,92,.06);flex-wrap:wrap;}
+  .fstep .n{background:var(--blue);color:#fff;font-weight:700;border-radius:12px;min-width:44px;text-align:center;padding:8px 4px;font-size:.95rem;}
+  .fstep .body{flex:1;min-width:200px;}
+  .fstep .body strong{color:var(--navy);}
+  .fstep .rate{color:var(--gray);font-size:.85rem;}
+  .statrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:24px 0;}
+  .stat{background:var(--white);border-radius:18px;padding:20px;text-align:center;box-shadow:0 4px 16px rgba(14,42,92,.06);}
+  .stat .big{font-size:1.7rem;font-weight:800;color:var(--blue);}
+  .stat .lbl{font-size:.82rem;color:var(--gray);font-weight:500;}
+  section.dark .stat{background:rgba(255,255,255,.07);border:1px solid rgba(127,168,240,.25);box-shadow:none;}
+  section.dark .stat .lbl{color:#A9BEE8;}
+  .footer{background:var(--deep);color:#9DB4E0;text-align:center;padding:34px 20px;font-size:.9rem;}
+  .footer strong{color:var(--white);}
+  .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .toc a{background:rgba(255,255,255,.1);border:1px solid rgba(127,168,240,.35);color:#DBE7FB;text-decoration:none;border-radius:999px;padding:7px 16px;font-size:.83rem;font-weight:500;transition:background .2s;}
+  .toc a:hover{background:rgba(127,168,240,.25);}
+  .score th,.score td{text-align:center;}
+  .score td:first-child,.score th:first-child{text-align:left;}
+  @media(max-width:640px){section{padding:40px 0;} .card{padding:20px;}}
+  @media print{.topbar,.copybtn{display:none;} body{background:#fff;} .scriptbox{border:1px solid #ccc;background:#fff;color:#000;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <a class="wordmark" href="index.html"><span class="star">✦</span> Vante</a>
+    <a class="back" href="index.html">← Voltar ao índice</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <span class="chip">Documento 04 · Uso interno da liderança comercial</span>
+    <h1>Plano de Formação de Equipe e Contratação</h1>
+    <p>Playbook completo para recrutar, selecionar, contratar e rampar consultores comerciais da Vante — do perfil ideal ao onboarding 30-60-90, passando pelo Coquetel de Recrutamento e pela entrevista coletiva.</p>
+    <div class="toc">
+      <a href="#s1">1. Perfil ideal</a><a href="#s2">2. Funil de recrutamento</a><a href="#s3">3. Canais de captação</a><a href="#s4">4. Coquetel de Recrutamento</a><a href="#s5">5. Entrevista coletiva</a><a href="#s6">6. Entrevista individual</a><a href="#s7">7. Contratação e vínculo</a><a href="#s8">8. Onboarding 30-60-90</a><a href="#s9">9. Parcerias</a><a href="#s10">10. Calendário 6 semanas</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 1. PERFIL ============ -->
+<section id="s1">
+  <div class="container">
+    <div class="kicker">Seção 1</div>
+    <h2>O perfil do consultor ideal</h2>
+    <p class="lead">O consultor Vante vende um SaaS de gestão (planos de R$ 99 a R$ 399/mês) para o pequeno varejo: distribuidoras de gás, adegas/depósitos de bebidas, salões de beleza, barbearias, petshops e lojas de utilidades. Ele só vende — implantação e suporte são da equipe Vante. Precisamos de gente de rua, com conversa de comerciante e disciplina de funil.</p>
+
+    <div class="grid c3">
+      <div class="card">
+        <h3>Hard skills</h3>
+        <ul class="check">
+          <li>Experiência em venda externa / porta a porta (B2B de pequeno comércio é o cenário ideal).</li>
+          <li>Domínio de WhatsApp como ferramenta de trabalho (listas, áudios, follow-up organizado).</li>
+          <li>Capacidade de conduzir uma demonstração simples de sistema (após o treinamento Vante).</li>
+          <li>Registro de atividades em CRM (a Vante fornece o CRM — exigimos disciplina de uso).</li>
+          <li>Noções básicas de rotina do comércio: caixa, estoque, entrega, fiado.</li>
+          <li>CNH ou meio de locomoção próprio é desejável para rotas de bairro.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Soft skills</h3>
+        <ul class="check">
+          <li>Resiliência: aguenta 20 "nãos" e mantém a energia no 21º contato.</li>
+          <li>Escuta ativa: vende pela dor do comerciante, não pelo catálogo de funções.</li>
+          <li>Coachability: aceita feedback e ajusta o script sem se defender.</li>
+          <li>Organização e constância: prospecção diária, mesmo sem supervisão presencial.</li>
+          <li>Comunicação simples: traduz "IA e dashboard" para "menos pedido perdido e caixa na mão".</li>
+          <li>Ambição saudável: motiva-se por comissão progressiva e bônus por volume.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Sinais de alerta na seleção</h3>
+        <ul class="check x">
+          <li>Só pergunta sobre fixo/salário e nada sobre produto, cliente ou território.</li>
+          <li>Histórico de pulos de emprego a cada 2-3 meses sem explicação consistente.</li>
+          <li>Culpa sempre terceiros pelos resultados anteriores ("o produto era ruim", "a empresa não ajudava").</li>
+          <li>Não consegue dar um exemplo concreto de venda que fechou e como fechou.</li>
+          <li>Atrasa ou some nas etapas do processo seletivo (prévia do comportamento com cliente).</li>
+          <li>Promete demais na dinâmica: perfil "papo bom" sem escuta é risco de venda mal feita e cancelamento antes da implantação — que <strong>não gera comissão</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>As duas personas que buscamos</h3>
+    <div class="grid c2">
+      <div class="card">
+        <span class="pill">Persona A</span>
+        <h3 style="margin-top:10px;">O vendedor externo experiente</h3>
+        <p>Ex-vendedor de consórcio, planos de saúde/odontológicos, telefonia ou maquininhas de cartão. Já vive de comissão, sabe prospectar na rua e contornar objeção de preço.</p>
+        <ul class="plain">
+          <li><strong>Por que serve:</strong> já domina venda recorrente/intangível e ciclo curto; rampa rápido.</li>
+          <li><strong>O que oferecer:</strong> produto com dor clara, comissão progressiva de 20% a 40% sobre implantação, bônus de R$ 500 a R$ 5.000 por contratos acumulados e ferramentas prontas (CRM, scripts, landing, vídeos).</li>
+          <li><strong>Risco a gerenciar:</strong> vícios de venda agressiva — reforçar no onboarding que cancelamento antes da implantação não comissiona.</li>
+          <li><strong>Onde encontrar:</strong> LinkedIn/OLX empregos, indicação de gerentes comerciais, grupos de vendedores.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill">Persona B</span>
+        <h3 style="margin-top:10px;">O empreendedor local com rede no comércio</h3>
+        <p>Dono ou ex-dono de pequeno negócio, representante de bairro, líder de associação, MEI de serviços que conhece "todo mundo" no comércio da região.</p>
+        <ul class="plain">
+          <li><strong>Por que serve:</strong> credibilidade e acesso — abre porta de distribuidora de gás e salão pelo relacionamento, não pela insistência.</li>
+          <li><strong>O que oferecer:</strong> renda complementar escalável, projeção oficial no plano Premium de ≈ R$ 990 com 5 clientes/mês até ≈ R$ 19.800 com 50 (conforme tabela oficial), sem precisar dar suporte técnico.</li>
+          <li><strong>Risco a gerenciar:</strong> falta de método de funil — compensar com cadência, metas de atividade e 1:1 semanal.</li>
+          <li><strong>Onde encontrar:</strong> associações comerciais, CDL, grupos de bairro, indicação de contadores.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. FUNIL ============ -->
+<section id="s2" class="alt">
+  <div class="container">
+    <div class="kicker">Seção 2</div>
+    <h2>Funil de recrutamento — quantos candidatos para fechar 5 consultores?</h2>
+    <p class="lead">Taxas de referência estimadas para seleção de vendedores externos comissionados. São <strong>estimativas a calibrar</strong> após o primeiro ciclo — meça cada etapa no CRM e ajuste.</p>
+
+    <div class="funnel">
+      <div class="fstep"><div class="n">1</div><div class="body"><strong>Divulgação</strong> — anúncios, indicações, grupos, landing 03-landing-consultores.html<div class="rate">Meta: alcance suficiente para gerar ~60 candidaturas em 2 semanas</div></div><span class="pill">alcance</span></div>
+      <div class="fstep"><div class="n">2</div><div class="body"><strong>Candidaturas recebidas</strong> — formulário da landing ou mensagem no WhatsApp<div class="rate">Base do funil: <strong>60 candidatos</strong></div></div><span class="pill">60</span></div>
+      <div class="fstep"><div class="n">3</div><div class="body"><strong>Triagem por WhatsApp</strong> — 5 perguntas rápidas (experiência, disponibilidade, locomoção, expectativa de renda, por que vendas) <div class="rate">~50% aprovados → <strong>30 seguem</strong></div></div><span class="pill">50%</span></div>
+      <div class="fstep"><div class="n">4</div><div class="body"><strong>Dinâmica coletiva</strong> (Seção 5) — convidados os 30; comparecimento típico ~60%; dos presentes, ~55% atingem nota de corte<div class="rate">30 → 18 presentes → <strong>10 aprovados</strong></div></div><span class="pill">60% × 55%</span></div>
+      <div class="fstep"><div class="n">5</div><div class="body"><strong>Entrevista individual</strong> (Seção 6) — validação de histórico e alinhamento de expectativas<div class="rate">~70% aprovados → <strong>7 propostas</strong></div></div><span class="pill">70%</span></div>
+      <div class="fstep"><div class="n">6</div><div class="body"><strong>Proposta</strong> — modelo de vínculo, comissionamento oficial e metas de rampa por escrito<div class="rate">~75% de aceite → <strong>5 a 6 fecham</strong></div></div><span class="pill">75%</span></div>
+      <div class="fstep"><div class="n">7</div><div class="body"><strong>Onboarding</strong> — início da trilha 30-60-90 (Seção 8)<div class="rate"><strong>5 consultores em rampa</strong> (margem para 1 desistência precoce)</div></div><span class="pill green">5 ✔</span></div>
+    </div>
+
+    <div class="statrow">
+      <div class="stat"><div class="big">60</div><div class="lbl">candidaturas necessárias</div></div>
+      <div class="stat"><div class="big">12:1</div><div class="lbl">candidatos por consultor contratado</div></div>
+      <div class="stat"><div class="big">2</div><div class="lbl">semanas de captação ativa</div></div>
+      <div class="stat"><div class="big">6</div><div class="lbl">semanas do ciclo completo</div></div>
+    </div>
+
+    <div class="callout"><strong>Regra prática:</strong> se a meta é fechar N consultores, gere ~12×N candidaturas. O gargalo mais comum é o comparecimento à dinâmica — confirme presença por WhatsApp na véspera e no dia (reduz o no-show de 40% para ~25%).</div>
+  </div>
+</section>
+
+<!-- ============ 3. CANAIS ============ -->
+<section id="s3">
+  <div class="container">
+    <div class="kicker">Seção 3</div>
+    <h2>Canais de captação de candidatos</h2>
+    <p class="lead">Combine 3 ou 4 canais simultâneos por ciclo. Todos apontam para a landing de consultores (<code>03-landing-consultores.html</code>) ou para o WhatsApp de recrutamento.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>1. Indicação — mini-programa "Indique um Vendedor"</h3>
+        <p>O melhor canal em qualidade: vendedor bom conhece vendedor bom.</p>
+        <ul class="plain">
+          <li><strong>Quem indica:</strong> consultores atuais, sócios, parceiros, clientes e a rede pessoal da liderança.</li>
+          <li><strong>Mecânica sugerida (a validar com a Vante):</strong> recompensa em duas fases — um reconhecimento simbólico quando o indicado é contratado e uma recompensa maior quando o indicado conclui a certificação e fecha as 3 primeiras vendas.</li>
+          <li><strong>Como divulgar:</strong> mensagem quinzenal no grupo da equipe + card visual com o link da landing.</li>
+        </ul>
+        <div class="scriptbox"><span class="label">Texto pronto · pedido de indicação</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Conhece alguém bom de venda que mereça uma oportunidade de verdade?
+
+A Vante Gestão Tecnologia está formando o time de consultores comerciais. É venda de um sistema de gestão para o pequeno comércio (distribuidoras de gás, adegas, salões, barbearias, petshops), com comissão progressiva, bônus por volume e todas as ferramentas fornecidas: CRM, treinamento, scripts e material de apresentação. O consultor só vende — implantação e suporte são da equipe Vante.
+
+Me indica essa pessoa? É só mandar o contato ou encaminhar este link: [LINK DA LANDING]</pre></div>
+      </div>
+
+      <div class="card">
+        <h3>2. Grupos locais (WhatsApp/Facebook)</h3>
+        <ul class="plain">
+          <li>Grupos de emprego e "vagas" da cidade/região, grupos de bairro e de comerciantes.</li>
+          <li>Publicar 2x por semana, variando o texto (foco renda / foco produto / foco liberdade de agenda).</li>
+          <li>Sempre com CTA único: "chame no WhatsApp (31) 2181-1044" ou link da landing.</li>
+        </ul>
+        <h3>3. Redes sociais orgânico</h3>
+        <ul class="plain">
+          <li>Posts no Instagram e LinkedIn da Vante: "estamos formando o time comercial" + depoimento em vídeo da liderança.</li>
+          <li>Stories com enquete ("Você trabalharia com vendas por comissão + bônus?") para gerar conversa no direct.</li>
+          <li>Reaproveitar os vídeos e apresentações que a Vante já fornece ao time.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>4. Tráfego pago simples para a landing</h3>
+        <ul class="plain">
+          <li>Campanha Meta Ads (Facebook/Instagram) de tráfego ou cadastro, orçamento de teste modesto por 14 dias.</li>
+          <li>Segmentação: raio da cidade-alvo, 22-50 anos, interesses em vendas, empreendedorismo, trabalho autônomo.</li>
+          <li>Criativo: imagem simples no design Vante + título "Consultor comercial — comissão progressiva conforme tabela oficial" (nunca "renda garantida").</li>
+          <li>Destino: <code>03-landing-consultores.html</code>. KPI: custo por candidatura qualificada.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>5. Parcerias com escolas de vendas e faculdades</h3>
+        <ul class="plain">
+          <li>Cursos técnicos de vendas/administração e faculdades locais: oferecer palestra gratuita "Carreira em vendas de tecnologia" e captar interessados no final.</li>
+          <li>Escolas/mentorias de vendas: acordo de divulgação da vaga para alunos formados.</li>
+        </ul>
+        <h3>6. Garimpo ativo — LinkedIn e OLX Empregos</h3>
+        <ul class="plain">
+          <li>LinkedIn: buscar "vendedor externo", "consultor comercial", "representante" na região; abordar 10 perfis/dia com mensagem curta e link da landing.</li>
+          <li>OLX/portais de emprego: publicar a vaga e também abordar candidatos que se anunciam como vendedores autônomos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scriptbox"><span class="label">Anúncio pronto · grupos e portais de vagas</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>🔵 VAGA: CONSULTOR(A) COMERCIAL — VANTE GESTÃO TECNOLOGIA
+
+Estamos formando o time que vai levar a plataforma Vante — gestão inteligente com IA — ao pequeno varejo da região (distribuidoras de gás, adegas, salões de beleza, barbearias, petshops e lojas de utilidades).
+
+O que você faz: prospecção, qualificação e acompanhamento até o fechamento. Implantação e suporte são feitos pela equipe Vante — você só vende.
+
+O que oferecemos:
+• Comissão progressiva sobre a taxa de implantação: de 20% a 40% conforme volume mensal
+• Bônus por performance acumulada: de R$ 500 (10 contratos) a R$ 5.000 (50 contratos)
+• CRM, treinamento comercial, scripts, apresentações, landing pages e acompanhamento — tudo fornecido
+• Potencial de ganho conforme tabela oficial (ex.: no plano Premium, 20 clientes/mês ≈ R$ 5.940)
+
+Perfil: experiência com vendas externas ou forte rede de contatos no comércio local, disciplina e vontade de crescer.
+
+Interessou? Chame no WhatsApp (31) 2181-1044 ou acesse: [LINK DA LANDING]</pre></div>
+  </div>
+</section>
+
+<!-- ============ 4. COQUETEL ============ -->
+<section id="s4" class="dark">
+  <div class="container">
+    <div class="kicker" style="color:var(--lightblue);">Seção 4 · Evento-assinatura</div>
+    <h2>Coquetel de Recrutamento — playbook completo</h2>
+    <p class="lead">Um evento noturno de 2h30 que junta seleção e encantamento em escala: em vez de 20 entrevistas dispersas, você apresenta a oportunidade uma única vez, com energia alta, e observa os candidatos interagindo de verdade.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Objetivo e por que funciona</h3>
+        <ul class="check">
+          <li><strong>Seleção em escala:</strong> 20-40 candidatos avaliados em uma noite — postura, pontualidade, networking espontâneo.</li>
+          <li><strong>Encantamento:</strong> o candidato vê estrutura, produto com IA e liderança presente; sai querendo a vaga (inverte a dinâmica de "convencer o candidato").</li>
+          <li><strong>Prova social:</strong> candidatos veem que há concorrência pela oportunidade, o que aumenta aceite de proposta e comparecimento nas etapas seguintes.</li>
+          <li><strong>Filtro natural:</strong> quem não comparece a um evento com convite confirmado dificilmente cumpriria rota de prospecção.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Logística</h3>
+        <ul class="check">
+          <li><strong>Local:</strong> sala de coworking, auditório de associação comercial ou espaço de eventos pequeno; boa iluminação, TV/projetor, som simples.</li>
+          <li><strong>Horário:</strong> 19h às 21h30, terça a quinta (melhor comparecimento).</li>
+          <li><strong>Convidados:</strong> 20 a 40 confirmados (convide ~60, no-show típico de 30-40%).</li>
+          <li><strong>Coquetel:</strong> simples e digno — água, refrigerante, suco, salgados e café. Sem álcool ou no máximo um brinde ao final.</li>
+          <li><strong>Custo estimado (faixas de referência, a cotar localmente):</strong> enxuto: espaço cedido por parceiro + buffet simples ≈ R$ 600–1.000; intermediário: espaço alugado + buffet ≈ R$ 1.200–2.000; completo com recepcionista e material impresso ≈ R$ 2.000–3.500.</li>
+          <li><strong>Equipe mínima:</strong> 1 apresentador (liderança), 1 apoio para recepção/lista, 1 avaliador circulando.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Roteiro minuto a minuto (19h00–21h30)</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Horário</th><th>Bloco</th><th>O que acontece</th><th>Responsável</th></tr></thead>
+        <tbody>
+          <tr><td>19h00–19h30</td><td><strong>Recepção (30 min)</strong></td><td>Check-in com lista e crachá; coquetel liberado; música ambiente; avaliadores circulam observando postura e quem puxa conversa. Cada candidato recebe uma ficha com QR code do formulário de interesse.</td><td>Apoio + avaliador</td></tr>
+          <tr><td>19h30–20h10</td><td><strong>Apresentação da oportunidade (40 min)</strong></td><td>Liderança apresenta: a Vante (+15 anos em software, +30 anos em vendas no varejo, origem na operação real de distribuição de gás); o mercado (varejo brasileiro movimenta R$ 2,3 trilhões/ano, +60% dos negócios em transformação digital, ~20% do PIB); o produto e a IA GásLink; o modelo do representante — comissão progressiva de 20% a 40%, bônus de R$ 500 a R$ 5.000, projeção oficial no Premium de ≈ R$ 990 (5 clientes/mês) a ≈ R$ 19.800 (50), <em>sempre "conforme tabela oficial"</em>; e o que a Vante fornece: CRM, treinamento, scripts, apresentações, landing pages, vídeos e acompanhamento comercial.</td><td>Liderança</td></tr>
+          <tr><td>20h10–20h30</td><td><strong>Depoimento / demo (20 min)</strong></td><td>Demonstração ao vivo do produto (pedido chegando pelo WhatsApp com IA criando o pedido automaticamente é o momento "uau") + depoimento de um consultor ou da própria liderança sobre a rotina de vendas.</td><td>Consultor/liderança</td></tr>
+          <tr><td>20h30–21h00</td><td><strong>Networking dirigido (30 min)</strong></td><td>Dinâmica leve: em duplas sorteadas, cada um tem 2 min para "vender" o colega ao grupo. Avaliadores anotam comunicação, energia e escuta. Coquetel continua.</td><td>Avaliadores</td></tr>
+          <tr><td>21h00–21h30</td><td><strong>Coleta de interesse + encerramento</strong></td><td>Formulário de interesse (QR code): dados, experiência, disponibilidade e "por que você?". Anúncio dos próximos passos: triagem e convite para a dinâmica coletiva em até 7 dias. Agradecimento e foto do grupo (com autorização).</td><td>Liderança + apoio</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid c2">
+      <div class="card">
+        <h3>Convite modelo (WhatsApp)</h3>
+        <div class="scriptbox" style="margin-bottom:0;"><span class="label">Convite pronto</span><button class="copybtn" onclick="copiar(this)">Copiar</button><pre>Olá, [NOME]! Aqui é [SEU NOME], da Vante Gestão Tecnologia.
+
+Vi seu perfil/recebi sua candidatura para o time comercial e quero te convidar para um encontro presencial exclusivo:
+
+🗓 [DATA], das 19h às 21h30
+📍 [LOCAL, ENDEREÇO]
+🥂 Coquetel de Recrutamento Vante
+
+Na ocasião você vai conhecer a plataforma (gestão com Inteligência Artificial para o pequeno varejo), o modelo de comissão progressiva + bônus e conversar direto com a liderança. São poucas vagas de consultor e a seleção começa nesse evento.
+
+Posso confirmar sua presença? Traje: esporte fino.</pre></div>
+      </div>
+      <div class="card">
+        <h3>Checklist de materiais</h3>
+        <ul class="check">
+          <li>Lista de confirmados impressa + crachás/etiquetas de nome</li>
+          <li>TV ou projetor + apresentação oficial (02-apresentacao-produto.html) testada</li>
+          <li>Celular com demo do WhatsApp/IA preparada (roteiro ensaiado)</li>
+          <li>QR code do formulário de interesse (testado) + fichas impressas de reserva</li>
+          <li>Coquetel: água, refrigerante, suco, café, salgados; copos e guardanapos</li>
+          <li>Banner ou fundo com wordmark Vante para fotos</li>
+          <li>Fichas de avaliação para os observadores (mesma matriz da Seção 5)</li>
+          <li>Caixa de som pequena + playlist ambiente</li>
+        </ul>
+        <h3>Follow-up em 24h</h3>
+        <ul class="check">
+          <li>Mensagem de agradecimento a todos os presentes com link do formulário (para quem não preencheu).</li>
+          <li>Convite para a dinâmica coletiva aos aprovados na triagem — com data e local definidos.</li>
+          <li>Mensagem cordial de encerramento aos não aprovados, mantendo no banco de talentos.</li>
+          <li>Registro de todos no CRM com nota do evento.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>KPIs do evento</h3>
+    <div class="statrow">
+      <div class="stat"><div class="big">≥60%</div><div class="lbl">comparecimento sobre confirmados</div></div>
+      <div class="stat"><div class="big">≥80%</div><div class="lbl">presentes que preenchem o formulário de interesse</div></div>
+      <div class="stat"><div class="big">≥40%</div><div class="lbl">presentes convidados à dinâmica coletiva</div></div>
+      <div class="stat"><div class="big">≤R$ 150</div><div class="lbl">custo por candidato qualificado (meta de referência)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. ENTREVISTA COLETIVA ============ -->
+<section id="s5" class="alt">
+  <div class="container">
+    <div class="kicker">Seção 5</div>
+    <h2>Entrevista coletiva / dinâmica de grupo — roteiro de 2h</h2>
+    <p class="lead">Para grupos de 8 a 18 candidatos aprovados na triagem. Dois avaliadores no mínimo, cada um com a matriz de notas em mãos desde o primeiro minuto (a avaliação começa na recepção).</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tempo</th><th>Bloco</th><th>Como conduzir</th><th>O que avaliar</th></tr></thead>
+        <tbody>
+          <tr><td>0h00–0h15</td><td><strong>Apresentação da empresa (15 min)</strong></td><td>Versão condensada do pitch: Vante, propósito ("simplificar a operação e aumentar a lucratividade"), nichos-alvo, modelo do representante e regras claras de comissão (paga após contrato assinado + implantação concluída + pagamento confirmado).</td><td>Atenção, perguntas inteligentes, pontualidade na chegada.</td></tr>
+          <tr><td>0h15–0h50</td><td><strong>Dinâmica 1 — "Venda-me isto" (35 min)</strong></td><td>Cada candidato sorteia um objeto comum (caneta, garrafa, carregador) e tem 90 segundos para vendê-lo a um avaliador que faz o papel de comerciante ocupado. Instrução: "descubra o que eu preciso antes de oferecer".</td><td><strong>Improviso e escuta:</strong> quem pergunta antes de oferecer pontua alto; quem despeja características pontua baixo.</td></tr>
+          <tr><td>0h50–1h25</td><td><strong>Dinâmica 2 — Objeção de preço (35 min)</strong></td><td>Simulação em duplas: um faz o comerciante que diz "R$ 199 por mês está caro, minha planilha é de graça"; o outro contorna. Depois invertem. Avaliadores circulam. Dica dada ao grupo: transforme preço em custo da desorganização (pedido perdido, estoque parado, decisão no escuro).</td><td><strong>Resiliência e raciocínio de valor:</strong> mantém a calma? Ancora em dor e retorno, ou só dá desconto imaginário?</td></tr>
+          <tr><td>1h25–1h50</td><td><strong>Dinâmica 3 — Apresentação pessoal de 60s (25 min)</strong></td><td>Um por vez, de pé: "quem sou, minha maior venda ou conquista, e por que a Vante deveria me escolher" em 60 segundos cronometrados.</td><td><strong>Energia, clareza e gestão do tempo.</strong> Estourar muito o tempo ou falar 20 segundos são sinais de baixa preparação.</td></tr>
+          <tr><td>1h50–2h00</td><td><strong>Encerramento (10 min)</strong></td><td>Próximos passos (entrevista individual em até 5 dias úteis para os aprovados), agradecimento, recolhimento das fichas.</td><td>Quem agradece e se despede bem — postura de relacionamento.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Matriz de avaliação (notas 1 a 5)</h3>
+    <p class="lead">Nota de corte sugerida: <strong>média ≥ 3,5</strong>, sem nenhum critério abaixo de 2. Coachability e resiliência pesam mais que técnica — técnica a Vante treina.</p>
+    <div class="tablewrap">
+      <table class="score">
+        <thead><tr><th>Critério</th><th>1 (fraco)</th><th>3 (adequado)</th><th>5 (excelente)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Comunicação</strong></td><td>Confuso, não conclui ideias</td><td>Claro na maior parte do tempo</td><td>Claro, objetivo e adapta a linguagem ao ouvinte</td></tr>
+          <tr><td><strong>Escuta</strong></td><td>Interrompe e ignora sinais</td><td>Ouve, mas volta ao script decorado</td><td>Pergunta antes de oferecer e usa a resposta na venda</td></tr>
+          <tr><td><strong>Resiliência</strong></td><td>Desmonta na primeira objeção</td><td>Insiste, mas repete o mesmo argumento</td><td>Recebe o "não", muda o ângulo e mantém o tom</td></tr>
+          <tr><td><strong>Coachability</strong></td><td>Rebate feedback, se justifica</td><td>Aceita, aplica parcialmente</td><td>Pede feedback e aplica na rodada seguinte</td></tr>
+          <tr><td><strong>Energia</strong></td><td>Apático, corpo fechado</td><td>Presente, mas oscila</td><td>Contagia o grupo do início ao fim</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Scorecard imprimível (um por candidato)</h3>
+    <div class="tablewrap">
+      <table class="score">
+        <thead><tr><th>Candidato: ______________________</th><th>D1: Venda-me isto</th><th>D2: Objeção de preço</th><th>D3: 60 segundos</th><th>Média</th></tr></thead>
+        <tbody>
+          <tr><td>Comunicação (1-5)</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+          <tr><td>Escuta (1-5)</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+          <tr><td>Resiliência (1-5)</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+          <tr><td>Coachability (1-5)</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+          <tr><td>Energia (1-5)</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+          <tr><td><strong>Observações / sinais de alerta</strong></td><td colspan="3">________________________________________________</td><td><strong>Aprovar? ☐ Sim ☐ Não</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. ENTREVISTA INDIVIDUAL ============ -->
+<section id="s6">
+  <div class="container">
+    <div class="kicker">Seção 6</div>
+    <h2>Entrevista individual — 10 perguntas fortes</h2>
+    <p class="lead">30 a 45 minutos, presencial ou por vídeo. O objetivo é validar histórico real, testar autoconsciência e alinhar expectativas de renda e rotina antes da proposta.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th style="width:46%;">Pergunta</th><th>O que observar na resposta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1.</strong> "Me conte a venda mais difícil que você já fechou. O que travava e o que você fez?"</td><td>Detalhe concreto (nomes de etapa, objeção específica, número). Resposta genérica = experiência rasa ou inventada.</td></tr>
+          <tr><td><strong>2.</strong> "Como era a sua semana de prospecção no último trabalho? Quantos contatos, visitas, propostas?"</td><td>Quem viveu funil sabe seus números de cabeça. Hesitação total é alerta para falta de método.</td></tr>
+          <tr><td><strong>3.</strong> "O que você faz depois de ouvir 10 'nãos' seguidos numa manhã?"</td><td>Resiliência real: rotina de recuperação (revisar abordagem, mudar rota, pedir ajuda) em vez de vitimização.</td></tr>
+          <tr><td><strong>4.</strong> "Por que saiu (ou quer sair) do último trabalho?"</td><td>Maturidade e responsabilização. Falar mal de todos os antigos empregadores é sinal de alerta clássico.</td></tr>
+          <tr><td><strong>5.</strong> "Nosso modelo é comissão progressiva sobre implantação + bônus, sem fixo garantido. Como você organiza suas finanças para uma rampa de 2-3 meses?"</td><td>Teste de realismo financeiro. Quem não pensou nisso tende a desistir no mês 2. Cite a projeção oficial apenas como referência de potencial, nunca como promessa.</td></tr>
+          <tr><td><strong>6.</strong> "Você conhece donos de comércio na região? Me dê exemplos de portas que você abriria na primeira semana."</td><td>Rede real (Persona B) ou plano concreto de prospecção (Persona A). Nomes de bairros e tipos de comércio contam pontos.</td></tr>
+          <tr><td><strong>7.</strong> "Me venda a ideia de um comerciante trocar o caderninho por um sistema de R$ 99 a R$ 399 por mês."</td><td>Mini role-play espontâneo: ancora em dor (pedido perdido, estoque, caixa no escuro) ou só lista funções?</td></tr>
+          <tr><td><strong>8.</strong> "Qual foi o último feedback duro que você recebeu e o que mudou depois dele?"</td><td>Coachability comprovada com exemplo. "Nunca recebi feedback negativo" é alerta.</td></tr>
+          <tr><td><strong>9.</strong> "Como você usaria um CRM no dia a dia? O que você registraria depois de cada visita?"</td><td>Disciplina de processo. A Vante fornece CRM e acompanhamento — quem despreza registro vai brigar com o método.</td></tr>
+          <tr><td><strong>10.</strong> "Onde você quer estar em 12 meses e o que espera da Vante para chegar lá?"</td><td>Ambição compatível com o plano de carreira e expectativas realistas sobre suporte (treinamento, materiais, acompanhamento — tudo isso a Vante dá; a atividade diária é dele).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout success"><strong>Fechamento da entrevista:</strong> apresente por escrito o modelo de comissão (faixas de 20% a 40%), os bônus por performance acumulada, a regra de pagamento (após contrato assinado + implantação concluída + pagamento confirmado) e as metas de rampa 30-60-90. Transparência aqui evita frustração e turnover no mês 2.</div>
+  </div>
+</section>
+
+<!-- ============ 7. CONTRATAÇÃO ============ -->
+<section id="s7" class="alt">
+  <div class="container">
+    <div class="kicker">Seção 7</div>
+    <h2>Contratação e vínculo</h2>
+    <p class="lead">Três modelos possíveis, com prós e contras. <span class="pill amber">Validar com contador/advogado</span> — os pontos jurídicos e tributários abaixo são orientativos e devem ser confirmados por profissional habilitado antes de qualquer contratação.</p>
+
+    <div class="grid c3">
+      <div class="card">
+        <h3>Modelo A — Autônomo / MEI com contrato de representação</h3>
+        <ul class="check">
+          <li>Baixo custo fixo; remuneração 100% variável, alinhada ao modelo oficial de comissões.</li>
+          <li>Escala rápido: dá para testar vários consultores em paralelo.</li>
+          <li>Contrato de representação/parceria comercial define território, metas, regras de comissão e confidencialidade.</li>
+        </ul>
+        <ul class="check x">
+          <li>Menor controle de agenda (não pode haver subordinação típica de CLT — <em>validar com advogado</em> os limites para evitar vínculo).</li>
+          <li>Turnover alto na rampa se o consultor não tiver reserva financeira.</li>
+        </ul>
+      </div>
+      <div class="card" style="border:2px solid var(--blue);">
+        <span class="pill green">Recomendado</span>
+        <h3 style="margin-top:10px;">Modelo B — MEI + ajuda de custo temporária na rampa</h3>
+        <ul class="check">
+          <li>MEI com contrato de representação <strong>+ ajuda de custo nos 2 primeiros meses</strong> (valor fixo modesto condicionado a atividade mínima comprovada no CRM: visitas, demos, propostas).</li>
+          <li>Resolve o principal motivo de desistência (caixa pessoal na rampa) sem criar salário fixo permanente.</li>
+          <li>Após o mês 2, remuneração passa a ser 100% comissão + bônus, conforme tabela oficial.</li>
+        </ul>
+        <ul class="check x">
+          <li>Custo de aquisição de consultor um pouco maior; exige controle de atividade.</li>
+          <li>Formato e valor da ajuda de custo: <em>validar com contador/advogado</em> (natureza do pagamento, contrato, riscos trabalhistas).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Modelo C — CLT vendedor</h3>
+        <ul class="check">
+          <li>Máximo controle de agenda, exclusividade e rotina; menor risco trabalhista de reclassificação.</li>
+          <li>Atrai perfis que não aceitam 100% variável.</li>
+        </ul>
+        <ul class="check x">
+          <li>Custo fixo alto (salário + encargos) antes de o consultor provar resultado.</li>
+          <li>Reduz o número de consultores que se pode testar simultaneamente.</li>
+          <li>Regras de comissionamento CLT (integração ao salário, reflexos) — <em>validar com contador/advogado</em>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout"><strong>Recomendação:</strong> iniciar com o <strong>Modelo B (MEI + ajuda de custo temporária na rampa)</strong> para os 5 primeiros consultores. Reavaliar após o primeiro ciclo: consultores consistentes podem evoluir dentro do plano de carreira (ver 08-comissionamento-carreira.html); o modelo CLT fica como opção futura para papéis de coordenação.</div>
+
+    <h3>Checklist de documentos e formalização</h3>
+    <div class="grid c2">
+      <div class="card">
+        <h4>Do consultor</h4>
+        <ul class="check">
+          <li>RG/CPF e comprovante de endereço</li>
+          <li>Certificado MEI (CCMEI) e cartão CNPJ ativos</li>
+          <li>Dados bancários da conta PJ (ou conforme orientação do contador)</li>
+          <li>CNH (se fizer rota com veículo)</li>
+          <li>Referências profissionais (2 contatos verificados)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Da Vante / liderança</h4>
+        <ul class="check">
+          <li>Contrato de representação comercial assinado (modelo revisado por advogado)</li>
+          <li>Termo de confidencialidade e uso de marca/materiais</li>
+          <li>Anexo com tabela oficial de comissões e regra de pagamento (contrato assinado + implantação concluída + pagamento confirmado; cancelamento antes da implantação não gera comissão)</li>
+          <li>Definição de território/nichos prioritários</li>
+          <li>Acessos: CRM, materiais de vendas, scripts, apresentações, grupo da equipe</li>
+          <li>Metas de rampa 30-60-90 assinadas em conjunto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. ONBOARDING ============ -->
+<section id="s8">
+  <div class="container">
+    <div class="kicker">Seção 8</div>
+    <h2>Onboarding 30-60-90</h2>
+    <p class="lead">A rampa é onde se ganha ou se perde o consultor. Estrutura clara, metas crescentes e rituais de acompanhamento desde o dia 1.</p>
+
+    <div class="grid c3">
+      <div class="card">
+        <span class="pill">Dias 1–30</span>
+        <h3 style="margin-top:10px;">Certificar e acompanhar</h3>
+        <ul class="check">
+          <li>Treinamento completo: produto, planos (R$ 99 / R$ 199 / R$ 399 + implantação R$ 300 / R$ 580 / R$ 990), as 4 dores, IA, metodologia e scripts (docs 06 e 07).</li>
+          <li>Certificação interna: demo simulada aprovada pela liderança.</li>
+          <li>Montagem da lista inicial de 100 leads do território (Google Maps + rede pessoal).</li>
+          <li>Primeiras visitas sempre acompanhadas (liderança ou consultor sênior).</li>
+          <li><strong>Meta do mês 1: certificação concluída + 3 vendas acompanhadas.</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill">Dias 31–60</span>
+        <h3 style="margin-top:10px;">Voar com supervisão</h3>
+        <ul class="check">
+          <li>Prospecção autônoma com cadência completa (ver 05-playbook-prospeccao.html).</li>
+          <li>Liderança acompanha 1 visita/semana por amostragem e revisa CRM.</li>
+          <li>Ajuste fino de discurso por nicho (gás x salão x petshop).</li>
+          <li>Início do pedido sistemático de indicações pós-implantação.</li>
+          <li><strong>Meta do mês 2: 6+ vendas.</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill">Dias 61–90</span>
+        <h3 style="margin-top:10px;">Rampa completa</h3>
+        <ul class="check">
+          <li>Operação autônoma; foco em subir de faixa de comissão (6-10 clientes/mês = 25%; 11-20 = 30%).</li>
+          <li>Primeiro checkpoint de bônus: 10 contratos acumulados = R$ 500.</li>
+          <li>Rotina consolidada de parcerias (contadores, associações).</li>
+          <li>Avaliação formal de 90 dias: continua, ajusta ou desliga.</li>
+          <li><strong>Meta do mês 3: 10+ vendas.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Rituais de gestão</h3>
+    <div class="grid c3">
+      <div class="card"><h4>Daily de WhatsApp</h4><p>Todo dia útil até 9h, no grupo da equipe: plano do dia (rota/nicho) e resultado do dia anterior (contatos, conversas, demos, propostas). 3 linhas, sem burocracia.</p></div>
+      <div class="card"><h4>1:1 semanal (30 min)</h4><p>Liderança + consultor: revisão do funil no CRM, escuta de uma abordagem real, um ajuste de técnica por semana e destrave de pendências.</p></div>
+      <div class="card"><h4>Reunião mensal de resultados</h4><p>Time completo: ranking do mês, faixas de comissão atingidas, bônus conquistados, melhor história de venda, calibração de metas e treinamento-relâmpago de 20 min.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. PARCERIAS ============ -->
+<section id="s9" class="alt">
+  <div class="container">
+    <div class="kicker">Seção 9</div>
+    <h2>Parcerias estratégicas para formar equipe</h2>
+    <p class="lead">Além de contratar indivíduos, dá para "alugar" redes inteiras de relacionamento — parceiros que já falam com os nichos-alvo todos os dias e podem indicar candidatos ou atuar como canal.</p>
+    <div class="grid c3">
+      <div class="card">
+        <h3>Escritórios de contabilidade</h3>
+        <ul class="plain">
+          <li>Atendem dezenas de pequenos varejistas e conhecem quem tem perfil comercial (clientes, ex-funcionários, filhos de clientes).</li>
+          <li>Proposta: o contador indica candidatos a consultor e/ou vira canal de indicação de clientes (ver playbook de prospecção).</li>
+          <li>Formato de retribuição: <span class="pill amber">a validar com a Vante</span>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Associações comerciais e CDL</h3>
+        <ul class="plain">
+          <li>Acesso a mailing de lojistas e espaço para eventos (inclusive o Coquetel de Recrutamento a custo reduzido).</li>
+          <li>Divulgação da vaga de consultor nos canais da associação.</li>
+          <li>Palestras "tecnologia para o pequeno varejo" que geram candidatos e clientes ao mesmo tempo.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Distribuidores que já atendem os nichos</h3>
+        <ul class="plain">
+          <li>Distribuidores de bebidas, cosméticos (salões/barbearias) e produtos pet têm vendedores e entregadores que conhecem cada ponto do bairro.</li>
+          <li>Vendedores desses distribuidores são candidatos naturais (Persona A) para renda adicional ou transição de carreira.</li>
+          <li>O dono do distribuidor também pode indicar clientes — dupla função da parceria.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. CALENDÁRIO ============ -->
+<section id="s10">
+  <div class="container">
+    <div class="kicker">Seção 10</div>
+    <h2>Calendário-modelo — ciclo completo de 6 semanas</h2>
+    <p class="lead">Do primeiro anúncio ao início do onboarding. Replicável a cada trimestre ou sempre que a equipe precisar crescer.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Semana</th><th>Foco</th><th>Atividades-chave</th><th>Entregável / meta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>Preparação e lançamento</td><td>Definir território e nº de vagas; revisar landing e formulário; publicar anúncios (grupos, OLX, LinkedIn); ativar tráfego pago; disparar o "Indique um Vendedor"; reservar local do coquetel.</td><td>Captação no ar em ≥4 canais; local e data do coquetel confirmados.</td></tr>
+          <tr><td><strong>2</strong></td><td>Captação e triagem</td><td>Triagem diária por WhatsApp (responder em até 24h); convites ao coquetel com confirmação; reforço de anúncios nos canais com melhor custo por candidatura.</td><td>≥40 candidaturas acumuladas; ≥30 convidados confirmados.</td></tr>
+          <tr><td><strong>3</strong></td><td>Coquetel de Recrutamento</td><td>Confirmações de véspera e do dia; evento (19h–21h30) com roteiro da Seção 4; follow-up em 24h; triagem final dos formulários de interesse.</td><td>≥60 candidaturas totais; lista de convocados para a dinâmica.</td></tr>
+          <tr><td><strong>4</strong></td><td>Dinâmica coletiva</td><td>1 ou 2 turmas da entrevista coletiva de 2h (Seção 5); consolidação dos scorecards; convocação dos aprovados.</td><td>~10 aprovados com média ≥ 3,5.</td></tr>
+          <tr><td><strong>5</strong></td><td>Entrevistas individuais e propostas</td><td>Entrevistas individuais (Seção 6); checagem de referências; envio de propostas por escrito com tabela oficial de comissões e metas de rampa.</td><td>7 entrevistas → 5-6 aceites; documentos em coleta.</td></tr>
+          <tr><td><strong>6</strong></td><td>Contratação e onboarding</td><td>Assinatura de contratos (modelo validado com contador/advogado); liberação de acessos (CRM, materiais); início do treinamento e da trilha 30-60-90; primeiro daily de WhatsApp.</td><td><strong>5 consultores em onboarding.</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><strong>Depois da semana 6:</strong> o ciclo de gestão assume — dailies, 1:1 semanais, reunião mensal e as metas de rampa (mês 1: certificação + 3 vendas acompanhadas; mês 2: 6+; mês 3: 10+). Novo ciclo de recrutamento pode começar em paralelo a partir da semana 5, usando o banco de talentos como ponto de partida.</div>
+  </div>
+</section>
+
+<div class="footer">
+  <p><strong>Vante Gestão Tecnologia</strong> · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+</div>
+
+<script>
+function copiar(btn){
+  var pre = btn.parentElement.querySelector('pre');
+  var texto = pre.innerText;
+  function ok(){ btn.textContent='Copiado ✔'; btn.classList.add('copied'); setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('copied');},2000); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(texto).then(ok).catch(function(){fallback();});
+  } else { fallback(); }
+  function fallback(){
+    var ta=document.createElement('textarea'); ta.value=texto; document.body.appendChild(ta);
+    ta.select(); try{document.execCommand('copy'); ok();}catch(e){} document.body.removeChild(ta);
+  }
+}
+</script>
+</body>
+</html>

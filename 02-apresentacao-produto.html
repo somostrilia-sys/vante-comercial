@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vante — Apresentação de Produto (Deck B2B)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563EB;
+    --navy:#0E2A5C;
+    --navy-deep:#0A1B3A;
+    --blue-light:#7FA8F0;
+    --bg-light:#EEF2F8;
+    --white:#FFFFFF;
+    --text:#1E293B;
+    --gray:#64748B;
+    --success:#16A34A;
+    --warn:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;
+    color:var(--text);
+    background:var(--navy-deep);
+    overflow:hidden;
+  }
+
+  /* ===== ESTRUTURA DOS SLIDES ===== */
+  .slide{
+    display:none;
+    width:100vw;
+    height:100vh;
+    padding:6vh 7vw 12vh;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .slide.ativo{display:flex;animation:entrar .45s ease both;}
+  @keyframes entrar{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+  .slide.claro{background:var(--bg-light);color:var(--text);}
+  .slide.escuro{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 100%);color:var(--white);}
+
+  /* ===== MARCA ===== */
+  .marca{
+    position:absolute;top:4vh;left:7vw;
+    display:flex;align-items:center;gap:.5rem;
+    font-weight:700;font-size:1.15rem;letter-spacing:.02em;
+  }
+  .marca .simbolo{color:var(--blue);font-size:1.05rem;}
+  .slide.escuro .marca{color:var(--white);}
+  .slide.claro .marca{color:var(--navy);}
+
+  .kicker{
+    display:inline-block;
+    background:rgba(127,168,240,.22);
+    color:var(--blue);
+    font-weight:600;font-size:.8rem;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:.45rem 1.1rem;border-radius:999px;
+    margin-bottom:1.2rem;width:fit-content;
+  }
+  .slide.escuro .kicker{background:rgba(127,168,240,.18);color:var(--blue-light);}
+
+  h1{font-weight:800;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.12;}
+  h2{font-weight:800;font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.15;margin-bottom:1.4rem;}
+  .slide.claro h2{color:var(--navy);}
+  .sub{font-size:clamp(1rem,1.6vw,1.25rem);font-weight:400;margin-top:1rem;}
+  .slide.escuro .sub{color:var(--blue-light);}
+  .slide.claro .sub{color:var(--gray);}
+
+  /* ===== COMPONENTES ===== */
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+  @media(max-width:820px){.grid2,.grid4{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--white);
+    border-radius:20px;
+    padding:1.5rem 1.6rem;
+    box-shadow:0 8px 24px rgba(14,42,92,.08);
+  }
+  .slide.escuro .card{
+    background:rgba(255,255,255,.06);
+    box-shadow:none;
+    border:1px solid rgba(127,168,240,.25);
+  }
+  .card h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem;}
+  .slide.claro .card h3{color:var(--navy);}
+  .card p{font-size:.92rem;color:var(--gray);line-height:1.5;}
+  .slide.escuro .card p{color:#C7D6F2;}
+
+  .chip{
+    display:inline-block;
+    background:rgba(127,168,240,.22);
+    color:var(--blue);
+    font-weight:600;font-size:.78rem;
+    padding:.3rem .85rem;border-radius:999px;
+    margin:.15rem .25rem .15rem 0;
+  }
+  .slide.escuro .chip{background:rgba(127,168,240,.16);color:var(--blue-light);}
+
+  ul.checks{list-style:none;margin-top:.6rem;}
+  ul.checks li{
+    padding-left:2rem;position:relative;
+    margin-bottom:.8rem;font-size:1.02rem;font-weight:500;line-height:1.45;
+  }
+  ul.checks li::before{
+    content:"✓";
+    position:absolute;left:0;top:0;
+    width:1.35rem;height:1.35rem;
+    background:var(--blue);color:var(--white);
+    border-radius:50%;
+    font-size:.8rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .slide.escuro ul.checks li::before{background:var(--blue-light);color:var(--navy-deep);}
+
+  .num-etapa{
+    width:2.4rem;height:2.4rem;border-radius:50%;
+    background:var(--blue);color:var(--white);
+    font-weight:700;font-size:1.05rem;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:.8rem;
+  }
+
+  .icone-dor{font-size:1.8rem;margin-bottom:.6rem;display:block;}
+
+  /* ===== SIMULAÇÃO WHATSAPP ===== */
+  .fone{
+    background:#E5DDD5;
+    border-radius:24px;
+    padding:1rem;
+    max-width:360px;width:100%;
+    box-shadow:0 16px 40px rgba(0,0,0,.35);
+    display:flex;flex-direction:column;gap:.6rem;
+  }
+  .fone-topo{
+    background:#075E54;color:#fff;
+    border-radius:16px 16px 8px 8px;
+    padding:.7rem 1rem;
+    font-size:.85rem;font-weight:600;
+    display:flex;align-items:center;gap:.6rem;
+  }
+  .fone-topo .avatar{
+    width:1.9rem;height:1.9rem;border-radius:50%;
+    background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.85rem;font-weight:700;
+  }
+  .fone-topo small{display:block;font-weight:400;opacity:.85;font-size:.7rem;}
+  .bolha{
+    max-width:82%;
+    padding:.6rem .85rem;
+    border-radius:14px;
+    font-size:.84rem;line-height:1.4;
+    color:#111;position:relative;
+  }
+  .bolha .hora{display:block;font-size:.62rem;color:#667781;text-align:right;margin-top:.2rem;}
+  .bolha.cliente{background:#fff;align-self:flex-start;border-bottom-left-radius:4px;}
+  .bolha.sistema{background:#D9FDD3;align-self:flex-end;border-bottom-right-radius:4px;}
+  .bolha.sistema .pedido{
+    background:rgba(22,163,74,.12);
+    border-left:3px solid var(--success);
+    border-radius:8px;padding:.45rem .6rem;
+    margin:.4rem 0 .2rem;font-size:.78rem;
+  }
+  .bolha.sistema .pedido strong{color:var(--success);}
+
+  /* ===== TABELA DE PLANOS ===== */
+  .planos{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+  @media(max-width:820px){.planos{grid-template-columns:1fr;}}
+  .plano{
+    background:var(--white);border-radius:22px;
+    padding:1.4rem 1.4rem 1.2rem;
+    box-shadow:0 8px 24px rgba(14,42,92,.08);
+    display:flex;flex-direction:column;
+  }
+  .plano.destaque{border:2px solid var(--blue);position:relative;}
+  .plano .tag-destaque{
+    position:absolute;top:-0.8rem;left:50%;transform:translateX(-50%);
+    background:var(--blue);color:#fff;
+    font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:.28rem .9rem;border-radius:999px;white-space:nowrap;
+  }
+  .plano h3{color:var(--navy);font-size:1.05rem;font-weight:700;}
+  .plano .preco{font-size:1.9rem;font-weight:800;color:var(--blue);margin:.3rem 0 0;}
+  .plano .preco small{font-size:.85rem;font-weight:500;color:var(--gray);}
+  .plano .meta{font-size:.76rem;color:var(--gray);margin-bottom:.7rem;}
+  .plano ul{list-style:none;margin-top:.2rem;flex:1;}
+  .plano ul li{
+    font-size:.8rem;color:var(--text);padding-left:1.4rem;position:relative;
+    margin-bottom:.42rem;line-height:1.35;
+  }
+  .plano ul li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:700;}
+
+  /* ===== NOTAS DO APRESENTADOR ===== */
+  details.notas{
+    position:absolute;bottom:7.5vh;right:7vw;
+    max-width:340px;z-index:20;
+    font-size:.78rem;
+  }
+  details.notas summary{
+    cursor:pointer;list-style:none;
+    display:inline-block;
+    background:rgba(100,116,139,.18);
+    color:inherit;opacity:.55;
+    padding:.3rem .8rem;border-radius:999px;
+    font-weight:600;font-size:.7rem;
+  }
+  details.notas summary::-webkit-details-marker{display:none;}
+  details.notas[open] summary{opacity:1;}
+  details.notas .conteudo{
+    margin-top:.5rem;background:var(--navy-deep);color:#DCE6F7;
+    border-radius:14px;padding:.9rem 1rem;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  details.notas .conteudo ul{list-style:none;}
+  details.notas .conteudo li{padding-left:1.1rem;position:relative;margin-bottom:.45rem;line-height:1.4;}
+  details.notas .conteudo li::before{content:"•";position:absolute;left:0;color:var(--blue-light);}
+  body.modo-apresentacao details.notas{display:none;}
+
+  /* ===== NAVEGAÇÃO ===== */
+  .navegacao{
+    position:fixed;bottom:0;left:0;right:0;
+    height:9vh;min-height:56px;
+    display:flex;align-items:center;justify-content:center;gap:1rem;
+    z-index:50;
+    background:linear-gradient(to top,rgba(10,27,58,.35),transparent);
+    pointer-events:none;
+  }
+  .navegacao > *{pointer-events:auto;}
+  .btn-nav{
+    width:2.7rem;height:2.7rem;border-radius:50%;
+    border:none;cursor:pointer;
+    background:var(--blue);color:#fff;
+    font-size:1.25rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(37,99,235,.4);
+    transition:transform .15s ease,opacity .15s ease;
+    font-family:inherit;
+  }
+  .btn-nav:hover{transform:scale(1.08);}
+  .btn-nav:disabled{opacity:.3;cursor:default;transform:none;}
+  .indicador{
+    background:rgba(255,255,255,.92);color:var(--navy);
+    font-size:.8rem;font-weight:600;
+    padding:.45rem 1.1rem;border-radius:999px;
+    box-shadow:0 4px 14px rgba(14,42,92,.18);
+    min-width:110px;text-align:center;
+  }
+  .btn-modo{
+    position:fixed;top:4vh;right:7vw;z-index:50;
+    border:none;cursor:pointer;
+    background:rgba(127,168,240,.25);color:inherit;
+    font-family:inherit;font-weight:600;font-size:.7rem;
+    padding:.4rem .95rem;border-radius:999px;
+    opacity:.6;
+  }
+  .btn-modo:hover{opacity:1;}
+  .slide-atual-escuro .btn-modo{color:#fff;}
+  .slide-atual-claro .btn-modo{color:var(--navy);}
+
+  .rodape-slide{
+    position:absolute;bottom:3vh;left:7vw;
+    font-size:.68rem;opacity:.55;letter-spacing:.02em;
+  }
+
+  .placeholder{
+    border-bottom:2px dashed var(--blue-light);
+    color:var(--blue-light);
+    padding:0 .2rem;font-style:italic;
+  }
+  .slide.claro .placeholder{color:var(--blue);border-color:var(--blue);}
+
+  /* ===== IMPRESSÃO ===== */
+  @media print{
+    body{overflow:visible;background:#fff;}
+    .slide{
+      display:flex !important;
+      width:100%;height:100vh;
+      page-break-after:always;break-after:page;
+      animation:none;
+    }
+    .slide:last-of-type{page-break-after:auto;}
+    .navegacao,.btn-modo,details.notas{display:none !important;}
+    .slide.escuro{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+
+  @media(max-width:820px){
+    .slide{padding:5vh 6vw 13vh;}
+    h1{font-size:1.7rem;}
+    h2{font-size:1.35rem;margin-bottom:1rem;}
+    .card{padding:1.1rem 1.2rem;}
+    details.notas{max-width:75vw;right:6vw;}
+    .fone{max-width:300px;}
+  }
+</style>
+</head>
+<body>
+
+<button class="btn-modo" id="btnModo" title="Ocultar notas do apresentador">Modo apresentação</button>
+
+<!-- ============ SLIDE 1 — CAPA ============ -->
+<section class="slide escuro ativo">
+  <div style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:1.6rem;">
+      <span style="color:var(--blue-light);font-size:2.4rem;">✦</span>
+      <span style="font-weight:700;font-size:3.2rem;letter-spacing:.01em;">Vante</span>
+    </div>
+    <h1 style="font-size:clamp(1.6rem,3.4vw,2.6rem);color:var(--blue-light);font-weight:700;">Plataforma de Gestão Inteligente</h1>
+    <p class="sub" style="margin-top:1.6rem;font-size:1.15rem;color:#DCE6F7;">
+      Apresentação para <span class="placeholder" contenteditable="true">[Nome do Comércio]</span>
+    </p>
+    <div style="margin-top:2.2rem;">
+      <span class="chip">Vendas</span><span class="chip">Estoque</span><span class="chip">Financeiro</span><span class="chip">Atendimento com IA</span>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Edite o nome do comércio antes da reunião (clique no espaço tracejado).</li>
+    <li>Abra agradecendo o tempo do dono e prometendo objetividade: "em 15 minutos você vai ver como simplificar sua operação".</li>
+    <li>Não fale de preço agora — preço só no slide 10, depois do valor construído.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 2 — DORES ============ -->
+<section class="slide claro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">O problema</span>
+  <h2>O seu dia a dia é assim?</h2>
+  <div class="grid2">
+    <div class="card">
+      <span class="icone-dor">💬</span>
+      <h3>Quantos pedidos você já perdeu no WhatsApp?</h3>
+      <p>Pedidos chegando por telefone, WhatsApp e balcão, sem integração. Retrabalho, mensagens esquecidas e nenhum histórico do cliente.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">📦</span>
+      <h3>Você sabe exatamente o que tem no estoque agora?</h3>
+      <p>Sem controle automatizado, não se sabe o que entra e o que sai. Falta produto na hora da venda — ou sobra parado, como botijões encalhados.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">🚚</span>
+      <h3>Suas entregas seguem a melhor rota — ou a rota de sempre?</h3>
+      <p>Entregas desorganizadas e rotas ineficientes custam caro: tempo do entregador e combustível todos os dias.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">📒</span>
+      <h3>Seu financeiro ainda vive no caderno e na planilha?</h3>
+      <p>Dados espalhados em anotações, sem visão de fluxo de caixa nem de rentabilidade. As decisões acabam sendo tomadas no escuro.</p>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Leia as perguntas olhando para o dono e faça pausas — deixe ele responder e contar a história dele.</li>
+    <li>Anote qual dor ele confirma primeiro: é ela que você retoma nos slides 6 a 8.</li>
+    <li>Não apresente solução ainda; aqui é só diagnóstico.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 3 — CUSTO DO PROBLEMA ============ -->
+<section class="slide escuro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">O custo do problema</span>
+  <h2>Quanto isso está custando para você?</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Retrabalho todos os dias</h3>
+      <p>Anotar, conferir, repassar, corrigir. Horas da sua equipe gastas repetindo tarefas que um sistema faria sozinho.</p>
+    </div>
+    <div class="card">
+      <h3>Pedido perdido = cliente perdido</h3>
+      <p>Quem não é atendido na hora compra do concorrente — e muitas vezes não volta. Cada mensagem sem resposta pode ser um cliente a menos.</p>
+    </div>
+    <div class="card">
+      <h3>Rota ruim = combustível e tempo jogados fora</h3>
+      <p>Cada quilômetro a mais nas entregas é dinheiro saindo do seu bolso e cliente esperando mais do que deveria.</p>
+    </div>
+    <div class="card">
+      <h3>Decisão no escuro</h3>
+      <p>Sem números confiáveis, você não sabe o que dá lucro, o que dá prejuízo e onde cortar. O negócio anda — mas você não sabe para onde.</p>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Faça o dono quantificar com os números dele: "quantas entregas por dia? quanto gasta de combustível?".</li>
+    <li>Não invente números — o impacto vem da conta que ELE faz na cabeça.</li>
+    <li>Feche com: "e se tudo isso rodasse num lugar só, automaticamente?" — gancho para o próximo slide.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 4 — QUEM SOMOS ============ -->
+<section class="slide claro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">Quem somos</span>
+  <h2>Nascemos dentro de uma operação real</h2>
+  <div class="grid2" style="align-items:stretch;">
+    <div class="card" style="text-align:center;">
+      <p style="font-size:2.6rem;font-weight:800;color:var(--blue);line-height:1;">+15 anos</p>
+      <p style="font-weight:600;color:var(--navy);margin-top:.4rem;">de experiência em desenvolvimento de software</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p style="font-size:2.6rem;font-weight:800;color:var(--blue);line-height:1;">+30 anos</p>
+      <p style="font-weight:600;color:var(--navy);margin-top:.4rem;">de experiência em vendas no varejo</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1.2rem;">
+    <h3>Prática, não teoria</h3>
+    <p>A Vante nasceu da prática, dentro da operação real de um negócio — com origem na distribuição de gás, de onde vem a nossa IA GásLink. Nosso propósito: <strong style="color:var(--navy);">simplificar a operação e aumentar a lucratividade, para que você foque no que realmente importa: crescer.</strong></p>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Mensagem central: "não somos uma software house distante — vivemos o balcão e a entrega na pele".</li>
+    <li>Se o cliente for do ramo de gás, reforce a origem GásLink; se não for, destaque os +30 anos de varejo.</li>
+    <li>Slide rápido: 1 minuto no máximo, credibilidade e segue.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 5 — A SOLUÇÃO ============ -->
+<section class="slide escuro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">A solução</span>
+  <h2>Uma plataforma única para todo o seu negócio</h2>
+  <p class="sub" style="margin-top:0;margin-bottom:1.4rem;">Vendas, estoque, financeiro e atendimento integrados em um só lugar.</p>
+  <div class="card" style="max-width:640px;">
+    <ul class="checks" style="margin-top:0;">
+      <li>Vendas e controle de pedidos e pagamentos em tempo real</li>
+      <li>Controle de estoque automatizado — entradas, saídas e saldo</li>
+      <li>Gestão financeira: caixa, contas a pagar e receber, relatórios</li>
+      <li>Atendimento com Inteligência Artificial no WhatsApp</li>
+      <li>Dashboard e acompanhamento do negócio inteiro em uma tela</li>
+    </ul>
+  </div>
+  <div style="margin-top:1.2rem;">
+    <span class="chip">Distribuidoras de gás</span><span class="chip">Adegas e depósitos</span><span class="chip">Salões e barbearias</span><span class="chip">Petshops</span><span class="chip">Lojas de utilidades</span>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Conecte cada checkmark à dor que o cliente confirmou no slide 2.</li>
+    <li>Frase-chave: "acaba o vaivém entre caderno, planilha e WhatsApp — tudo num lugar só".</li>
+    <li>Aponte o chip do segmento dele para mostrar que a plataforma fala a língua do negócio.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 6 — IA NO WHATSAPP (UAU) ============ -->
+<section class="slide claro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <div class="grid2" style="align-items:center;gap:3rem;">
+    <div>
+      <span class="kicker">Inteligência Artificial</span>
+      <h2>O WhatsApp que atende, registra e organiza sozinho</h2>
+      <ul class="checks">
+        <li>O pedido do cliente vira registro automático no sistema</li>
+        <li>Resumo e nota gerados na hora, sem digitação</li>
+        <li>Classificação automática: pedido, dúvida ou reclamação</li>
+        <li>Pedidos por voz — o cliente manda áudio e a IA entende</li>
+      </ul>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <div class="fone">
+        <div class="fone-topo">
+          <span class="avatar">✦</span>
+          <span>Distribuidora do João<small>atendimento com IA Vante</small></span>
+        </div>
+        <div class="bolha cliente">Boa tarde! Quero 2 botijões pra entregar hoje 🙏<span class="hora">14:02</span></div>
+        <div class="bolha sistema">Boa tarde! 👋 Pedido confirmado:
+          <div class="pedido"><strong>✓ Pedido #1042 criado</strong><br>2× Botijão P13 · entrega hoje<br>Endereço cadastrado: Rua das Flores, 120</div>
+          Já avisamos a equipe de entrega. Você recebe aqui as atualizações do pedido!<span class="hora">14:02</span>
+        </div>
+        <div class="bolha cliente">Que rápido! Obrigado 👍<span class="hora">14:03</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Este é o slide "uau" — dê tempo para o cliente ler a conversa simulada inteira.</li>
+    <li>Destaque: ninguém digitou nada no sistema; o pedido nasceu pronto a partir da mensagem.</li>
+    <li>Se ele vende por áudio, enfatize os pedidos por voz: "seu cliente manda áudio e a IA entende".</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 7 — LOGÍSTICA ============ -->
+<section class="slide escuro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">Logística inteligente</span>
+  <h2>Entregas mais rápidas, mais baratas e sem telefone tocando</h2>
+  <div class="grid4">
+    <div class="card">
+      <span class="icone-dor">🗺️</span>
+      <h3>Roteirização inteligente</h3>
+      <p>A IA monta a melhor rota de entregas — menos quilômetros, menos combustível.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">📈</span>
+      <h3>Previsão de demanda</h3>
+      <p>Previsão por região: saiba onde a procura vai crescer e prepare o estoque antes.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">📍</span>
+      <h3>Monitoramento em tempo real</h3>
+      <p>Acompanhe cada entrega em andamento direto no painel, sem ligar para o entregador.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">🔔</span>
+      <h3>Cliente avisado sozinho</h3>
+      <p>Notificações automáticas de status do pedido para o cliente — sem esforço da sua equipe.</p>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Retome o custo do slide 3: "lembra do combustível e do tempo? É aqui que isso se resolve".</li>
+    <li>Monitoramento em tempo real e notificações ao cliente fazem parte do plano Avançado — deixe isso claro se perguntarem.</li>
+    <li>Exemplo prático: "seu cliente para de ligar perguntando 'cadê meu pedido?'".</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 8 — FINANCEIRO ============ -->
+<section class="slide claro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">Financeiro e visão do negócio</span>
+  <h2>Do caderno para o painel: enxergue seu negócio de verdade</h2>
+  <div class="grid4">
+    <div class="card">
+      <span class="icone-dor">💰</span>
+      <h3>Fluxo de caixa</h3>
+      <p>Caixa e acerto de venda organizados: saiba quanto entrou e quanto saiu, todo dia.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">🧾</span>
+      <h3>Contas a pagar e receber</h3>
+      <p>Vencimentos sob controle, sem surpresa no fim do mês nem juros por esquecimento.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">📊</span>
+      <h3>Relatórios</h3>
+      <p>Relatórios de vendas, financeiros e de estoque prontos — sem montar planilha.</p>
+    </div>
+    <div class="card">
+      <span class="icone-dor">💡</span>
+      <h3>Painel de insights</h3>
+      <p>A IA analisa seus dados e mostra insights automáticos para decidir com clareza.</p>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Contraste direto com a dor 4: "acabou a decisão no escuro".</li>
+    <li>Pergunta poderosa: "hoje, quanto tempo você levaria para me dizer seu lucro do mês passado?".</li>
+    <li>Recursos financeiros avançados e dashboard completo estão nos planos superiores — gancho natural para o slide de planos.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 9 — IMPLANTAÇÃO ============ -->
+<section class="slide escuro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">Implantação sem dor</span>
+  <h2>Quem implanta e dá suporte é a equipe Vante</h2>
+  <div class="grid4">
+    <div class="card">
+      <div class="num-etapa">1</div>
+      <h3>Cadastros</h3>
+      <p>Produtos, clientes e equipe entram no sistema — com migração dos seus dados atuais.</p>
+    </div>
+    <div class="card">
+      <div class="num-etapa">2</div>
+      <h3>Atendimento</h3>
+      <p>Treinamento completo do time, com módulo educacional para aprender no ritmo de cada um.</p>
+    </div>
+    <div class="card">
+      <div class="num-etapa">3</div>
+      <h3>Estoque e Logística</h3>
+      <p>Controle de estoque e rotas de entrega funcionando na sua operação real.</p>
+    </div>
+    <div class="card">
+      <div class="num-etapa">4</div>
+      <h3>Financeiro</h3>
+      <p>Módulo financeiro completo ativado (premium): caixa, contas e relatórios.</p>
+    </div>
+  </div>
+  <p class="sub" style="margin-top:1.4rem;font-size:1rem;">E depois? A plataforma evolui continuamente, com melhorias automáticas sem impactar a sua operação.</p>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Aqui você derruba o medo da mudança: "você não fica sozinho — a equipe Vante implanta e treina".</li>
+    <li>Implantação opcional inclui migração de dados + treinamento (valores no próximo slide).</li>
+    <li>Etapas graduais = a operação não para em momento nenhum.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 10 — PLANOS ============ -->
+<section class="slide claro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">Planos &amp; investimento</span>
+  <h2 style="margin-bottom:.4rem;">Menos de R$ 3,30 por dia no plano Básico</h2>
+  <p style="color:var(--gray);margin-bottom:1.6rem;font-size:.95rem;">Usuário adicional: R$ 99/usuário em qualquer plano · Implantação opcional inclui migração de dados + treinamento.</p>
+  <div class="planos">
+    <div class="plano">
+      <h3>Básico</h3>
+      <p class="preco">R$ 99<small>/mês</small></p>
+      <p class="meta">1 usuário incluso · implantação R$ 300</p>
+      <ul>
+        <li>Dashboard básico de vendas</li>
+        <li>Catálogo: clientes, categorias e produtos</li>
+        <li>Estoque e saldo</li>
+        <li>Controle de pedidos e pagamentos</li>
+        <li>Financeiro: caixa e acerto de venda</li>
+        <li>Relatórios de vendas</li>
+      </ul>
+    </div>
+    <div class="plano destaque">
+      <span class="tag-destaque">Mais completo p/ operação</span>
+      <h3>Intermediário</h3>
+      <p class="preco">R$ 199<small>/mês</small></p>
+      <p class="meta">2 usuários inclusos · implantação R$ 580</p>
+      <ul>
+        <li>Tudo do Básico</li>
+        <li>Módulo fiscal (NFe/NFCe)</li>
+        <li>Logística: motoristas, veículos, transportadoras</li>
+        <li>RH: cargos e funcionários</li>
+        <li>Financeiro avançado: contas a pagar/receber</li>
+        <li>Notificações WhatsApp para entregadores</li>
+        <li>Relatórios financeiros e de estoque</li>
+      </ul>
+    </div>
+    <div class="plano">
+      <h3>Avançado</h3>
+      <p class="preco">R$ 399<small>/mês</small></p>
+      <p class="meta">3 usuários inclusos · implantação R$ 990</p>
+      <ul>
+        <li>Tudo do Intermediário</li>
+        <li>App mobile de delivery próprio</li>
+        <li>Monitoramento logístico em tempo real</li>
+        <li>Ponto via app (RH digital)</li>
+        <li>Gestão de crédito de clientes</li>
+        <li>Notificações automáticas de status ao cliente</li>
+        <li>Inteligência Artificial GásLink</li>
+      </ul>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Enquadre como investimento, não custo: "menos de R$ 3,30/dia — menos que um café".</li>
+    <li>Recomende o plano pela dor confirmada: logística/fiscal → Intermediário; IA e delivery próprio → Avançado.</li>
+    <li>Implantação é opcional e paga uma única vez; inclui migração de dados + treinamento.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 11 — FECHAMENTO / CTA ============ -->
+<section class="slide escuro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <div style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <span class="kicker">Próximo passo</span>
+    <h1 style="max-width:16ch;">Vamos juntos evoluir sua operação?</h1>
+    <p class="sub" style="max-width:52ch;">Simplificar a operação e aumentar a lucratividade, para que você foque no que realmente importa: crescer.</p>
+    <div class="grid2" style="margin-top:2rem;width:100%;max-width:760px;text-align:left;">
+      <div class="card">
+        <h3>Fale com a Vante</h3>
+        <p style="line-height:1.9;">
+          🌐 vantetecnologia.com.br<br>
+          📞 (31) 2181-1044<br>
+          ✉️ contato@vantetecnologia.com.br
+        </p>
+      </div>
+      <div class="card">
+        <h3>Seu consultor</h3>
+        <p style="line-height:1.9;">
+          👤 <span class="placeholder" contenteditable="true">[Nome do consultor]</span><br>
+          💬 WhatsApp: <span class="placeholder" contenteditable="true">[(XX) XXXXX-XXXX]</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Preencha seu nome e WhatsApp antes da reunião (campos editáveis).</li>
+    <li>Feche com pergunta de ação: "faz sentido começarmos pela etapa de cadastros ainda esta semana?".</li>
+    <li>Saia sempre com um próximo passo agendado: data da implantação ou nova conversa marcada.</li>
+  </ul></div></details>
+</section>
+
+<!-- ============ SLIDE 12 — FAQ (BACKUP) ============ -->
+<section class="slide claro">
+  <div class="marca"><span class="simbolo">✦</span>Vante</div>
+  <span class="kicker">Apoio · Perguntas frequentes</span>
+  <h2>As dúvidas mais comuns, respondidas</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>"Já uso planilha e funciona."</h3>
+      <p>Funciona até o dia em que não funciona: planilha não avisa vencimento, não registra pedido do WhatsApp nem roteiriza entrega. A Vante faz isso sozinha — e a migração dos seus dados está incluída na implantação.</p>
+    </div>
+    <div class="card">
+      <h3>"É caro."</h3>
+      <p>O plano Básico custa R$ 99/mês — menos de R$ 3,30 por dia. Compare com o custo de um único pedido perdido ou de rotas ineficientes todos os dias: o sistema se propõe a se pagar na operação.</p>
+    </div>
+    <div class="card">
+      <h3>"Meu time não vai saber usar."</h3>
+      <p>A implantação inclui treinamento completo da equipe, com módulo educacional, feito pela própria equipe Vante. Ninguém fica sozinho — e o suporte continua depois.</p>
+    </div>
+    <div class="card">
+      <h3>"E se eu quiser cancelar?"</h3>
+      <p>As condições de cancelamento estão descritas em contrato, com transparência total antes da assinatura. Nosso compromisso é você ficar pelo resultado, não por amarras.</p>
+    </div>
+  </div>
+  <p class="rodape-slide">Vante Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br</p>
+  <details class="notas"><summary>Notas do apresentador</summary><div class="conteudo"><ul>
+    <li>Slide de apoio: use apenas se a objeção aparecer — não apresente espontaneamente.</li>
+    <li>Sobre cancelamento: nunca prometa política específica; sempre remeta às condições do contrato.</li>
+    <li>Responda com calma e volte ao CTA: objeção respondida = pedir o fechamento de novo.</li>
+  </ul></div></details>
+</section>
+
+<div class="navegacao">
+  <button class="btn-nav" id="btnAnterior" aria-label="Slide anterior">‹</button>
+  <span class="indicador" id="indicador">slide 1 de 12</span>
+  <button class="btn-nav" id="btnProximo" aria-label="Próximo slide">›</button>
+</div>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var total = slides.length;
+  var atual = 0;
+  var indicador = document.getElementById('indicador');
+  var btnAnt = document.getElementById('btnAnterior');
+  var btnProx = document.getElementById('btnProximo');
+  var btnModo = document.getElementById('btnModo');
+
+  function mostrar(i){
+    if(i < 0 || i >= total) return;
+    slides[atual].classList.remove('ativo');
+    atual = i;
+    slides[atual].classList.add('ativo');
+    indicador.textContent = 'slide ' + (atual + 1) + ' de ' + total;
+    btnAnt.disabled = (atual === 0);
+    btnProx.disabled = (atual === total - 1);
+    document.body.classList.toggle('slide-atual-escuro', slides[atual].classList.contains('escuro'));
+    document.body.classList.toggle('slide-atual-claro', slides[atual].classList.contains('claro'));
+  }
+
+  btnAnt.addEventListener('click', function(){ mostrar(atual - 1); });
+  btnProx.addEventListener('click', function(){ mostrar(atual + 1); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.target.isContentEditable) return;
+    if(e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); mostrar(atual + 1); }
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); mostrar(atual - 1); }
+    else if(e.key === 'Home'){ e.preventDefault(); mostrar(0); }
+    else if(e.key === 'End'){ e.preventDefault(); mostrar(total - 1); }
+  });
+
+  btnModo.addEventListener('click', function(){
+    var ligado = document.body.classList.toggle('modo-apresentacao');
+    btnModo.textContent = ligado ? 'Sair do modo apresentação' : 'Modo apresentação';
+  });
+
+  // Suporte a toque (tablet): deslizar para navegar
+  var toqueX = null;
+  document.addEventListener('touchstart', function(e){ toqueX = e.changedTouches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if(toqueX === null) return;
+    var dx = e.changedTouches[0].clientX - toqueX;
+    if(Math.abs(dx) > 60){ dx < 0 ? mostrar(atual + 1) : mostrar(atual - 1); }
+    toqueX = null;
+  }, {passive:true});
+
+  mostrar(0);
+})();
+</script>
+</body>
+</html>

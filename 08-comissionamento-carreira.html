@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comissionamento e Plano de Carreira — Vante Gestão Tecnologia</title>
+<meta name="description" content="Política oficial de comissionamento, simulador de ganhos, cenários e plano de carreira do time comercial Vante. Documento interno.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563EB;
+    --navy:#0E2A5C;
+    --navy-deep:#0A1B3A;
+    --blue-light:#7FA8F0;
+    --bg:#EEF2F8;
+    --white:#FFFFFF;
+    --text:#1E293B;
+    --gray:#64748B;
+    --success:#16A34A;
+    --warn:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+    font-size:16px;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+
+  /* ===== Topo ===== */
+  .topbar{background:var(--navy-deep);padding:14px 0;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .logo{color:var(--white);font-weight:700;font-size:1.25rem;text-decoration:none;}
+  .logo .mark{color:var(--blue-light);margin-right:6px;}
+  .back-link{color:var(--blue-light);text-decoration:none;font-size:.9rem;font-weight:500;}
+  .back-link:hover{text-decoration:underline;}
+
+  header.doc-head{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 100%);
+    color:var(--white);
+    padding:64px 0 56px;
+  }
+  .doc-head .badge{
+    display:inline-block;
+    background:rgba(217,119,6,.2);
+    color:#F7C77E;
+    border:1px solid rgba(217,119,6,.5);
+    font-weight:600;font-size:.78rem;
+    padding:6px 16px;border-radius:999px;
+    margin-bottom:18px;letter-spacing:.6px;text-transform:uppercase;
+  }
+  .doc-head h1{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;max-width:820px;margin-bottom:14px;}
+  .doc-head p{color:#C4D3F0;max-width:760px;}
+
+  h2.sec-title{
+    font-size:clamp(1.3rem,3vw,1.8rem);
+    font-weight:800;color:var(--navy);
+    margin-bottom:8px;
+  }
+  .sec-sub{color:var(--gray);margin-bottom:32px;max-width:820px;}
+  .eyebrow{color:var(--blue);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:8px;}
+
+  /* ===== Tabelas ===== */
+  .table-scroll{overflow-x:auto;border-radius:18px;box-shadow:0 8px 30px rgba(14,42,92,.08);margin-bottom:28px;}
+  table{width:100%;border-collapse:collapse;background:var(--white);min-width:600px;}
+  thead th{background:var(--navy);color:var(--white);font-weight:600;font-size:.88rem;padding:15px 18px;text-align:left;white-space:nowrap;}
+  tbody td{padding:13px 18px;font-size:.94rem;border-top:1px solid #E8EDF6;}
+  tbody tr:nth-child(even){background:#F6F9FE;}
+  td.center,th.center{text-align:center;}
+  .pct{font-weight:700;color:var(--blue);}
+
+  /* ===== Cards / caixas ===== */
+  .card{background:var(--white);border-radius:20px;padding:30px 28px;box-shadow:0 8px 30px rgba(14,42,92,.08);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media (max-width:900px){.grid3,.grid4{grid-template-columns:1fr 1fr;}}
+  @media (max-width:620px){.grid2,.grid3,.grid4{grid-template-columns:1fr;}}
+
+  .rule-highlight{
+    background:linear-gradient(135deg,var(--navy) 0%,#173d82 100%);
+    color:var(--white);
+    border-radius:20px;
+    padding:32px 30px;
+    margin:8px 0 28px;
+    box-shadow:0 12px 36px rgba(14,42,92,.25);
+  }
+  .rule-highlight h3{font-size:1.1rem;font-weight:700;margin-bottom:14px;color:var(--blue-light);}
+  .rule-steps{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .rule-step{
+    background:rgba(255,255,255,.1);
+    border:1.5px solid rgba(127,168,240,.45);
+    border-radius:14px;
+    padding:14px 20px;
+    font-weight:600;font-size:.95rem;
+    flex:1;min-width:180px;text-align:center;
+  }
+  .rule-plus{font-size:1.4rem;font-weight:800;color:var(--blue-light);}
+  .rule-highlight .note{margin-top:16px;font-size:.86rem;color:#C4D3F0;}
+  .rule-highlight .note strong{color:#F7C77E;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 18px;}
+  .chip{background:rgba(127,168,240,.22);color:var(--navy);font-weight:600;font-size:.85rem;padding:8px 18px;border-radius:999px;}
+
+  ul.checks{list-style:none;}
+  ul.checks li{padding-left:32px;position:relative;margin-bottom:12px;font-size:.95rem;}
+  ul.checks li::before{
+    content:"✔";position:absolute;left:0;top:2px;
+    width:20px;height:20px;background:rgba(37,99,235,.12);color:var(--blue);
+    border-radius:50%;font-size:.68rem;display:flex;align-items:center;justify-content:center;font-weight:700;
+  }
+
+  /* ===== Simulador ===== */
+  .sim{
+    background:var(--white);
+    border-radius:24px;
+    padding:38px 34px;
+    box-shadow:0 12px 40px rgba(14,42,92,.12);
+  }
+  @media (max-width:620px){.sim{padding:28px 20px;}}
+  .sim h3{color:var(--navy);font-weight:800;font-size:1.3rem;margin-bottom:6px;}
+  .sim .sub{color:var(--gray);font-size:.9rem;margin-bottom:26px;}
+  .sim-inputs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:26px;}
+  @media (max-width:820px){.sim-inputs{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.sim-inputs{grid-template-columns:1fr;}}
+  .field label{display:block;font-weight:600;font-size:.85rem;color:var(--navy);margin-bottom:6px;}
+  .field .hint{font-weight:400;color:var(--gray);font-size:.75rem;}
+  .field input{
+    width:100%;padding:12px 14px;border-radius:13px;
+    border:1.5px solid #D5DEEE;font-family:inherit;font-size:1rem;
+    color:var(--text);background:#FBFCFE;outline:none;transition:border-color .15s;
+  }
+  .field input:focus{border-color:var(--blue);}
+  .sim-results{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:820px){.sim-results{grid-template-columns:1fr;}}
+  .sim-box{
+    border-radius:18px;padding:24px 22px;text-align:center;
+  }
+  .sim-box .lbl{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
+  .sim-box .val{font-size:1.7rem;font-weight:800;line-height:1.2;}
+  .sim-box .det{font-size:.84rem;margin-top:8px;}
+  .sim-box.main{background:linear-gradient(135deg,var(--navy) 0%,#173d82 100%);color:var(--white);}
+  .sim-box.main .lbl{color:#9FB9E8;}
+  .sim-box.main .val{color:var(--blue-light);}
+  .sim-box.main .det{color:#C4D3F0;}
+  .sim-box.next{background:#EDF3FE;border:1.5px solid #C9DAFA;}
+  .sim-box.next .lbl{color:var(--blue);}
+  .sim-box.next .val{color:var(--navy);font-size:1.25rem;}
+  .sim-box.next .det{color:var(--gray);}
+  .sim-box.bonus{background:#F3FBF5;border:1.5px solid #BFE5C8;}
+  .sim-box.bonus .lbl{color:var(--success);}
+  .sim-box.bonus .val{color:#14532D;font-size:1.25rem;}
+  .sim-box.bonus .det{color:var(--gray);}
+  .sim-breakdown{margin-top:22px;font-size:.88rem;color:var(--gray);background:#F6F9FE;border-radius:14px;padding:16px 20px;}
+
+  /* ===== Cenários ===== */
+  .scenario{position:relative;overflow:hidden;}
+  .scenario .tier-tag{
+    position:absolute;top:0;right:0;
+    background:var(--blue);color:var(--white);
+    font-size:.72rem;font-weight:700;letter-spacing:.5px;
+    padding:7px 18px;border-radius:0 20px 0 16px;
+  }
+  .scenario h3{color:var(--navy);font-size:1.1rem;font-weight:800;margin-bottom:4px;}
+  .scenario .mix{color:var(--gray);font-size:.85rem;margin-bottom:16px;}
+  .scenario .rows{border-top:1px dashed #D5DEEE;padding-top:14px;margin-bottom:14px;}
+  .scenario .row{display:flex;justify-content:space-between;font-size:.88rem;padding:4px 0;color:var(--text);}
+  .scenario .row span:last-child{font-weight:600;}
+  .scenario .total{
+    background:#EDF3FE;border-radius:14px;padding:14px 18px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .scenario .total .lbl{font-size:.82rem;font-weight:600;color:var(--navy);}
+  .scenario .total .val{font-size:1.35rem;font-weight:800;color:var(--blue);}
+  .scenario .obs{font-size:.78rem;color:var(--gray);margin-top:12px;}
+  .scenario .obs strong{color:var(--success);}
+
+  /* ===== Carreira ===== */
+  .career{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media (max-width:900px){.career{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.career{grid-template-columns:1fr;}}
+  .career .lvl{
+    background:var(--white);border-radius:20px;padding:26px 22px;
+    box-shadow:0 8px 30px rgba(14,42,92,.08);
+    border-top:5px solid var(--blue-light);
+  }
+  .career .lvl:nth-child(2){border-top-color:#5B85DE;}
+  .career .lvl:nth-child(3){border-top-color:var(--blue);}
+  .career .lvl:nth-child(4){border-top-color:var(--navy);}
+  .career .lvl .stage{font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;}
+  .career .lvl h3{color:var(--navy);font-size:1.05rem;font-weight:800;margin:6px 0 12px;}
+  .career .lvl ul{list-style:none;font-size:.85rem;color:var(--gray);}
+  .career .lvl ul li{padding-left:18px;position:relative;margin-bottom:8px;}
+  .career .lvl ul li::before{content:"›";position:absolute;left:0;color:var(--blue);font-weight:700;}
+
+  /* ===== Avisos / propostas ===== */
+  .warn-box{
+    background:#FFF7EC;border:1.5px solid #F2C48B;border-radius:18px;
+    padding:22px 26px;margin-bottom:28px;
+  }
+  .warn-box .tag{
+    display:inline-block;background:var(--warn);color:var(--white);
+    font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+    padding:5px 14px;border-radius:999px;margin-bottom:10px;
+  }
+  .warn-box p{font-size:.92rem;color:#7A4A10;}
+  .proposal-sec{
+    border:2px dashed var(--warn);
+    border-radius:24px;
+    padding:36px 32px;
+    background:#FFFDF8;
+  }
+  @media (max-width:620px){.proposal-sec{padding:26px 18px;}}
+
+  .conduct{background:var(--navy);color:var(--white);border-radius:24px;padding:38px 34px;}
+  .conduct h2{color:var(--white);font-size:1.4rem;font-weight:800;margin-bottom:6px;}
+  .conduct .sec-sub{color:#B9C8E6;}
+  .conduct ul.checks li{color:#E3EBF9;}
+  .conduct ul.checks li::before{background:rgba(127,168,240,.2);color:var(--blue-light);}
+  .conduct ul.checks li strong{color:var(--white);}
+
+  .footnote{font-size:.8rem;color:var(--gray);margin-top:14px;}
+
+  footer{
+    background:var(--navy-deep);color:#8FA6CE;text-align:center;
+    padding:34px 24px;font-size:.88rem;
+  }
+  footer a{color:#8FA6CE;}
+  footer .logo{display:inline-block;margin-bottom:10px;font-size:1.15rem;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark">✦</span>Vante</a>
+    <a class="back-link" href="index.html">← Voltar ao índice</a>
+  </div>
+</div>
+
+<header class="doc-head">
+  <div class="wrap">
+    <span class="badge">Documento interno — Time Comercial</span>
+    <h1>Política de Comissionamento e Plano de Carreira</h1>
+    <p>Tabelas oficiais de comissão e bônus, regras de pagamento, simulador de ganhos, cenários de referência e trilha de evolução do consultor Vante. Toda a remuneração segue a tabela oficial — resultados dependem do desempenho individual.</p>
+  </div>
+</header>
+
+<!-- ===== 1. TABELAS OFICIAIS ===== -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">1. Tabelas oficiais</span>
+    <h2 class="sec-title">Comissão progressiva sobre a taxa de implantação</h2>
+    <p class="sec-sub">A faixa é definida pelo <strong>total de clientes fechados no mês</strong> (somando todos os planos). O percentual da faixa atingida é aplicado sobre a taxa de implantação de <strong>cada</strong> venda do mês. Papel do consultor: prospecção, qualificação e acompanhamento até o fechamento — implantação e suporte são responsabilidade da Vante.</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Faixa</th><th class="center">Clientes no mês</th><th class="center">% de comissão</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Faixa 1</td><td class="center">1 – 5</td><td class="center pct">20%</td></tr>
+          <tr><td>Faixa 2</td><td class="center">6 – 10</td><td class="center pct">25%</td></tr>
+          <tr><td>Faixa 3</td><td class="center">11 – 20</td><td class="center pct">30%</td></tr>
+          <tr><td>Faixa 4</td><td class="center">21 – 35</td><td class="center pct">35%</td></tr>
+          <tr><td>Faixa 5</td><td class="center">Acima de 35</td><td class="center pct">40%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="sec-title" style="font-size:1.25rem;">Comissão por plano, em R$ por venda</h2>
+    <p class="sec-sub">Valores resultantes da aplicação do % da faixa sobre a implantação de cada plano (Básico R$ 300 · Intermediário R$ 580 · Avançado R$ 990).</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Plano (implantação)</th><th class="center">Faixa 1 · 20%</th><th class="center">Faixa 2 · 25%</th><th class="center">Faixa 3 · 30%</th><th class="center">Faixa 4 · 35%</th><th class="center">Faixa 5 · 40%</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Básico</strong> (R$ 300)</td><td class="center">R$ 60</td><td class="center">R$ 75</td><td class="center">R$ 90</td><td class="center">R$ 105</td><td class="center">R$ 120</td></tr>
+          <tr><td><strong>Intermediário</strong> (R$ 580)</td><td class="center">R$ 116</td><td class="center">R$ 145</td><td class="center">R$ 174</td><td class="center">R$ 203</td><td class="center">R$ 232</td></tr>
+          <tr><td><strong>Premium / Avançado</strong> (R$ 990)</td><td class="center">R$ 198</td><td class="center">R$ 247,50</td><td class="center">R$ 297</td><td class="center">R$ 346,50</td><td class="center">R$ 396</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <h2 class="sec-title" style="font-size:1.25rem;">Bônus por performance acumulada</h2>
+        <p class="sec-sub" style="margin-bottom:18px;">Marcos de contratos acumulados (não zera todo mês):</p>
+        <div class="table-scroll" style="margin-bottom:0;">
+          <table style="min-width:0;">
+            <thead><tr><th>Contratos acumulados</th><th class="center">Bônus</th></tr></thead>
+            <tbody>
+              <tr><td>10 contratos</td><td class="center"><strong>R$ 500</strong></td></tr>
+              <tr><td>20 contratos</td><td class="center"><strong>R$ 1.500</strong></td></tr>
+              <tr><td>35 contratos</td><td class="center"><strong>R$ 3.000</strong></td></tr>
+              <tr><td>50 contratos</td><td class="center"><strong>R$ 5.000</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h2 class="sec-title" style="font-size:1.25rem;">Projeção oficial (plano Premium/Avançado)</h2>
+        <p class="sec-sub" style="margin-bottom:18px;">Comissão mensal estimada vendendo somente o plano Avançado:</p>
+        <div class="table-scroll" style="margin-bottom:0;">
+          <table style="min-width:0;">
+            <thead><tr><th>Clientes/mês</th><th class="center">Comissão estimada</th></tr></thead>
+            <tbody>
+              <tr><td>5</td><td class="center">≈ R$ 990</td></tr>
+              <tr><td>10</td><td class="center">≈ R$ 2.475</td></tr>
+              <tr><td>20</td><td class="center">≈ R$ 5.940</td></tr>
+              <tr><td>35</td><td class="center">≈ R$ 12.127,50</td></tr>
+              <tr><td>50</td><td class="center">≈ R$ 19.800</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-highlight" style="margin-top:32px;">
+      <h3>⚠️ Regra de pagamento — quando a comissão é devida</h3>
+      <div class="rule-steps">
+        <div class="rule-step">1. Contrato assinado</div>
+        <div class="rule-plus">+</div>
+        <div class="rule-step">2. Implantação concluída</div>
+        <div class="rule-plus">+</div>
+        <div class="rule-step">3. Pagamento confirmado</div>
+      </div>
+      <p class="note">A comissão só é paga quando os <strong>três marcos</strong> estiverem cumpridos. <strong>Cancelamento antes da implantação não gera comissão.</strong> Registre cada etapa no CRM para acompanhar o status dos seus contratos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. SIMULADOR ===== -->
+<section style="padding-top:8px;">
+  <div class="wrap">
+    <span class="eyebrow">2. Simulador</span>
+    <h2 class="sec-title">Simulador interativo de comissão</h2>
+    <p class="sec-sub">Informe quantas vendas de cada plano você fará no mês. O simulador calcula a faixa atingida (pelo total de clientes), a comissão total do mês e mostra o que falta para a próxima faixa e para o próximo bônus.</p>
+
+    <div class="sim">
+      <h3>🧮 Meu mês de vendas</h3>
+      <p class="sub">Preencha os campos abaixo — o resultado é atualizado automaticamente.</p>
+      <div class="sim-inputs">
+        <div class="field">
+          <label for="s-basico">Vendas Básico <span class="hint">(R$ 300 impl.)</span></label>
+          <input type="number" id="s-basico" min="0" max="200" value="3">
+        </div>
+        <div class="field">
+          <label for="s-inter">Vendas Intermediário <span class="hint">(R$ 580 impl.)</span></label>
+          <input type="number" id="s-inter" min="0" max="200" value="5">
+        </div>
+        <div class="field">
+          <label for="s-avancado">Vendas Avançado <span class="hint">(R$ 990 impl.)</span></label>
+          <input type="number" id="s-avancado" min="0" max="200" value="2">
+        </div>
+        <div class="field">
+          <label for="s-acumulado">Contratos acumulados antes deste mês <span class="hint">(para o cálculo do bônus)</span></label>
+          <input type="number" id="s-acumulado" min="0" max="500" value="0">
+        </div>
+      </div>
+      <div class="sim-results">
+        <div class="sim-box main">
+          <div class="lbl">Comissão total do mês</div>
+          <div class="val" id="r-total">—</div>
+          <div class="det" id="r-faixa">—</div>
+        </div>
+        <div class="sim-box next">
+          <div class="lbl">Próxima faixa</div>
+          <div class="val" id="r-proxfaixa">—</div>
+          <div class="det" id="r-proxfaixa-det">—</div>
+        </div>
+        <div class="sim-box bonus">
+          <div class="lbl">Próximo bônus</div>
+          <div class="val" id="r-proxbonus">—</div>
+          <div class="det" id="r-proxbonus-det">—</div>
+        </div>
+      </div>
+      <div class="sim-breakdown" id="r-breakdown">—</div>
+    </div>
+    <p class="footnote">Simulação conforme tabela oficial. Comissão paga somente após contrato assinado + implantação concluída + pagamento confirmado. Bônus são pagos uma única vez ao atingir cada marco acumulado.</p>
+  </div>
+</section>
+
+<!-- ===== 3. CENÁRIOS ===== -->
+<section style="padding-top:8px;">
+  <div class="wrap">
+    <span class="eyebrow">3. Cenários de referência</span>
+    <h2 class="sec-title">Três cenários prontos</h2>
+    <p class="sec-sub">Valores calculados conforme a regra oficial: a faixa é definida pelo <strong>total de clientes no mês</strong> e o % da faixa é aplicado sobre a implantação de <strong>cada plano vendido</strong>.</p>
+
+    <div class="grid3">
+      <!-- Iniciante: 5 vendas = Faixa 1 (20%): 3×60 + 2×116 = 412 -->
+      <div class="card scenario">
+        <span class="tier-tag">FAIXA 1 · 20%</span>
+        <h3>🌱 Iniciante</h3>
+        <p class="mix">5 vendas/mês · mix: 3 Básico + 2 Intermediário</p>
+        <div class="rows">
+          <div class="row"><span>3 × Básico (R$ 60)</span><span>R$ 180,00</span></div>
+          <div class="row"><span>2 × Intermediário (R$ 116)</span><span>R$ 232,00</span></div>
+        </div>
+        <div class="total"><span class="lbl">Comissão do mês</span><span class="val">R$ 412,00</span></div>
+        <p class="obs">Mantendo esse ritmo, no 2º mês você atinge 10 contratos acumulados e ganha o <strong>bônus de R$ 500</strong>.</p>
+      </div>
+
+      <!-- Em ritmo: 12 vendas = Faixa 3 (30%): 5×90 + 5×174 + 2×297 = 1.914 -->
+      <div class="card scenario">
+        <span class="tier-tag">FAIXA 3 · 30%</span>
+        <h3>🚀 Em ritmo</h3>
+        <p class="mix">12 vendas/mês · mix: 5 Básico + 5 Intermediário + 2 Avançado</p>
+        <div class="rows">
+          <div class="row"><span>5 × Básico (R$ 90)</span><span>R$ 450,00</span></div>
+          <div class="row"><span>5 × Intermediário (R$ 174)</span><span>R$ 870,00</span></div>
+          <div class="row"><span>2 × Avançado (R$ 297)</span><span>R$ 594,00</span></div>
+        </div>
+        <div class="total"><span class="lbl">Comissão do mês</span><span class="val">R$ 1.914,00</span></div>
+        <p class="obs">Já no 1º mês nesse ritmo você passa dos 10 contratos acumulados: <strong>+ R$ 500 de bônus</strong>. No 2º mês, passa dos 20: <strong>+ R$ 1.500</strong>.</p>
+      </div>
+
+      <!-- Alta performance: 36 vendas = Faixa 5 (40%): 12×120 + 16×232 + 8×396 = 8.320 -->
+      <div class="card scenario">
+        <span class="tier-tag">FAIXA 5 · 40%</span>
+        <h3>🏆 Alta performance</h3>
+        <p class="mix">36 vendas/mês · mix: 12 Básico + 16 Intermediário + 8 Avançado</p>
+        <div class="rows">
+          <div class="row"><span>12 × Básico (R$ 120)</span><span>R$ 1.440,00</span></div>
+          <div class="row"><span>16 × Intermediário (R$ 232)</span><span>R$ 3.712,00</span></div>
+          <div class="row"><span>8 × Avançado (R$ 396)</span><span>R$ 3.168,00</span></div>
+        </div>
+        <div class="total"><span class="lbl">Comissão do mês</span><span class="val">R$ 8.320,00</span></div>
+        <p class="obs">Já no 1º mês nesse ritmo, os marcos de 10, 20 e 35 contratos acumulados são atingidos: <strong>+ R$ 5.000 em bônus</strong> (500 + 1.500 + 3.000).</p>
+      </div>
+    </div>
+    <p class="footnote">Cenários ilustrativos com base na tabela oficial. Resultados dependem do desempenho individual — nunca apresente como renda garantida.</p>
+  </div>
+</section>
+
+<!-- ===== 4. PLANO DE CARREIRA ===== -->
+<section style="padding-top:8px;">
+  <div class="wrap">
+    <span class="eyebrow">4. Plano de carreira</span>
+    <h2 class="sec-title">Trilha de evolução do consultor</h2>
+    <div class="warn-box">
+      <span class="tag">Sugestão a validar com a Vante</span>
+      <p>A trilha abaixo é uma <strong>proposta de estrutura de carreira</strong> elaborada pela gestão comercial. Níveis, critérios e eventuais overrides devem ser validados e formalizados com a Vante antes de serem comunicados como oficiais.</p>
+    </div>
+    <div class="career">
+      <div class="lvl">
+        <span class="stage">Nível 1</span>
+        <h3>Consultor</h3>
+        <ul>
+          <li>Porta de entrada após treinamento e certificação</li>
+          <li>Meta de rampa: 5 contratos no 1º mês completo</li>
+          <li>Remuneração: comissão progressiva + bônus (tabela oficial)</li>
+          <li>Registro de 100% da atividade no CRM</li>
+        </ul>
+      </div>
+      <div class="lvl">
+        <span class="stage">Nível 2</span>
+        <h3>Consultor Sênior</h3>
+        <ul>
+          <li>Critério objetivo: <strong>20+ contratos acumulados</strong> pagos</li>
+          <li>Mínimo de 2 meses consecutivos na Faixa 2 ou superior</li>
+          <li>Prioridade em leads das landing pages da Vante</li>
+          <li>Participa como apoio nos treinamentos de novos consultores</li>
+        </ul>
+      </div>
+      <div class="lvl">
+        <span class="stage">Nível 3</span>
+        <h3>Líder de Célula</h3>
+        <ul>
+          <li>Gerencia célula de <strong>3 a 5 consultores</strong></li>
+          <li>Critérios: 35+ contratos acumulados + perfil de liderança avaliado</li>
+          <li><strong>Override sugerido</strong> sobre as vendas da célula (percentual a definir com a Vante)</li>
+          <li>Responsável por ritos: reunião semanal, revisão de funil, role-play</li>
+        </ul>
+      </div>
+      <div class="lvl">
+        <span class="stage">Nível 4</span>
+        <h3>Gerente Comercial</h3>
+        <ul>
+          <li>Gerencia múltiplas células e o resultado regional</li>
+          <li>Critérios: histórico consistente como Líder + metas de time batidas</li>
+          <li>Participa do planejamento comercial com a direção da Vante</li>
+          <li>Modelo de remuneração de gestão a formalizar com a Vante</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. PROPOSTA DE EVOLUÇÃO ===== -->
+<section style="padding-top:8px;">
+  <div class="wrap">
+    <span class="eyebrow">5. Proposta de evolução do modelo</span>
+    <div class="proposal-sec">
+      <div class="warn-box" style="margin-bottom:24px;">
+        <span class="tag">A negociar com a Vante — NÃO é o modelo vigente</span>
+        <p>O modelo atual remunera apenas sobre a <strong>taxa de implantação</strong> (uma única vez por cliente). A proposta abaixo — comissão recorrente sobre a mensalidade — é uma recomendação estratégica para retenção de consultores e ainda <strong>não está aprovada</strong>. Não mencionar em material de cliente final nem em recrutamento até formalização.</p>
+      </div>
+      <h2 class="sec-title" style="font-size:1.3rem;">Comissão recorrente sobre mensalidade (10–20% por 12 meses)</h2>
+      <p class="sec-sub">Racional: o consultor passa a ter interesse direto na permanência do cliente, reduz churn de carteira e cria renda previsível — o principal fator de retenção de bons vendedores em modelos SaaS.</p>
+
+      <h3 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:14px;">Simulação comparativa — consultor com 10 clientes Intermediário fechados no mês (Faixa 2)</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Modelo</th><th class="center">Na venda (mês 1)</th><th class="center">Recorrente/mês (12 meses)</th><th class="center">Total em 12 meses por safra</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Vigente</strong> — 25% sobre implantação</td>
+              <td class="center">10 × R$ 145 = <strong>R$ 1.450</strong></td>
+              <td class="center">R$ 0</td>
+              <td class="center"><strong>R$ 1.450</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Proposta A</strong> — vigente + 10% da mensalidade (R$ 199) por 12 meses</td>
+              <td class="center">R$ 1.450</td>
+              <td class="center">10 × R$ 19,90 = <strong>R$ 199</strong></td>
+              <td class="center"><strong>R$ 3.838</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Proposta B</strong> — vigente + 20% da mensalidade (R$ 199) por 12 meses</td>
+              <td class="center">R$ 1.450</td>
+              <td class="center">10 × R$ 39,80 = <strong>R$ 398</strong></td>
+              <td class="center"><strong>R$ 6.226</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">Leitura estratégica: se o consultor repetir essa safra todos os meses, na Proposta A ele acumula uma renda recorrente crescente (≈ R$ 199 adicionais por mês a cada safra ativa, chegando a ≈ R$ 2.388/mês recorrentes com 12 safras ativas na Proposta A e ≈ R$ 4.776/mês na Proposta B) — condicionada à permanência e adimplência dos clientes. Percentual, prazo e condições a negociar com a Vante.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. CÓDIGO DE CONDUTA ===== -->
+<section style="padding-top:8px;padding-bottom:72px;">
+  <div class="wrap">
+    <div class="conduct">
+      <span class="eyebrow" style="color:var(--blue-light);">6. Código de conduta comercial</span>
+      <h2>Regras inegociáveis do time</h2>
+      <p class="sec-sub">O descumprimento pode levar à retenção de comissões em apuração e ao desligamento da parceria.</p>
+      <ul class="checks">
+        <li><strong>Nunca prometa o que o sistema não faz.</strong> Venda as funcionalidades reais de cada plano — dúvida sobre escopo? Pergunte antes de prometer.</li>
+        <li><strong>Nenhum desconto sem autorização.</strong> Preços e condições de mensalidade e implantação são os da tabela oficial; exceções só com aprovação formal da Vante.</li>
+        <li><strong>Respeite o território.</strong> Atue apenas na região definida na sua entrada; conflitos de carteira são resolvidos pelo registro no CRM.</li>
+        <li><strong>100% da atividade registrada no CRM.</strong> Lead sem registro não conta para disputa de carteira nem para apuração de comissão.</li>
+        <li><strong>Transparência com o cliente sobre prazos.</strong> Implantação segue o cronograma da Vante (4 etapas) — não prometa datas por conta própria.</li>
+        <li><strong>Comunicação em nome da Vante</strong> apenas com os materiais oficiais (apresentações, vídeos, landing pages e scripts fornecidos).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo"><span style="color:var(--blue-light);">✦</span> <strong>Vante</strong></span><br>
+  Vante Gestão Tecnologia · <a href="https://vantetecnologia.com.br" target="_blank" rel="noopener">vantetecnologia.com.br</a> · (31) 2181-1044 · <a href="mailto:contato@vantetecnologia.com.br">contato@vantetecnologia.com.br</a><br>
+  <span style="font-size:.78rem;opacity:.75;">Documento interno do time comercial — não distribuir a clientes finais. <a href="index.html">← Voltar ao índice</a></span>
+</footer>
+
+<script>
+/* ===== Tabela oficial (BRIEF) ===== */
+var FAIXAS = [
+  { min: 1,  max: 5,        pct: 20, nome: "Faixa 1" },
+  { min: 6,  max: 10,       pct: 25, nome: "Faixa 2" },
+  { min: 11, max: 20,       pct: 30, nome: "Faixa 3" },
+  { min: 21, max: 35,       pct: 35, nome: "Faixa 4" },
+  { min: 36, max: Infinity, pct: 40, nome: "Faixa 5" }
+];
+// Comissão R$ por venda por plano nas faixas 1..5
+var PLANOS = {
+  basico:   { nome: "Básico",        valores: [60, 75, 90, 105, 120] },
+  inter:    { nome: "Intermediário", valores: [116, 145, 174, 203, 232] },
+  avancado: { nome: "Avançado",      valores: [198, 247.50, 297, 346.50, 396] }
+};
+// Bônus por contratos acumulados
+var BONUS = [
+  { marco: 10, valor: 500 },
+  { marco: 20, valor: 1500 },
+  { marco: 35, valor: 3000 },
+  { marco: 50, valor: 5000 }
+];
+
+function faixaPorTotal(total) {
+  for (var i = 0; i < FAIXAS.length; i++) {
+    if (total >= FAIXAS[i].min && total <= FAIXAS[i].max) return { idx: i, faixa: FAIXAS[i] };
+  }
+  return null;
+}
+function brl(v) {
+  return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+function intVal(id) {
+  var v = parseInt(document.getElementById(id).value, 10);
+  return isNaN(v) || v < 0 ? 0 : v;
+}
+
+function simular() {
+  var nB = intVal("s-basico"), nI = intVal("s-inter"), nA = intVal("s-avancado");
+  var acumuladoAntes = intVal("s-acumulado");
+  var total = nB + nI + nA;
+
+  var elTotal = document.getElementById("r-total");
+  var elFaixa = document.getElementById("r-faixa");
+  var elProxF = document.getElementById("r-proxfaixa");
+  var elProxFDet = document.getElementById("r-proxfaixa-det");
+  var elProxB = document.getElementById("r-proxbonus");
+  var elProxBDet = document.getElementById("r-proxbonus-det");
+  var elBreak = document.getElementById("r-breakdown");
+
+  if (total === 0) {
+    elTotal.textContent = "R$ 0,00";
+    elFaixa.textContent = "Nenhuma venda informada";
+    elProxF.textContent = "Faixa 1 (20%)";
+    elProxFDet.textContent = "Sua primeira venda já entra na Faixa 1.";
+    elProxB.textContent = "—";
+    elProxBDet.textContent = "Informe suas vendas para calcular.";
+    elBreak.textContent = "Preencha as vendas por plano para ver o detalhamento.";
+    return;
+  }
+
+  var f = faixaPorTotal(total);
+  var vB = PLANOS.basico.valores[f.idx] * nB;
+  var vI = PLANOS.inter.valores[f.idx] * nI;
+  var vA = PLANOS.avancado.valores[f.idx] * nA;
+  var comissao = vB + vI + vA;
+
+  elTotal.textContent = brl(comissao);
+  elFaixa.textContent = total + " cliente" + (total > 1 ? "s" : "") + " no mês · " + f.faixa.nome + " (" + f.faixa.pct + "%)";
+
+  // Próxima faixa: quantos contratos faltam e quanto a comissão passaria a ser
+  if (f.idx < FAIXAS.length - 1) {
+    var prox = FAIXAS[f.idx + 1];
+    var faltam = prox.min - total;
+    // Recalcula a comissão das vendas atuais já na próxima faixa (os contratos extras seriam além disso)
+    var comissaoProx = PLANOS.basico.valores[f.idx + 1] * nB +
+                       PLANOS.inter.valores[f.idx + 1] * nI +
+                       PLANOS.avancado.valores[f.idx + 1] * nA;
+    elProxF.textContent = "Faltam " + faltam + " contrato" + (faltam > 1 ? "s" : "") + " para " + prox.nome + " (" + prox.pct + "%)";
+    elProxFDet.textContent = "Na " + prox.nome + ", só as vendas que você já tem passariam a valer " + brl(comissaoProx) + " (+" + brl(comissaoProx - comissao) + ") — sem contar os contratos extras.";
+  } else {
+    elProxF.textContent = "Faixa máxima atingida! 🏆";
+    elProxFDet.textContent = "Você está na Faixa 5 (40%), o topo da tabela.";
+  }
+
+  // Próximo bônus: acumulado antes + vendas do mês
+  var acumuladoTotal = acumuladoAntes + total;
+  var bonusDoMes = 0, marcosDoMes = [];
+  for (var i = 0; i < BONUS.length; i++) {
+    if (acumuladoAntes < BONUS[i].marco && acumuladoTotal >= BONUS[i].marco) {
+      bonusDoMes += BONUS[i].valor;
+      marcosDoMes.push(BONUS[i].marco);
+    }
+  }
+  var proximo = null;
+  for (var j = 0; j < BONUS.length; j++) {
+    if (acumuladoTotal < BONUS[j].marco) { proximo = BONUS[j]; break; }
+  }
+  if (proximo) {
+    var faltamB = proximo.marco - acumuladoTotal;
+    elProxB.textContent = "Faltam " + faltamB + " contrato" + (faltamB > 1 ? "s" : "") + " para +" + brl(proximo.valor);
+    elProxBDet.textContent = "Você fecha o mês com " + acumuladoTotal + " contratos acumulados. Próximo marco: " + proximo.marco + " contratos.";
+  } else {
+    elProxB.textContent = "Todos os marcos atingidos! 🏆";
+    elProxBDet.textContent = acumuladoTotal + " contratos acumulados — acima do marco máximo de 50.";
+  }
+  if (bonusDoMes > 0) {
+    elProxBDet.textContent += " Neste mês você desbloqueia " + brl(bonusDoMes) + " em bônus (marco" + (marcosDoMes.length > 1 ? "s" : "") + " de " + marcosDoMes.join(", ") + " contratos).";
+  }
+
+  // Detalhamento
+  var partes = [];
+  if (nB) partes.push(nB + " × Básico a " + brl(PLANOS.basico.valores[f.idx]) + " = " + brl(vB));
+  if (nI) partes.push(nI + " × Intermediário a " + brl(PLANOS.inter.valores[f.idx]) + " = " + brl(vI));
+  if (nA) partes.push(nA + " × Avançado a " + brl(PLANOS.avancado.valores[f.idx]) + " = " + brl(vA));
+  elBreak.innerHTML = "<strong>Detalhamento (" + f.faixa.nome + " · " + f.faixa.pct + "% sobre a implantação de cada plano):</strong><br>" +
+    partes.join(" &nbsp;·&nbsp; ") +
+    (bonusDoMes > 0 ? "<br><strong style='color:var(--success);'>Bônus desbloqueado no mês: " + brl(bonusDoMes) + "</strong> (pago à parte da comissão)" : "");
+}
+
+["s-basico", "s-inter", "s-avancado", "s-acumulado"].forEach(function (id) {
+  document.getElementById(id).addEventListener("input", simular);
+});
+simular();
+</script>
+</body>
+</html>
