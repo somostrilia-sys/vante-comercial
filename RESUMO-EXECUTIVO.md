@@ -16,7 +16,7 @@ Parceria de representação comercial da **Vante Gestão Tecnologia** (vantetecn
 |---|---|---|---|
 | — | **Hub / link mestre** | [index](https://somostrilia-sys.github.io/vante-comercial/) | Ponto de partida: estratégia em 4 fases + todos os links |
 | 01 | Análise estratégica | [abrir](https://somostrilia-sys.github.io/vante-comercial/01-analise-estrategica.html) | INTERNO — ICP por nicho, SWOT, riscos, crítica do comissionamento |
-| 02 | Apresentação B2B (12 slides) | [abrir](https://somostrilia-sys.github.io/vante-comercial/02-apresentacao-produto.html) | Na frente do dono do comércio (teclado/swipe, notas do apresentador) |
+| 02 | Apresentação B2B (15 slides) | [abrir](https://somostrilia-sys.github.io/vante-comercial/02-apresentacao-produto.html) | Na frente do dono do comércio (teclado/swipe, notas do apresentador) |
 | 03 | Landing de consultores | [abrir](https://somostrilia-sys.github.io/vante-comercial/03-landing-consultores.html) | Divulgar para captar candidatos (calculadora de ganhos + formulário WhatsApp) |
 | 04 | Plano de recrutamento | [abrir](https://somostrilia-sys.github.io/vante-comercial/04-plano-recrutamento.html) | Tráfego pago (Meta Ads) e conteúdo intencional, coquetel minuto a minuto, entrevista coletiva com scorecard, onboarding 30-60-90 |
 | 05 | Playbook de prospecção | [abrir](https://somostrilia-sys.github.io/vante-comercial/05-playbook-prospeccao.html) | 8 canais com scripts prontos por nicho; top 3: WhatsApp outbound, porta a porta, indicação |
