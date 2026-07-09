@@ -1,0 +1,11 @@
+# Config do gitleaks para este repositório.
+# A chave "sb_publishable_*" do Supabase é PÚBLICA por design (equivalente à anon key):
+# vai no front-end, e os dados são protegidos por RLS + RPC com senha no servidor.
+# Nenhuma chave secreta (service_role/sb_secret) é permitida aqui.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Supabase publishable key — pública por design"
+regexes = ['''sb_publishable_[A-Za-z0-9_-]+''']

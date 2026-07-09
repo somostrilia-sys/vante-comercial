@@ -646,6 +646,31 @@
 var WHATSAPP_DESTINO = "553121811044";
 var EMAIL_DESTINO = "contato@vantetecnologia.com.br";
 
+/* ===== Registro de candidaturas (painel admin.html) ===== */
+var VANTE_DB_URL = "https://uovwxbsfnvriozljhfdh.supabase.co";
+var VANTE_DB_KEY = "sb_publishable_rWLjy7ygsRM_YiWS-KcjFQ_t5UVcpX7";
+function salvarCandidatura() {
+  try {
+    fetch(VANTE_DB_URL + "/rest/v1/vante_candidatos", {
+      method: "POST",
+      keepalive: true,
+      headers: {
+        "apikey": VANTE_DB_KEY,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({
+        nome: document.getElementById("f-nome").value.trim(),
+        whatsapp: document.getElementById("f-whats").value.trim(),
+        cidade: document.getElementById("f-cidade").value.trim(),
+        experiencia: document.getElementById("f-exp").value,
+        motivo: document.getElementById("f-porque").value.trim(),
+        origem: "landing"
+      })
+    });
+  } catch (err) { /* registro é best-effort; o WhatsApp segue como canal principal */ }
+}
+
 /* ===== Tabela oficial de comissionamento (BRIEF) ===== */
 // Faixas por total de clientes no mês: [min, max, %]
 var FAIXAS = [
@@ -710,12 +735,14 @@ function montarMensagem() {
 }
 document.getElementById("form-candidatura").addEventListener("submit", function (e) {
   e.preventDefault();
+  salvarCandidatura();
   var msg = montarMensagem();
   window.open("https://wa.me/" + WHATSAPP_DESTINO + "?text=" + encodeURIComponent(msg), "_blank");
 });
 document.getElementById("mailto-alt").addEventListener("click", function (e) {
   var form = document.getElementById("form-candidatura");
   if (!form.checkValidity()) { form.reportValidity(); e.preventDefault(); return; }
+  salvarCandidatura();
   var msg = montarMensagem().replace(/\*/g, "");
   this.href = "mailto:" + EMAIL_DESTINO +
     "?subject=" + encodeURIComponent("Candidatura — Consultor Comercial Vante") +
