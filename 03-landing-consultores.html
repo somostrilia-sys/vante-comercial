@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seja Consultor Vante — Venda tecnologia para o pequeno varejo</title>
 <meta name="description" content="Torne-se consultor comercial da Vante Gestão Tecnologia: a cada venda, escolha 100% da implantação no ato ou 10% da mensalidade recorrente. Produto com IA e implantação por conta da Vante.">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -316,6 +317,86 @@
   footer a{color:#8FA6CE;}
   footer .back{display:block;margin-top:14px;font-size:.8rem;opacity:.75;}
   .vmark{height:1.35em;width:auto;vertical-align:-.32em;display:inline-block;}
+
+  /* ============ REDESIGN · MOTION & ART DIRECTION ============ */
+  :root{--ease:cubic-bezier(.22,.7,.2,1);}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-11px);}}
+  @keyframes pulseGlow{0%,100%{opacity:.4;transform:scale(1);}50%{opacity:.75;transform:scale(1.09);}}
+  @keyframes sweep{to{transform:rotate(360deg);}}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(46px,-34px) scale(1.12);}66%{transform:translate(-34px,24px) scale(.94);}}
+  @keyframes sheen{0%,58%{left:-60%;}100%{left:150%;}}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:radial-gradient(125% 120% at 50% -12%,#173d82 0%,#0B2F5E 46%,#0A1B3A 100%);padding:104px 0 92px;}
+  .hero .aurora{position:absolute;inset:0;z-index:0;overflow:hidden;}
+  .hero .blob{position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(82px);opacity:.5;mix-blend-mode:screen;animation:drift 22s var(--ease) infinite;}
+  .hero .b1{background:#155DFC;top:-170px;left:-90px;}
+  .hero .b2{background:#6AA9F7;bottom:-190px;right:-70px;animation-duration:27s;}
+  .hero .b3{background:#2A74F7;top:18%;left:56%;width:360px;height:360px;opacity:.32;animation-duration:24s;}
+  .hero .grid-overlay{position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(127,168,240,.16) 1px,transparent 1.5px);background-size:36px 36px;-webkit-mask-image:radial-gradient(ellipse 72% 62% at 50% 38%,#000 28%,transparent 76%);mask-image:radial-gradient(ellipse 72% 62% at 50% 38%,#000 28%,transparent 76%);opacity:.55;}
+  .hero .wrap{position:relative;z-index:2;}
+
+  /* Emblem — bússola animada */
+  .emblem{position:relative;width:128px;height:128px;margin:0 auto 26px;}
+  .emblem>*{position:absolute;inset:0;}
+  .emblem .halo{background:radial-gradient(circle,rgba(21,93,252,.6),transparent 62%);filter:blur(6px);animation:pulseGlow 4.6s ease-in-out infinite;}
+  .emblem .sweep{border-radius:50%;background:conic-gradient(from 0deg,rgba(127,168,240,.42),rgba(127,168,240,0) 30%);-webkit-mask:radial-gradient(closest-side,transparent 56%,#000 58%);mask:radial-gradient(closest-side,transparent 56%,#000 58%);animation:sweep 6s linear infinite;}
+  .emblem .ring{border:1.4px dashed rgba(127,168,240,.42);border-radius:50%;animation:spin 36s linear infinite;}
+  .emblem .ring::after{content:"";position:absolute;inset:9px;border:1px solid rgba(127,168,240,.16);border-radius:50%;}
+  .emblem img{inset:27%;width:46%;height:auto;filter:drop-shadow(0 6px 20px rgba(21,93,252,.7));animation:float 6s ease-in-out infinite;}
+
+  .hero .kicker{backdrop-filter:blur(6px);border:1px solid rgba(127,168,240,.3);}
+  .hero h1 .hl{background:linear-gradient(100deg,#6AA9F7,#9CC6F7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+
+  .hero-options{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:0 auto 32px;max-width:700px;}
+  .hopt{flex:1 1 300px;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(127,168,240,.28);border-radius:16px;padding:14px 18px;color:#DCE7FB;font-size:.94rem;font-weight:500;text-align:left;backdrop-filter:blur(8px);transition:transform .25s var(--ease),border-color .25s;}
+  .hopt:hover{transform:translateY(-3px);border-color:rgba(127,168,240,.55);}
+  .hopt .tag{background:var(--blue);color:#fff;font-weight:700;font-size:.68rem;letter-spacing:.6px;text-transform:uppercase;padding:6px 12px;border-radius:999px;white-space:nowrap;}
+  .hopt .tag.rec{background:var(--success);}
+  .scrolldown{display:inline-block;margin-top:12px;color:#8FA6CE;font-size:1.5rem;text-decoration:none;animation:float 2.4s ease-in-out infinite;}
+  .scrolldown:hover{color:var(--blue-light);}
+
+  /* Buttons — gradiente + brilho */
+  .btn{background:linear-gradient(135deg,#155DFC,#2A74F7);position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(21,93,252,.4);}
+  .btn::after{content:"";position:absolute;top:0;left:-60%;width:34%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);transform:skewX(-20deg);animation:sheen 5s ease-in-out infinite;}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(21,93,252,.5);}
+  .btn-ghost{background:transparent;box-shadow:none;}
+  .btn-ghost::after{display:none;}
+
+  /* Cards — hover + ícone animado */
+  .card{position:relative;transition:transform .28s var(--ease),box-shadow .28s var(--ease);border:1px solid rgba(21,93,252,.06);}
+  .card:hover{transform:translateY(-6px);box-shadow:0 22px 52px rgba(11,47,94,.16);}
+  .card .icon{background:linear-gradient(135deg,rgba(21,93,252,.15),rgba(106,169,247,.1));transition:transform .28s var(--ease);}
+  .card:hover .icon{transform:scale(1.08) rotate(-5deg);}
+
+  /* Proofbar — números com gradiente */
+  .proof-item .num{background:linear-gradient(120deg,#155DFC,#2A74F7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+
+  /* Chips por nicho (cores oficiais do manual) */
+  .chip{display:inline-flex;align-items:center;gap:9px;transition:transform .2s var(--ease),box-shadow .2s;}
+  .chip:hover{transform:translateY(-2px);}
+  .chip::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--nc,#155DFC);box-shadow:0 0 9px var(--nc,#155DFC);}
+  .n-gas{--nc:#155DFC;} .n-adega{--nc:#F64A00;} .n-salao{--nc:#C4557E;} .n-barb{--nc:#475569;} .n-pet{--nc:#218367;} .n-util{--nc:#0891B2;}
+
+  /* Seções escuras — marca d'água girando */
+  .sec-dark{position:relative;overflow:hidden;}
+  .sec-dark>.wrap{position:relative;z-index:1;}
+  .sec-dark::before{content:"";position:absolute;width:440px;height:440px;right:-130px;top:-110px;background:url(assets/vante-symbol-white.png) center/contain no-repeat;opacity:.05;animation:spin 80s linear infinite;pointer-events:none;}
+
+  /* Reveal on scroll — só quando há JS (html.js). Sem JS, conteúdo visível. */
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  html.js .reveal.in{opacity:1;transform:none;}
+
+  /* Topbar — logo gira no hover */
+  .topbar{transition:box-shadow .3s;}
+  .topbar .logo .vmark{transition:transform .7s var(--ease);}
+  .topbar .logo:hover .vmark{transform:rotate(180deg);}
+
+  @media (prefers-reduced-motion: reduce){
+    .emblem .ring,.emblem .sweep,.emblem .halo,.emblem img,.hero .blob,.btn::after,.sec-dark::before,.scrolldown{animation:none!important;}
+    .reveal{opacity:1!important;transform:none!important;transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -330,15 +411,28 @@
 
 <!-- ===== HERO ===== -->
 <header class="hero">
+  <div class="aurora"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+  <div class="grid-overlay"></div>
   <div class="wrap">
+    <div class="emblem" aria-hidden="true">
+      <div class="halo"></div>
+      <div class="sweep"></div>
+      <div class="ring"></div>
+      <img src="assets/vante-symbol-white.png" alt="">
+    </div>
     <span class="kicker">Estamos formando o time comercial Vante</span>
     <h1>Venda tecnologia que o pequeno varejo <span class="hl">precisa</span> — e construa uma carteira que paga <span class="hl">cada vez mais</span></h1>
-    <p class="sub">Torne-se <strong>representante Vante</strong>: a cada venda você escolhe entre <strong>100% da implantação no ato</strong> ou <strong>10% da mensalidade todo mês</strong>, construindo uma carteira que paga cada vez mais. Você vende uma plataforma de gestão com Inteligência Artificial — a <strong>implantação e o suporte ficam por conta da Vante</strong>. Seu trabalho é vender.</p>
+    <p class="sub">Torne-se <strong>representante Vante</strong> e venda uma plataforma de gestão com Inteligência Artificial para o pequeno varejo. Você vende — a <strong>implantação e o suporte ficam por conta da Vante</strong>.</p>
+    <div class="hero-options">
+      <div class="hopt"><span class="tag">À vista</span> 100% da implantação, no ato da venda</div>
+      <div class="hopt"><span class="tag rec">Recorrente</span> 10% da mensalidade, todo mês</div>
+    </div>
     <div class="cta-row">
       <a class="btn" href="#candidatura">Quero me candidatar</a>
       <a class="btn btn-ghost" href="#ganhos">Ver quanto posso ganhar</a>
     </div>
     <p class="micro">Sem custo de entrada · Treinamento e ferramentas fornecidos pela Vante · Ganhos conforme o modelo oficial de comissionamento</p>
+    <a class="scrolldown" href="#produto" aria-label="Rolar para saber mais">▾</a>
   </div>
 </header>
 
@@ -377,12 +471,12 @@
       </div>
     </div>
     <div class="chips">
-      <span class="chip">Distribuidoras de Gás</span>
-      <span class="chip">Adegas e Depósitos de Bebidas</span>
-      <span class="chip">Salões de Beleza</span>
-      <span class="chip">Barbearias</span>
-      <span class="chip">Petshops</span>
-      <span class="chip">Lojas de Utilidades</span>
+      <span class="chip n-gas">Distribuidoras de Gás</span>
+      <span class="chip n-adega">Adegas e Depósitos de Bebidas</span>
+      <span class="chip n-salao">Salões de Beleza</span>
+      <span class="chip n-barb">Barbearias</span>
+      <span class="chip n-pet">Petshops</span>
+      <span class="chip n-util">Lojas de Utilidades</span>
     </div>
     <p class="footnote">Planos para o cliente final a partir de R$ 99/mês — preço acessível que facilita o "sim" do pequeno varejista.</p>
   </div>
@@ -739,6 +833,38 @@ document.getElementById("mailto-alt").addEventListener("click", function (e) {
     "?subject=" + encodeURIComponent("Candidatura — Consultor Comercial Vante") +
     "&body=" + encodeURIComponent(msg);
 });
+</script>
+
+<script>
+/* ===== Reveal on scroll + micro-interações (com blindagem) ===== */
+(function(){
+  var els = [];
+  function revealAll(){ els.forEach(function(el){ el.classList.add("in"); }); }
+  try{
+    var sel = ".card,.step,details,.sec-head,.calc,.table-scroll,.chip,.proof-item";
+    els = Array.prototype.slice.call(document.querySelectorAll(sel));
+    els.forEach(function(el){
+      el.classList.add("reveal");
+      var sibs = Array.prototype.slice.call(el.parentNode.children).filter(function(c){return c.classList && c.classList.contains("reveal");});
+      var i = sibs.indexOf(el);
+      if(i > 0) el.style.transitionDelay = Math.min(i,6)*70 + "ms";
+    });
+    if(!("IntersectionObserver" in window)){ revealAll(); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {threshold:.1, rootMargin:"0px 0px -40px 0px"});
+    els.forEach(function(el){ io.observe(el); });
+    // Rede de segurança: se algo não disparar, revela após 4s (nada fica invisível).
+    setTimeout(revealAll, 4000);
+  }catch(err){ revealAll(); }
+})();
+/* ===== Topbar — sombra ao rolar ===== */
+(function(){
+  var tb = document.querySelector(".topbar");
+  if(!tb) return;
+  var onScroll = function(){ tb.style.boxShadow = (window.scrollY > 12) ? "0 6px 24px rgba(10,27,58,.45)" : "0 2px 12px rgba(10,27,58,.25)"; };
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+})();
 </script>
 </body>
 </html>
