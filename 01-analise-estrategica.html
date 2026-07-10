@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --blue:#2563EB; --navy:#0E2A5C; --deep:#0A1B3A; --lightblue:#7FA8F0;
+    --blue:#155DFC; --navy:#0B2F5E; --deep:#0A1B3A; --lightblue:#6AA9F7;
     --bg:#EEF2F8; --white:#FFFFFF; --text:#1E293B; --gray:#64748B;
-    --success:#16A34A; --warn:#D97706;
+    --success:#00A63E; --warn:#D97706;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-weight:400;}
@@ -107,6 +107,7 @@
     .step{grid-template-columns:44px 1fr;}
     .step .n{width:44px;height:44px;border-radius:13px;}
   }
+  .vmark{height:1.35em;width:auto;vertical-align:-.32em;display:inline-block;}
 </style>
 </head>
 <body>
@@ -114,7 +115,7 @@
 <div class="topbar">
   <div class="wrap">
     <a href="index.html">← Voltar ao índice</a>
-    <span class="wordmark"><span class="star">✦</span> Vante · Pacote Comercial</span>
+    <span class="wordmark"><img class="vmark" src="assets/vante-symbol-blue.png" alt="Vante"> Vante · Pacote Comercial</span>
   </div>
 </div>
 
@@ -135,22 +136,22 @@
     <span class="kicker">Seção 1</span>
     <h2 class="section-title"><span class="num-badge">1</span>Sumário executivo</h2>
     <p style="margin-top:14px;">O negócio é uma <strong>parceria de representação comercial</strong> do SaaS <strong>Vante — Plataforma de Gestão Inteligente</strong> (Vante Gestão Tecnologia): uma plataforma que integra vendas, estoque, financeiro e atendimento para o pequeno varejo, com Inteligência Artificial como diferencial central. Nosso papel é montar e liderar uma equipe de consultores que faz prospecção, qualificação e acompanhamento até o fechamento; <strong>implantação e suporte ficam 100% com a Vante</strong> — o representante só vende.</p>
-    <p><strong>Por que a oportunidade é boa:</strong> o varejo brasileiro movimenta R$ 2,3 trilhões/ano (~20% do PIB) e mais de 60% dos negócios estão em transformação digital — mas o pequeno varejista ainda opera com caderno, planilha e WhatsApp desorganizado. A Vante chega com um produto que nasceu <em>dentro</em> de uma operação real de distribuição de gás (+30 anos de vendas no varejo, +15 anos de software), verticalizado no nicho onde a dor de logística é mais aguda, com IA aplicada (GásLink) e preço de entrada acessível (a partir de R$ 99/mês). Para o representante, a comissão é progressiva (20% a 40% da implantação), há bônus de até R$ 5.000 por volume acumulado e a Vante fornece CRM, treinamento, apresentações, landing pages e scripts.</p>
+    <p><strong>Por que a oportunidade é boa:</strong> o varejo brasileiro movimenta R$ 2,3 trilhões/ano (~20% do PIB) e mais de 60% dos negócios estão em transformação digital — mas o pequeno varejista ainda opera com caderno, planilha e WhatsApp desorganizado. A Vante chega com um produto que nasceu <em>dentro</em> de uma operação real de distribuição de gás (+30 anos de vendas no varejo, +15 anos de software), verticalizado no nicho onde a dor de logística é mais aguda, com IA aplicada e preço de entrada acessível (a partir de R$ 99/mês). Para o representante, a comissão é flexível: ele escolhe, a cada venda, entre <strong>100% da implantação no ato</strong> (caixa imediato) ou <strong>10% da mensalidade de forma recorrente</strong> (renda de carteira); e a Vante fornece CRM, treinamento, apresentações, landing pages e scripts.</p>
     <div class="cards-3">
       <div class="card">
         <span class="pill amber">Risco 1</span>
-        <h3 class="risk-title">Sem receita recorrente para o consultor</h3>
-        <p style="margin:0;font-size:.9rem;color:var(--gray);">A comissão incide só sobre a taxa de implantação (R$ 60 a R$ 396 por venda). Quem para de vender, para de ganhar — risco alto de rotatividade de consultores. Detalhe e proposta de solução na seção 6.</p>
+        <h3 class="risk-title">À vista sozinho não cria carteira</h3>
+        <p style="margin:0;font-size:.9rem;color:var(--gray);">A opção à vista (100% da implantação, no ato) paga bem, mas quem só vende à vista volta à estaca zero todo mês. Mitigação: orientar o consultor a montar carteira pela opção recorrente. Detalhe na seção 6.</p>
       </div>
       <div class="card">
         <span class="pill amber">Risco 2</span>
-        <h3 class="risk-title">Ciclo de recebimento alongado</h3>
-        <p style="margin:0;font-size:.9rem;color:var(--gray);">Comissão só é paga após contrato assinado + implantação concluída + pagamento confirmado. A implantação é da Vante — ou seja, parte do recebimento do consultor depende de um processo fora do controle dele.</p>
+        <h3 class="risk-title">Recorrência depende da permanência do cliente</h3>
+        <p style="margin:0;font-size:.9rem;color:var(--gray);">Na opção recorrente (10% da mensalidade), o repasse acontece mês a mês conforme o cliente paga — cancelamento ou inadimplência interrompe a recorrência daquele contrato. Escolher recorrente exige clientes de perfil sólido.</p>
       </div>
       <div class="card">
         <span class="pill amber">Risco 3</span>
         <h3 class="risk-title">Expectativa de IA acima da entrega</h3>
-        <p style="margin:0;font-size:.9rem;color:var(--gray);">"IA" vende, mas promessa exagerada gera frustração — e cancelamento antes da implantação zera a comissão. O discurso precisa ser preciso: o que a IA faz hoje, em qual plano, com quais limites.</p>
+        <p style="margin:0;font-size:.9rem;color:var(--gray);">"IA" vende, mas promessa exagerada gera frustração — e o cancelamento interrompe a recorrência e queima o território. O discurso precisa ser preciso: o que a IA faz hoje, em qual plano, com quais limites.</p>
       </div>
     </div>
   </div>
@@ -161,7 +162,7 @@
   <div class="wrap">
     <span class="kicker">Seção 2</span>
     <h2>2. O produto</h2>
-    <p style="margin-top:14px;">A Vante é uma <strong style="color:#fff;">plataforma completa de gestão para o pequeno varejo</strong>: vendas, estoque, financeiro e atendimento em um só lugar. Não é um "sistema de caixa" nem um "chatbot" — é o sistema operacional do negócio, com a IA costurada nos fluxos do dia a dia. Nasceu da prática: foi construída dentro da operação real de uma distribuição de gás, e é dessa origem que vem a IA "GásLink".</p>
+    <p style="margin-top:14px;">A Vante é uma <strong style="color:#fff;">plataforma completa de gestão para o pequeno varejo</strong>: vendas, estoque, financeiro e atendimento em um só lugar. Não é um "sistema de caixa" nem um "chatbot" — é o sistema operacional do negócio, com a IA costurada nos fluxos do dia a dia. Nasceu da prática: foi construída dentro da operação real de uma distribuição de gás, e é dessa origem que vem a IA nativa da Vante.</p>
 
     <h3 style="margin-top:26px;">As 4 dores que o produto resolve — e como narrá-las na venda</h3>
     <div class="cards-2">
@@ -216,10 +217,10 @@
     <div class="nicho">
       <div class="card" style="border:2px solid var(--blue);">
         <div class="nicho-head"><h3 style="margin:0;">🔵 Distribuidoras de Gás</h3><span class="pill navy">Nicho prioritário · o mais maduro</span></div>
-        <p style="font-size:.93rem;">É o nicho de origem do produto — a Vante nasceu dentro de uma operação real de distribuição de gás, e isso aparece no software: a IA se chama <strong>GásLink</strong>, a roteirização inteligente foi desenhada para entregas de botijão, e a notificação de entregadores via WhatsApp resolve exatamente o fluxo desse negócio. Aqui a Vante não é um ERP genérico adaptado: é ferramenta feita sob medida, com vocabulário do setor. É onde a demonstração é mais convincente, o ciclo de venda é mais curto e a taxa de conversão tende a ser maior — por isso, é onde a equipe deve rampar.</p>
+        <p style="font-size:.93rem;">É o nicho de origem do produto — a Vante nasceu dentro de uma operação real de distribuição de gás, e isso aparece no software: a roteirização inteligente foi desenhada para entregas de botijão, e a notificação de entregadores via WhatsApp resolve exatamente o fluxo desse negócio. Aqui a Vante não é um ERP genérico adaptado: é ferramenta feita sob medida, com vocabulário do setor. É onde a demonstração é mais convincente, o ciclo de venda é mais curto e a taxa de conversão tende a ser maior — por isso, é onde a equipe deve rampar.</p>
         <div class="nicho-grid">
           <div class="mini"><b>Dor dominante</b>Logística: rotas ineficientes e pedidos dispersos entre telefone e WhatsApp — custo diário de tempo, combustível e entrega perdida.</div>
-          <div class="mini"><b>Plano mais provável</b><strong style="color:var(--blue);">Avançado (R$ 399/mês)</strong> — IA GásLink, monitoramento logístico em tempo real e notificações de status ao cliente. Operações menores: Intermediário (R$ 199/mês).</div>
+          <div class="mini"><b>Plano mais provável</b><strong style="color:var(--blue);">Avançado (R$ 399/mês)</strong> — IA da Vante, monitoramento logístico em tempo real e notificações de status ao cliente. Operações menores: Intermediário (R$ 199/mês).</div>
           <div class="mini"><b>Gancho de abordagem</b>"Quanto custa por mês o entregador cruzar a cidade duas vezes por rota mal montada?"</div>
         </div>
       </div>
@@ -298,7 +299,7 @@
         </tr>
         <tr>
           <td><strong>Verticalização no nicho de gás</strong></td>
-          <td class="win">Nasceu dentro da operação; IA GásLink e fluxos desenhados para o setor</td>
+          <td class="win">Nasceu dentro da operação; IA da Vante e fluxos desenhados para o setor</td>
           <td class="neutral">Genérico por definição — o cliente adapta o processo ao sistema</td>
         </tr>
         <tr>
@@ -364,49 +365,39 @@
   <div class="wrap">
     <span class="kicker">Seção 6 · uso interno — não apresentar ao cliente final</span>
     <h2>6. Análise crítica do modelo de comissionamento</h2>
-    <p style="margin-top:14px;">O modelo oficial: comissão progressiva <strong style="color:#fff;">sobre a taxa de implantação</strong>, por volume mensal — Faixa 1 (1–5 clientes/mês) 20% · Faixa 2 (6–10) 25% · Faixa 3 (11–20) 30% · Faixa 4 (21–35) 35% · Faixa 5 (&gt;35) 40% — mais bônus por performance acumulada (10 contratos → R$ 500 · 20 → R$ 1.500 · 35 → R$ 3.000 · 50 → R$ 5.000).</p>
+    <p style="margin-top:14px;">O modelo oficial dá ao consultor <strong style="color:#fff;">duas formas de comissão, à escolha dele em cada venda</strong>: <strong style="color:#fff;">100% da taxa de implantação, no ato</strong> (Básico R$ 300 · Intermediário R$ 580 · Avançado R$ 990) — ou <strong style="color:#fff;">10% da mensalidade, recorrente</strong>, enquanto o cliente estiver ativo (Básico R$ 9,90 · Intermediário R$ 19,90 · Avançado R$ 39,90 por mês). Sem faixas progressivas e sem bônus por volume: o valor é o mesmo por venda, e a alavanca de ganho é o volume e a construção de carteira.</p>
 
     <div class="cards-2">
       <div class="card" style="background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.45);box-shadow:none;">
         <span class="pill green">Pontos fortes</span>
         <ul class="check" style="margin-bottom:0;">
-          <li>Progressividade agressiva: dobra o percentual (20% → 40%) conforme o volume — recompensa de verdade quem escala. No Premium, a projeção oficial vai de ≈ R$ 990 (5 clientes/mês) a ≈ R$ 19.800 (50 clientes/mês).</li>
-          <li>Bônus acumulados somam até R$ 10.000 nos primeiros marcos (500 + 1.500 + 3.000 + 5.000) — excelente para a rampa do consultor novo.</li>
-          <li>Ferramentas fornecidas pela Vante (CRM, treinamento, apresentações, landing pages, vídeos, scripts, acompanhamento) — custo de operação do consultor perto de zero.</li>
-          <li>Consultor não carrega implantação nem suporte: vende e passa o bastão.</li>
+          <li><strong style="color:#fff;">À vista paga no ato:</strong> a opção à vista libera 100% da implantação no fechamento — caixa imediato, sem depender da fila de implantação da Vante.</li>
+          <li><strong style="color:#fff;">Recorrência nativa:</strong> a opção de 10% da mensalidade cria "renda de carteira" que não zera nos meses fracos — o principal fator de retenção de bons vendedores em SaaS.</li>
+          <li><strong style="color:#fff;">Flexibilidade:</strong> o consultor decide venda a venda conforme o momento (precisa de caixa? à vista) e o perfil do cliente (sólido? recorrente).</li>
+          <li>Ferramentas fornecidas pela Vante (CRM, treinamento, apresentações, landing pages, vídeos, scripts) — custo de operação do consultor perto de zero; não carrega implantação nem suporte.</li>
         </ul>
       </div>
       <div class="card" style="background:rgba(217,119,6,.12);border:1px solid rgba(217,119,6,.5);box-shadow:none;">
         <span class="pill amber">Fragilidades</span>
         <ul class="check" style="margin-bottom:0;">
-          <li><strong style="color:#fff;">Comissão só sobre a implantação:</strong> o ticket por venda fica entre R$ 60 (Básico, Faixa 1) e R$ 396 (Premium, Faixa 5). O consultor não participa do valor recorrente que ele mesmo gerou.</li>
-          <li><strong style="color:#fff;">Sem recorrência → churn de consultores:</strong> a renda zera no mês em que o consultor não vende. Sem "salário de carteira", os bons tendem a migrar para modelos com recorrência — e recrutar/treinar de novo custa caro.</li>
-          <li><strong style="color:#fff;">Ciclo de recebimento alongado:</strong> a regra "contrato + implantação concluída + pagamento confirmado" faz a comissão depender da agenda de implantação da Vante. Cancelamento antes da implantação = comissão zero, mesmo com a venda feita.</li>
+          <li><strong style="color:#fff;">Recorrência pequena por cliente:</strong> R$ 9,90 a R$ 39,90/mês só vira renda relevante com volume e carteira grande — exige paciência e constância na rampa.</li>
+          <li><strong style="color:#fff;">Recorrente depende de permanência e adimplência:</strong> cancelamento ou atraso do cliente corta a recorrência daquele contrato. Vender para o cliente errado destrói a carteira.</li>
+          <li><strong style="color:#fff;">À vista sozinho não fideliza o consultor:</strong> quem só escolhe à vista tem renda que zera sem venda nova — a liderança precisa incentivar a construção de carteira.</li>
         </ul>
       </div>
     </div>
 
-    <div class="callout warn" style="background:rgba(255,255,255,.97);margin-top:30px;">
-      <span class="pill amber">Proposta de evolução — a negociar com a Vante · NÃO faz parte do plano aprovado</span>
-      <p style="color:var(--text);margin-top:10px;"><strong>Recomendação:</strong> negociar comissão recorrente de <strong>10–20% da mensalidade por 12 meses</strong> sobre cada contrato ativo trazido pelo consultor. Isso cria "renda de carteira", ancora o consultor na operação e alinha todos ao mesmo objetivo: cliente implantado, ativo e pagando. A simulação abaixo usa o ponto médio (15%) sobre o plano Intermediário (R$ 199/mês → R$ 29,85/cliente/mês).</p>
-    </div>
-
-    <h3 style="margin-top:26px;">Simulação: consultor vendendo 10 Intermediários/mês durante 6 meses</h3>
-    <p style="font-size:.9rem;">Premissas: 10 vendas/mês = Faixa 2 (25%) → R$ 145 por venda (25% de R$ 580 de implantação) → R$ 1.450/mês. Bônus acumulados: 10 contratos no mês 1 (R$ 500), 20 no mês 2 (R$ 1.500), 35 cruzado no mês 4 (R$ 3.000), 50 no mês 5 (R$ 5.000). Recorrente proposto: 15% × R$ 199 = R$ 29,85 por cliente ativo/mês, carteira crescendo 10 clientes/mês, churn zero para simplificar (na prática, aplicar churn reduz a cauda).</p>
+    <h3 style="margin-top:26px;">Simulação: consultor vendendo 10 Avançado/mês por 12 meses — à vista vs recorrente</h3>
+    <p style="font-size:.9rem;">Premissas: 10 vendas/mês do plano Avançado. À vista: 10 × R$ 990 = R$ 9.900/mês (recebido no ato). Recorrente: cada cliente paga R$ 39,90/mês (10% de R$ 399), carteira crescendo 10 clientes/mês, churn zero para simplificar (na prática, o churn reduz a cauda).</p>
     <div class="table-scroll">
       <table>
-        <tr><th>Mês</th><th>Carteira acumulada</th><th>Modelo atual<br>(implantação + bônus)</th><th>Recorrente proposto<br>(15% × R$ 199 × carteira)</th><th>Modelo proposto<br>(total do mês)</th></tr>
-        <tr><td>1</td><td>10 clientes</td><td>R$ 1.450 + R$ 500 = <strong>R$ 1.950</strong></td><td>R$ 298,50</td><td><strong>R$ 2.248,50</strong></td></tr>
-        <tr><td>2</td><td>20 clientes</td><td>R$ 1.450 + R$ 1.500 = <strong>R$ 2.950</strong></td><td>R$ 597,00</td><td><strong>R$ 3.547,00</strong></td></tr>
-        <tr><td>3</td><td>30 clientes</td><td><strong>R$ 1.450</strong></td><td>R$ 895,50</td><td><strong>R$ 2.345,50</strong></td></tr>
-        <tr><td>4</td><td>40 clientes</td><td>R$ 1.450 + R$ 3.000 = <strong>R$ 4.450</strong></td><td>R$ 1.194,00</td><td><strong>R$ 5.644,00</strong></td></tr>
-        <tr><td>5</td><td>50 clientes</td><td>R$ 1.450 + R$ 5.000 = <strong>R$ 6.450</strong></td><td>R$ 1.492,50</td><td><strong>R$ 7.942,50</strong></td></tr>
-        <tr><td>6</td><td>60 clientes</td><td><strong>R$ 1.450</strong></td><td>R$ 1.791,00</td><td><strong>R$ 3.241,00</strong></td></tr>
-        <tr class="total"><td colspan="2">Total nos 6 meses</td><td>R$ 18.700,00</td><td>R$ 6.268,50</td><td>R$ 24.968,50 (+33,5%)</td></tr>
-        <tr class="total"><td colspan="2">Cauda após o mês 6 (meses 7–17)</td><td>R$ 0 se parar de vender</td><td colspan="2">+ R$ 15.223,50 restantes dos 12 meses de recorrência da carteira</td></tr>
+        <tr><th>Métrica</th><th>Opção à vista</th><th>Opção recorrente</th></tr>
+        <tr><td>Recebido no mês 12</td><td>R$ 9.900 (se manteve o ritmo)</td><td>R$ 4.788 (carteira de 120 clientes)</td></tr>
+        <tr><td>Recebido acumulado em 12 meses</td><td><strong>R$ 118.800</strong></td><td>R$ 31.122</td></tr>
+        <tr class="total"><td>Se parar de vender no mês 13</td><td>R$ 0 dali em diante</td><td>+ R$ 4.788/mês seguindo, enquanto os clientes estiverem ativos</td></tr>
       </table>
     </div>
-    <p>A leitura decisiva não é o +33,5% no semestre — é a última linha. <strong style="color:#fff;">No modelo atual, o consultor que para de vender no mês 7 ganha R$ 0 dali em diante.</strong> No modelo proposto, a carteira de 60 clientes ainda paga R$ 1.791/mês por vários meses (até completar os 12 meses de cada safra — R$ 15.223,50 no total). É essa cauda que segura o consultor na operação em meses ruins e reduz o custo de reposição de equipe. Custo para a Vante: 15% da mensalidade no 1º ano de cada contrato — argumento de negociação: consultor retido vende mais, e cliente acompanhado cancela menos.</p>
+    <p>A leitura decisiva: <strong style="color:#fff;">o à vista maximiza o caixa enquanto você vende</strong> — no ano 1 rende muito mais (R$ 118.800 vs R$ 31.122). <strong style="color:#fff;">A recorrente constrói renda durável</strong>: no mês 12 já são R$ 4.788/mês que continuam entrando mesmo se o consultor tirar o pé — é a cauda que segura a equipe nos meses ruins e reduz a reposição de time. Por isso a orientação é <strong style="color:#fff;">misturar as duas</strong>: à vista na rampa e nos clientes de maior risco; recorrente nos clientes sólidos, para ir formando a carteira. Guia completo de decisão no arquivo <a href="08-comissionamento-carreira.html" style="color:var(--lightblue);">08 — Comissionamento &amp; Carreira</a>.</p>
   </div>
 </section>
 
@@ -422,16 +413,16 @@
           <li>Produto nascido da operação real (gás), com +15 anos de software e +30 anos de varejo por trás.</li>
           <li>IA aplicada de ponta a ponta (atendimento, logística, análise) — diferencial concreto, não slogan.</li>
           <li>Preço de entrada acessível (R$ 99/mês) e implantação assistida pela Vante.</li>
-          <li>Comissão progressiva (até 40%) + bônus de até R$ 5.000, com ferramentas de venda fornecidas.</li>
+          <li>Comissão flexível: 100% da implantação no ato ou 10% recorrente, à escolha do consultor, com ferramentas de venda fornecidas.</li>
         </ul>
       </div>
       <div class="card">
         <h3><span class="badge b-w">W</span>Fraquezas</h3>
         <ul>
-          <li>Sem comissão recorrente: ticket por venda de R$ 60 a R$ 396 e renda que zera sem venda nova.</li>
-          <li>Recebimento condicionado à implantação e ao pagamento — fora do controle do consultor.</li>
+          <li>Recorrência pequena por cliente (R$ 9,90 a R$ 39,90/mês): só vira renda relevante com volume e carteira acumulada.</li>
+          <li>Opção recorrente depende da permanência e adimplência do cliente — churn corta a renda de carteira.</li>
           <li>Marca ainda em construção fora do nicho de gás; ecossistema de integrações menor que o de ERPs grandes.</li>
-          <li>IA GásLink restrita ao plano Avançado — o maior diferencial não aparece nos planos de entrada.</li>
+          <li>IA da Vante restrita ao plano Avançado — o maior diferencial não aparece nos planos de entrada.</li>
         </ul>
       </div>
       <div class="card">
@@ -439,7 +430,7 @@
         <ul>
           <li>Varejo de R$ 2,3 tri/ano (~20% do PIB) com +60% dos negócios em transformação digital.</li>
           <li>Nichos pulverizados e mal atendidos: adegas, salões, barbearias, petshops, utilidades.</li>
-          <li>Negociar recorrência (10–20% × 12 meses) e transformar o modelo em carreira de carteira.</li>
+          <li>Construir carteira recorrente (10% da mensalidade) e transformar o modelo em carreira de renda previsível.</li>
           <li>Parcerias locais (sindicatos, revendas, contadores) como canal de indicação em escala.</li>
         </ul>
       </div>
@@ -466,9 +457,9 @@
       <table>
         <tr><th style="width:28%;">Risco</th><th style="width:22%;">Impacto</th><th>Mitigação</th></tr>
         <tr>
-          <td><strong>Dependência da Vante para implantação</strong> — a comissão só sai depois de implantado e pago</td>
-          <td>Caixa do consultor atrasa; desmotivação na rampa; venda cancelada antes da implantação = comissão zero</td>
-          <td>Acordar SLA de implantação com a Vante e acompanhar fila semanalmente; consultor mantém contato com o cliente entre assinatura e implantação (reduz cancelamento); medir "tempo venda → comissão" como KPI da operação</td>
+          <td><strong>Atraso de implantação na Vante</strong> — cliente demora a ser ativado e a recorrência demora a começar</td>
+          <td>Cliente esfria entre a venda e a ativação; risco de cancelamento antes de ativar; início da renda recorrente atrasa</td>
+          <td>Acordar SLA de implantação com a Vante e acompanhar fila semanalmente; consultor mantém contato com o cliente entre assinatura e ativação (reduz cancelamento); medir "tempo venda → cliente ativo" como KPI da operação</td>
         </tr>
         <tr>
           <td><strong>Canibalização de território entre consultores</strong></td>
@@ -478,12 +469,12 @@
         <tr>
           <td><strong>Promessa excessiva de IA gerando frustração</strong></td>
           <td>Cancelamento antes/logo após a implantação (sem comissão), churn do cliente e boca a boca negativo no nicho</td>
-          <td>Script aprovado com o que a IA faz <em>hoje</em> e em qual plano (GásLink só no Avançado); demonstração ao vivo em vez de promessa verbal; checklist de expectativas assinado junto com a proposta; certificação interna antes de campo</td>
+          <td>Script aprovado com o que a IA faz <em>hoje</em> e em qual plano (IA avançada só no Avançado); demonstração ao vivo em vez de promessa verbal; checklist de expectativas assinado junto com a proposta; certificação interna antes de campo</td>
         </tr>
         <tr>
-          <td><strong>Churn de consultores por falta de recorrência</strong></td>
+          <td><strong>Churn de consultores</strong> (renda à vista zera sem venda nova)</td>
           <td>Perda dos melhores vendedores após a rampa; custo de recrutar e treinar de novo; território esfria</td>
-          <td>Negociar a recorrência da seção 6 com a Vante; enquanto não sai, usar bônus acumulados + plano de carreira (arquivo 08) e ranking mensal como retenção; metas de faixa (25%→30%) como degrau visível de ganho</td>
+          <td>Incentivar a construção de carteira pela opção recorrente (renda que não zera) + plano de carreira (arquivo 08) e ranking mensal como retenção; acompanhar a evolução da carteira de cada consultor como KPI</td>
         </tr>
         <tr>
           <td><strong>Concentração excessiva no nicho de gás</strong></td>
@@ -497,13 +488,13 @@
         </tr>
       </table>
     </div>
-    <p style="font-size:.88rem;">Próximo passo de leitura: <a href="04-plano-recrutamento.html" style="color:var(--lightblue);">04 — Plano de Recrutamento</a> para montar a equipe, e <a href="08-comissionamento-carreira.html" style="color:var(--lightblue);">08 — Comissionamento &amp; Carreira</a> para as simulações completas por faixa.</p>
+    <p style="font-size:.88rem;">Próximo passo de leitura: <a href="04-plano-recrutamento.html" style="color:var(--lightblue);">04 — Plano de Recrutamento</a> para montar a equipe, e <a href="08-comissionamento-carreira.html" style="color:var(--lightblue);">08 — Comissionamento &amp; Carreira</a> para as simulações completas das duas opções.</p>
     <p style="margin-top:20px;"><a href="index.html" style="color:#fff;background:var(--blue);padding:12px 26px;border-radius:999px;font-weight:600;display:inline-block;">← Voltar ao índice</a></p>
   </div>
 </section>
 
 <footer>
-  <span class="star">✦</span> <strong style="color:#fff;">Vante</strong> Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br
+  <img class="vmark" src="assets/vante-symbol-white.png" alt="Vante"> <strong style="color:#fff;">Vante</strong> Gestão Tecnologia · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br
 </footer>
 
 </body>

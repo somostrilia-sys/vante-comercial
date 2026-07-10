@@ -8,7 +8,7 @@ Este é o brief de referência para TODOS os materiais do pacote comercial. Qual
 - **Site**: vantetecnologia.com.br
 - **WhatsApp/Tel**: (31) 2181-1044
 - **E-mail**: contato@vantetecnologia.com.br
-- **Credenciais**: +15 anos de experiência em desenvolvimento de software; +30 anos de experiência em vendas no varejo. Nasceu da prática dentro da operação real de um negócio (origem em distribuição de gás — daí a IA "GásLink").
+- **Credenciais**: +15 anos de experiência em desenvolvimento de software; +30 anos de experiência em vendas no varejo. Nasceu da prática dentro da operação real de um negócio (origem em distribuição de gás — daí a IA nativa da Vante para o setor).
 - **Propósito**: "Simplificar a operação e aumentar a lucratividade, para que o cliente possa focar no que realmente importa: crescer."
 
 ## 2. O PRODUTO
@@ -48,19 +48,18 @@ Plataforma completa de gestão para o pequeno varejo: integra vendas, estoque, f
 - Implantação opcional inclui migração de dados + treinamento.
 - **Básico**: dashboard básico de vendas, catálogo (clientes/categorias/produtos), estoque e saldo, controle de pedidos e pagamentos, financeiro (caixa e acerto de venda), relatórios de vendas.
 - **Intermediário**: tudo do Básico + módulo fiscal (NFe/NFCe), logística (motoristas, veículos, transportadoras), RH (cargos e funcionários), financeiro avançado (contas a pagar/receber), notificações WhatsApp para entregadores, relatórios financeiros e de estoque.
-- **Avançado**: tudo do Intermediário + app mobile de delivery próprio, monitoramento logístico em tempo real, ponto via app (RH digital), gestão de crédito de clientes, notificações automáticas de status do pedido para clientes, Inteligência Artificial GásLink.
+- **Avançado**: tudo do Intermediário + app mobile de delivery próprio, monitoramento logístico em tempo real, ponto via app (RH digital), gestão de crédito de clientes, notificações automáticas de status do pedido para clientes, Inteligência Artificial da Vante.
 
 ## 4. MODELO DO REPRESENTANTE (proposta comercial oficial)
 
 - Papel: prospecção, qualificação e acompanhamento até fechamento. Implantação e suporte = Vante.
-- **Comissão progressiva sobre a taxa de implantação** por volume no mês:
-  - Faixa 1: 1–5 clientes/mês → 20% | Faixa 2: 6–10 → 25% | Faixa 3: 11–20 → 30% | Faixa 4: 21–35 → 35% | Faixa 5: >35 → 40%
-- Comissão por plano (R$ por venda): Básico 60/75/90/105/120; Intermediário 116/145/174/203/232; Premium(Avançado) 198/247,50/297/346,50/396.
-- **Bônus por performance acumulada**: 10 contratos → R$ 500; 20 → R$ 1.500; 35 → R$ 3.000; 50 → R$ 5.000.
+- **Comissão em duas opções, à escolha do consultor em cada venda:**
+  - **À vista:** 100% da taxa de implantação, no ato — Básico R$ 300 · Intermediário R$ 580 · Avançado R$ 990.
+  - **Recorrente:** 10% da mensalidade, por mês, enquanto o cliente estiver ativo — Básico R$ 9,90 · Intermediário R$ 19,90 · Avançado R$ 39,90.
+- Sem faixas progressivas e sem bônus por volume: o valor é o mesmo por venda; a alavanca é o volume e a construção de carteira recorrente.
 - Ferramentas fornecidas: CRM, treinamento comercial, apresentações, landing pages, vídeos, suporte técnico, scripts de vendas, acompanhamento comercial.
-- Regra: comissão paga após contrato assinado + implantação concluída + pagamento confirmado. Cancelamento antes da implantação não gera comissão.
-- Projeção oficial (Premium): 5 cli/mês ≈ R$990; 10 ≈ R$2.475; 20 ≈ R$5.940; 35 ≈ R$12.127,50; 50 ≈ R$19.800.
-- **Ponto de atenção estratégico (interno, não usar em material do cliente final)**: o modelo atual NÃO prevê comissão recorrente sobre mensalidade — recomendação nossa é negociar % recorrente (ex.: 10–20% da mensalidade por 12 meses) para retenção de consultores. Onde o material tratar disso, apresentar como "proposta de evolução do plano" claramente separada do que já está aprovado.
+- Regra: à vista paga no ato da venda; recorrente paga todo mês conforme o cliente paga. Cancelamento/inadimplência interrompe a recorrência daquele contrato.
+- Efeito carteira (10 Avançado/mês na recorrência): mês 3 ≈ R$ 1.197/mês; mês 6 ≈ R$ 2.394; mês 12 ≈ R$ 4.788; mês 24 ≈ R$ 9.576.
 
 ## 5. DESIGN SYSTEM (obrigatório em todos os HTML)
 

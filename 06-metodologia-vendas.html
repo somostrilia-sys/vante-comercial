@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --blue:#2563EB; --navy:#0E2A5C; --deep:#0A1B3A; --lightblue:#7FA8F0;
+    --blue:#155DFC; --navy:#0B2F5E; --deep:#0A1B3A; --lightblue:#6AA9F7;
     --bg:#EEF2F8; --white:#FFFFFF; --text:#1E293B; --gray:#64748B;
-    --success:#16A34A; --warn:#D97706;
+    --success:#00A63E; --warn:#D97706;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-weight:400;}
@@ -119,6 +119,7 @@
   footer{background:var(--deep);color:#9FB2D6;text-align:center;padding:28px 24px;font-size:.85rem;}
   footer .star{color:var(--lightblue);}
   @media(max-width:640px){section{padding:44px 0;}}
+  .vmark{height:1.35em;width:auto;vertical-align:-.32em;display:inline-block;}
 </style>
 </head>
 <body>
@@ -126,7 +127,7 @@
 <header class="hero">
   <div class="wrap">
     <div class="hero-top">
-      <div class="wordmark"><span class="star">✦</span>Vante</div>
+      <div class="wordmark"><img class="vmark" src="assets/vante-symbol-white.png" alt="Vante">Vante</div>
       <a class="backlink" href="index.html">← Voltar ao índice</a>
     </div>
     <h1>Metodologia de Vendas — o Método Vante em 5 Passos</h1>
@@ -273,7 +274,7 @@
           <li><strong>Problema:</strong> "Você sabe, sem contar agora, quantos botijões cheios e vazios tem no depósito? Já vendeu sem ter, ou deixou capital parado em casco?"</li>
           <li><strong>Problema:</strong> "Nos horários de pico — fim de tarde, domingo — o telefone e o WhatsApp dão conta, ou pedido fica sem resposta?"</li>
           <li><strong>Implicação:</strong> "Gás é recompra: se o cliente liga, não é atendido e pede no concorrente, você perdeu o cliente por anos, não uma venda. Quantos são por mês?"</li>
-          <li><strong>Necessidade:</strong> "E se uma IA atendesse o WhatsApp, criasse o pedido sozinha e o sistema montasse a rota das entregas — quanto tempo e combustível você economizaria por semana?" <em style="font-style:normal;color:var(--gray);font-size:.8rem;">(gancho direto para a IA GásLink, do plano Avançado)</em></li>
+          <li><strong>Necessidade:</strong> "E se uma IA atendesse o WhatsApp, criasse o pedido sozinha e o sistema montasse a rota das entregas — quanto tempo e combustível você economizaria por semana?" <em style="font-style:normal;color:var(--gray);font-size:.8rem;">(gancho direto para a IA da Vante, do plano Avançado)</em></li>
         </ul>
       </div>
       <div class="card">
@@ -336,7 +337,7 @@
     <div class="table-scroll">
       <table>
         <tr><th>Plano</th><th>Mensalidade</th><th>Usuários inclusos</th><th>Usuário adicional</th><th>Implantação (única)</th><th>Custo por dia*</th></tr>
-        <tr><td><strong>Avançado</strong> — app de delivery próprio, monitoramento em tempo real, ponto via app, crédito de clientes, notificações automáticas ao cliente, <strong>IA GásLink</strong></td><td><strong>R$ 399/mês</strong></td><td>3</td><td>R$ 99/usuário</td><td>R$ 990</td><td>≈ R$ 13,30</td></tr>
+        <tr><td><strong>Avançado</strong> — app de delivery próprio, monitoramento em tempo real, ponto via app, crédito de clientes, notificações automáticas ao cliente, <strong>IA da Vante</strong></td><td><strong>R$ 399/mês</strong></td><td>3</td><td>R$ 99/usuário</td><td>R$ 990</td><td>≈ R$ 13,30</td></tr>
         <tr><td><strong>Intermediário</strong> — tudo do Básico + fiscal (NFe/NFCe), logística, RH, financeiro avançado (contas a pagar/receber), WhatsApp para entregadores, relatórios financeiros e de estoque</td><td><strong>R$ 199/mês</strong></td><td>2</td><td>R$ 99/usuário</td><td>R$ 580</td><td>≈ R$ 6,63</td></tr>
         <tr><td><strong>Básico</strong> — dashboard de vendas, catálogo, estoque e saldo, pedidos e pagamentos, caixa e acerto de venda, relatórios de vendas</td><td><strong>R$ 99/mês</strong></td><td>1</td><td>R$ 99/usuário</td><td>R$ 300</td><td>≈ R$ 3,30</td></tr>
       </table>
@@ -376,7 +377,7 @@
 
     <div class="script">
       <header><h4>Script — apresentação da proposta (após a demo)</h4><button class="copy-btn" onclick="copiar(this)">Copiar</button></header>
-      <div class="body">"Deixa eu te mostrar o investimento. A plataforma tem três planos. O completo é o Avançado: R$ 399 por mês, 3 usuários, com o app de delivery próprio, monitoramento das entregas em tempo real e a Inteligência Artificial GásLink atendendo seu WhatsApp — é o plano de quem quer automatizar de ponta a ponta.
+      <div class="body">"Deixa eu te mostrar o investimento. A plataforma tem três planos. O completo é o Avançado: R$ 399 por mês, 3 usuários, com o app de delivery próprio, monitoramento das entregas em tempo real e a Inteligência Artificial da Vante atendendo seu WhatsApp — é o plano de quem quer automatizar de ponta a ponta.
 
 Agora, pelo que você me contou aqui — [retomar as dores declaradas] — o plano que eu recomendo para você começar é o [PLANO], por R$ [VALOR] por mês. Isso dá cerca de R$ [VALOR/30] por dia para resolver [dor principal declarada].
 
@@ -603,12 +604,12 @@ Fechando hoje, eu já agendo a sua implantação com a equipe da Vante para os p
       </div>
     </div>
 
-    <div class="callout green"><b>Fecho do método:</b> o Método Vante em 5 passos só vira resultado com volume + disciplina. Prospecção constante (ver <a href="05-playbook-prospeccao.html">Playbook de Prospecção</a>), diagnóstico bem feito, demo enxuta, objeção respondida com respeito e follow-up pontual — e a comissão progressiva (20% a 40% sobre a implantação, conforme tabela oficial em <a href="08-comissionamento-carreira.html">Comissionamento &amp; Carreira</a>) faz o resto.</div>
+    <div class="callout green"><b>Fecho do método:</b> o Método Vante em 5 passos só vira resultado com volume + disciplina. Prospecção constante (ver <a href="05-playbook-prospeccao.html">Playbook de Prospecção</a>), diagnóstico bem feito, demo enxuta, objeção respondida com respeito e follow-up pontual — e a comissão à sua escolha (100% da implantação no ato ou 10% recorrente, ver <a href="08-comissionamento-carreira.html">Comissionamento &amp; Carreira</a>) faz o resto.</div>
   </div>
 </section>
 
 <footer>
-  <span class="star">✦</span> <strong>Vante Gestão Tecnologia</strong> · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br
+  <img class="vmark" src="assets/vante-symbol-white.png" alt="Vante"> <strong>Vante Gestão Tecnologia</strong> · vantetecnologia.com.br · (31) 2181-1044 · contato@vantetecnologia.com.br
 </footer>
 
 <script>

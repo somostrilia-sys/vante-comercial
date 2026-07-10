@@ -4,11 +4,11 @@
 
 ## O projeto
 
-Parceria de representação comercial da **Vante Gestão Tecnologia** (vantetecnologia.com.br · (31) 2181-1044): SaaS de gestão para o pequeno varejo — distribuidoras de gás (nicho de origem, IA "GásLink"), adegas, salões de beleza, barbearias, petshops e lojas de utilidades. Diferenciais: atendimento WhatsApp com IA (pedido automático, inclusive por voz), roteirização inteligente, fiscal NFe/NFCe, app de delivery próprio, financeiro integrado.
+Parceria de representação comercial da **Vante Gestão Tecnologia** (vantetecnologia.com.br · (31) 2181-1044): SaaS de gestão para o pequeno varejo — distribuidoras de gás (nicho de origem, IA nativa da Vante), adegas, salões de beleza, barbearias, petshops e lojas de utilidades. Diferenciais: atendimento WhatsApp com IA (pedido automático, inclusive por voz), roteirização inteligente, fiscal NFe/NFCe, app de delivery próprio, financeiro integrado.
 
 **Planos (cliente final):** Básico R$ 99/mês · Intermediário R$ 199/mês · Avançado R$ 399/mês (+R$ 99/usuário adicional). Implantação: R$ 300 / R$ 580 / R$ 990 — feita pela equipe da Vante.
 
-**Modelo do representante:** comissão progressiva de 20% a 40% sobre a implantação conforme volume mensal (1–5 / 6–10 / 11–20 / 21–35 / >35 clientes); bônus de R$ 500 / 1.500 / 3.000 / 5.000 aos 10 / 20 / 35 / 50 contratos; comissão paga após contrato + implantação + pagamento confirmado.
+**Modelo do representante:** duas opções à escolha do consultor em cada venda — **100% da implantação no ato** (R$ 300 / 580 / 990) **ou 10% da mensalidade recorrente** (R$ 9,90 / 19,90 / 39,90 por mês, enquanto o cliente estiver ativo). Sem faixas nem bônus por volume. À vista paga no ato; recorrente paga todo mês conforme o cliente paga.
 
 ## Os 9 materiais
 
@@ -32,7 +32,7 @@ Arquivos locais em `~/Documents/Vante-Comercial/` · Repositório: https://githu
 1. **Estruturação (sem. 1-2):** dominar o produto, definir metas e território, ajustar materiais (trocar WhatsApp da landing).
 2. **Recrutamento (sem. 2-6):** divulgar a landing, coquetel de recrutamento, entrevistas coletivas, seleção de 5 consultores.
 3. **Treinamento & rampa (sem. 4-8):** trilha de 40h, certificação, primeiras vendas acompanhadas (meta mês 1: 3 vendas/consultor).
-4. **Escala (mês 3+):** 10 vendas/consultor/mês → 50 contratos/mês na faixa de 40% + bônus.
+4. **Escala (mês 3+):** 10 vendas/consultor/mês → 50 contratos/mês; cada consultor escolhe, por venda, 100% da implantação no ato ou 10% recorrente (carteira que cresce e não zera).
 
 ## Pontos de atenção
 
